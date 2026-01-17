@@ -75,7 +75,7 @@ export default function RequestFormSection() {
             />
           </a>
           <a
-            href="https://uphold.com/us"
+            href="https://uphold.com/en-us"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block hover:scale-105 transition-transform duration-300"
