@@ -53,17 +53,17 @@ export default function ServicesSection() {
 				<svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
 					<defs>
 						<pattern id="services-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-							<path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.4" opacity="0.6"/>
-							<path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.3" opacity="0.5"/>
+							<path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.4" opacity="0.6" />
+							<path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.3" opacity="0.5" />
 							<circle cx="10" cy="10" r="0.8" fill="#00CED1" opacity="0.7">
-								<animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite"/>
+								<animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite" />
 							</circle>
 							<circle cx="5" cy="5" r="0.5" fill="#32CD32" opacity="0.6">
-								<animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.5s" repeatCount="indefinite"/>
+								<animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.5s" repeatCount="indefinite" />
 							</circle>
 						</pattern>
 					</defs>
-					<rect width="100" height="100" fill="url(#services-circuit)"/>
+					<rect width="100" height="100" fill="url(#services-circuit)" />
 				</svg>
 			</div>
 			<div className="container mx-auto px-4 relative z-[100]">
@@ -344,8 +344,8 @@ function HeaderIntro() {
 			<h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
 				<span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent font-tan-headline">ReefTech Services</span>
 			</h2>
-			<p className="text-xl md:text-2xl text-white leading-relaxed">
-ReefTech provides comprehensive solutions for Hawaii&apos;s property managers. We handle everything from Access Control to Emergency Service. Our integrated approach eliminates the need for multiple contractors, streamlining operations and reducing costs for multi-property management companies across the Big Island.			</p>
+			<p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+				ReefTech provides comprehensive solutions for Hawaii&apos;s property managers. We handle everything from Access Control to Emergency Service. Our integrated approach eliminates the need for multiple contractors, streamlining operations and reducing costs for multi-property management companies across the Big Island.			</p>
 		</div>
 	);
 }
@@ -357,7 +357,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 	const isAccessControl = category.id === 'access-control';
 	const isMaglocks = category.id === 'maglocks';
 	const isSauna = category.id === 'sauna';
-				const isPlumbing = category.id === 'plumbing';	return (
+	const isPlumbing = category.id === 'plumbing'; return (
 		<motion.div
 			ref={ref}
 			initial={{ opacity: 0, y: 40 }}
@@ -588,7 +588,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 				{isSauna && (
 					<div className="mt-8">
 						<div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-							
+
 							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
 								<img src="/photos/brand-pictures/Jacuzzi-Hawaii.jpg" alt="Jacuzzi spa installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
@@ -612,7 +612,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</div>
 					</div>
 				)}
-						{!isLighting && !isAccessControl && !isMaglocks && !isSauna && !isPlumbing && (
+				{!isLighting && !isAccessControl && !isMaglocks && !isSauna && !isPlumbing && (
 					<div className="hidden lg:flex w-64 flex-none items-center justify-center">
 						{category.image ? (
 							<div className="relative w-full h-48 overflow-hidden rounded-2xl shadow-lg group">

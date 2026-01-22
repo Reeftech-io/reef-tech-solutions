@@ -32,15 +32,13 @@ export default function RequestFormSection() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8">
-            <span className="text-white drop-shadow-lg">
-              Ready to Upgrade Your Property?
-            </span>
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r leading-snug from-cyan-700 via-teal-600 to-cyan-700 bg-clip-text text-transparent font-tan-headline">
+            Ready to Upgrade Your Property?
           </h2>
           <div className="text-3xl md:text-4xl font-semibold text-lime-200 mb-8">
             Get Complete Solutions Today
           </div>
-          <p className="text-2xl opacity-95 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Custom technology integration and maintenance solutions for your smart home, vacation rental, or luxury property
           </p>
         </div>

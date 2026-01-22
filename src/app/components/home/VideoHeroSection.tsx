@@ -1,18 +1,25 @@
 "use client";
 import { MotionFade } from '../anim/MotionFade';
 
+import { useState, useEffect } from 'react';
+
 export default function VideoHeroSection() {
+  const [videoSrc, setVideoSrc] = useState<string>("");
+
+  useEffect(() => {
+    setVideoSrc("/videos/Hero.mp4");
+  }, []);
+
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden bg-gray-900">
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
       >
-        <source src="/videos/Hero.mp4" type="video/mp4" />
+        <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-black/40 z-10" />
