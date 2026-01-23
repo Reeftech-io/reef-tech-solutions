@@ -10,7 +10,7 @@ export default function ResourcesSection() {
       title: 'Vacation Rental Tech Checklist',
       description: 'Essential smart home + automation standards for seamless guest stays.',
       icon: <IoCalendar />,
-      href: '/pdfs/TechChecklist.pdf',
+      href: '/pdfs/TechChecklistNew.pdf',
       cta: 'Download PDF'
     },
     {
