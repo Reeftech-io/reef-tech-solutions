@@ -29,7 +29,7 @@ export default function VideoHeroSection() {
             <div className="mb-8 sm:mb-12">
               <MotionFade className="flex items-center justify-center mb-8 sm:mb-12" delay={0.05}>
                 <img
-                  src="/photos/logo.png"
+                  src="/photos/logoOpt.webp"
                   alt="ReefTech Solutions Logo"
                   className="h-24 sm:h-32 md:h-40 lg:h-56 xl:h-64 w-auto"
                   style={{ filter: 'drop-shadow(0 0 20px rgba(0, 206, 209, 0.5))' }}

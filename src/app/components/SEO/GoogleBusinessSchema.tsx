@@ -12,12 +12,12 @@ export default function GoogleBusinessSchema() {
     "telephone": "+18083034627",
     "email": "info@reeftech.io",
     "image": [
-      "https://reeftech.io/photos/logo.png",
+      "https://reeftech.io/photos/logoOpt.webp",
       "https://reeftech.io/photos/og-image.jpg"
     ],
     "logo": {
       "@type": "ImageObject",
-      "url": "https://reeftech.io/photos/logo.png",
+      "url": "https://reeftech.io/photos/logoOpt.webp",
       "width": 300,
       "height": 300
     },
@@ -41,7 +41,7 @@ export default function GoogleBusinessSchema() {
         "sameAs": "https://en.wikipedia.org/wiki/Kailua-Kona,_Hawaii"
       },
       {
-        "@type": "City", 
+        "@type": "City",
         "name": "Waimea",
         "alternateName": "Kamuela",
         "sameAs": "https://en.wikipedia.org/wiki/Waimea,_Hawaii_County,_Hawaii"
@@ -76,7 +76,7 @@ export default function GoogleBusinessSchema() {
         "closes": "18:00"
       },
       {
-        "@type": "OpeningHoursSpecification", 
+        "@type": "OpeningHoursSpecification",
         "dayOfWeek": "Saturday",
         "opens": "09:00",
         "closes": "16:00"
@@ -100,7 +100,7 @@ export default function GoogleBusinessSchema() {
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "Service", 
+            "@type": "Service",
             "name": "Smart Home Automation Waimea",
             "description": "Complete smart home integration including lighting, security, climate control, and voice automation for Waimea and Kamuela area properties",
             "serviceType": "Home Automation",
@@ -112,7 +112,7 @@ export default function GoogleBusinessSchema() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Vacation Rental Automation Kona", 
+            "name": "Vacation Rental Automation Kona",
             "description": "Automated guest management, smart locks, remote monitoring, and property management technology for Kailua-Kona vacation rentals",
             "serviceType": "Vacation Rental Technology",
             "areaServed": "Kailua-Kona Hawaii"
@@ -131,7 +131,7 @@ export default function GoogleBusinessSchema() {
     "slogan": "Your Property's Complete Tech Department",
     "knowsAbout": [
       "Smart Home Integration",
-      "Vacation Rental Automation", 
+      "Vacation Rental Automation",
       "Sauna Maintenance Big Island",
       "Pool Automation Hawaii",
       "Building Technology Solutions",

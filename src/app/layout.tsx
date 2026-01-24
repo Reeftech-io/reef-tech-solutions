@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "handyman Big Island",
     "property repair services Hawaii",
     "maintenance services Kona",
-    
+
     // Service-specific Keywords
     "plumbing repairs Hawaii",
     "electrical repairs Big Island",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     "emergency plumbing Hawaii",
     "carpentry services Big Island",
     "general repairs Hawaii",
-    
+
     // Location-specific Primary
     "handyman Kailua-Kona",
     "property maintenance Waimea",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     "sauna repair Big Island",
     "maintenance Waimea",
     "property repair Captain Cook",
-    
+
     // Location + Service Combinations
     "emergency repairs Kona",
     "Big Island plumber",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     "lighting repair Hawaii",
     "door repair Kona",
     "emergency locksmith Big Island",
-    
+
     // Industry-specific
     "residential maintenance Hawaii",
     "commercial property maintenance",
@@ -195,13 +195,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-W9LCF6ZJ');`
         }} />
         {/* End Google Tag Manager */}
-        
+
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+
         {/* Enhanced Structured Data - Multiple Schema Types */}
         <script
           type="application/ld+json"
@@ -215,9 +215,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "alternateName": "ReefTech",
                 "description": "Professional property maintenance and repair services for Hawaii properties. Plumbing, electrical, carpentry, sauna repair, lock service, and general maintenance for residential and commercial properties.",
                 "url": "https://reeftech.io",
-                "logo": "https://reeftech.io/photos/logo.png",
+                "logo": "https://reeftech.io/photos/logoOpt.webp",
                 "image": [
-                  "https://reeftech.io/photos/logo.png",
+                  "https://reeftech.io/photos/logoOpt.webp",
                   "https://reeftech.io/photos/og-image.jpg"
                 ],
                 "telephone": "+1-808-303-4627",
@@ -244,7 +244,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     "name": "Kailua-Kona"
                   },
                   {
-                    "@type": "City", 
+                    "@type": "City",
                     "name": "Hilo"
                   },
                   {
@@ -284,7 +284,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       }
                     },
                     {
-                      "@type": "Offer", 
+                      "@type": "Offer",
                       "itemOffered": {
                         "@type": "Service",
                         "name": "Electrical Services",
@@ -297,7 +297,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     {
                       "@type": "Offer",
                       "itemOffered": {
-                        "@type": "Service", 
+                        "@type": "Service",
                         "name": "Sauna & Spa Repair",
                         "description": "Professional sauna repair and maintenance, spa service, and wellness system repairs for residential and commercial properties",
                         "provider": {
@@ -309,7 +309,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       "@type": "Offer",
                       "itemOffered": {
                         "@type": "Service",
-                        "name": "Lock & Door Services", 
+                        "name": "Lock & Door Services",
                         "description": "Lock installation, lockout assistance, door hardware repair, and security solutions",
                         "provider": {
                           "@id": "https://reeftech.io/#organization"
@@ -350,7 +350,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 ],
                 "sameAs": [
                   "https://www.yelp.com/biz/reeftech-solutions",
-                  "https://www.facebook.com/reeftechsolutions", 
+                  "https://www.facebook.com/reeftechsolutions",
                   "https://www.linkedin.com/company/reeftech-solutions"
                 ],
                 "knowsAbout": [
@@ -418,11 +418,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             ])
           }}
         />
-        
+
         {/* Additional SEO enhancements */}
         <link rel="canonical" href="https://reeftech.io/" />
         <link rel="alternate" hrefLang="en-US" href="https://reeftech.io/" />
-        
+
         {/* Security headers */}
         <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
       </head>
@@ -431,15 +431,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>
-          <iframe 
+          <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-W9LCF6ZJ"
-            height="0" 
-            width="0" 
-            style={{display: 'none', visibility: 'hidden'}}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        
+
         <MarketingHeader />
         {children}
         <Footer />

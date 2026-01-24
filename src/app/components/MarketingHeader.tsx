@@ -43,21 +43,21 @@ export default function MarketingHeader() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-4">
-            <img src="/photos/logo.png" alt="ReefTech Solutions Logo" className="h-12 w-auto" style={{ filter: 'drop-shadow(0 0 10px rgba(0, 206, 209, 0.3))' }} />
+            <img src="/photos/logoOpt.webp" alt="ReefTech Solutions Logo" className="h-12 w-auto" style={{ filter: 'drop-shadow(0 0 10px rgba(0, 206, 209, 0.3))' }} />
             <div className="hidden sm:block">
               <h1 className="text-2xl font-bold"><span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent font-tan-headline">ReefTech Solutions</span></h1>
               <p className="text-sm text-gray-600 font-medium">Your Property&apos;s Tech Department</p>
             </div>
           </Link>
-          
+
           <nav className="hidden lg:flex items-center space-x-6">
             {/* Services Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setServicesDropdownOpen(true)}
               onMouseLeave={() => setServicesDropdownOpen(false)}
             >
-              <button 
+              <button
                 onClick={handleServicesClick}
                 className="text-gray-700 hover:text-cyan-600 font-medium transition-colors duration-300 flex items-center gap-1"
               >
@@ -67,60 +67,60 @@ export default function MarketingHeader() {
               {servicesDropdownOpen && (
                 <div className="absolute top-full left-0 mt-0 pt-2 w-64 z-[10001]">
                   <div className="bg-white rounded-lg shadow-xl border border-gray-200 py-2">
-                  <Link 
-                    href="/plumbing-services" 
-                    className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-200"
-                    onClick={() => setServicesDropdownOpen(false)}
-                  >
-                    <div className="font-semibold">Plumbing Services</div>
-                    <div className="text-xs text-gray-500">Emergency & repairs</div>
-                  </Link>
-                  <Link 
-                    href="/fire-alarm-support-waimea" 
-                    className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-200"
-                    onClick={() => setServicesDropdownOpen(false)}
-                  >
-                    <div className="font-semibold">Fire Alarm Services</div>
-                    <div className="text-xs text-gray-500">Installation & inspection</div>
-                  </Link>
-                  <Link 
-                    href="/lock-locksmith-services" 
-                    className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-200"
-                    onClick={() => setServicesDropdownOpen(false)}
-                  >
-                    <div className="font-semibold">Lock & Locksmith</div>
-                    <div className="text-xs text-gray-500">Installation & lockout service</div>
-                  </Link>
-                  <Link 
-                    href="/electrical-services" 
-                    className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-200"
-                    onClick={() => setServicesDropdownOpen(false)}
-                  >
-                    <div className="font-semibold">Electrical Services</div>
-                    <div className="text-xs text-gray-500">Minor electrical work</div>
-                  </Link>
-                  <div className="border-t border-gray-100 my-1"></div>
-                  <button
-                    onClick={handleServicesClick}
-                    className="block w-full text-left px-4 py-2 text-sm text-cyan-600 hover:bg-cyan-50 transition-colors duration-200"
-                  >
-                    View All Services →
-                  </button>
+                    <Link
+                      href="/plumbing-services"
+                      className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-200"
+                      onClick={() => setServicesDropdownOpen(false)}
+                    >
+                      <div className="font-semibold">Plumbing Services</div>
+                      <div className="text-xs text-gray-500">Emergency & repairs</div>
+                    </Link>
+                    <Link
+                      href="/fire-alarm-support-waimea"
+                      className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-200"
+                      onClick={() => setServicesDropdownOpen(false)}
+                    >
+                      <div className="font-semibold">Fire Alarm Services</div>
+                      <div className="text-xs text-gray-500">Installation & inspection</div>
+                    </Link>
+                    <Link
+                      href="/lock-locksmith-services"
+                      className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-200"
+                      onClick={() => setServicesDropdownOpen(false)}
+                    >
+                      <div className="font-semibold">Lock & Locksmith</div>
+                      <div className="text-xs text-gray-500">Installation & lockout service</div>
+                    </Link>
+                    <Link
+                      href="/electrical-services"
+                      className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-200"
+                      onClick={() => setServicesDropdownOpen(false)}
+                    >
+                      <div className="font-semibold">Electrical Services</div>
+                      <div className="text-xs text-gray-500">Minor electrical work</div>
+                    </Link>
+                    <div className="border-t border-gray-100 my-1"></div>
+                    <button
+                      onClick={handleServicesClick}
+                      className="block w-full text-left px-4 py-2 text-sm text-cyan-600 hover:bg-cyan-50 transition-colors duration-200"
+                    >
+                      View All Services →
+                    </button>
                   </div>
                 </div>
               )}
             </div>
 
-            <button 
+            <button
               onClick={handleResourcesClick}
               className="text-gray-700 hover:text-cyan-600 font-medium transition-colors duration-300"
             >
               Resources
             </button>
 
-            <a 
-              href="tel:+1-808-303-4627" 
-              className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full font-semibold hover:from-green-400 hover:to-emerald-400 transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2" 
+            <a
+              href="tel:+1-808-303-4627"
+              className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full font-semibold hover:from-green-400 hover:to-emerald-400 transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2"
               style={{ boxShadow: '0 0 20px rgba(34,197,94,0.3)' }}
               data-gtm-event="phone_call"
               data-gtm-location="header_desktop"
@@ -147,28 +147,28 @@ export default function MarketingHeader() {
                 </button>
                 {mobileServicesOpen && (
                   <div className="pl-4 mt-2 space-y-2">
-                    <Link 
+                    <Link
                       href="/plumbing-services"
                       onClick={() => setMobileMenuOpen(false)}
                       className="block text-gray-600 hover:text-cyan-600 py-2"
                     >
                       Plumbing Services
                     </Link>
-                    <Link 
+                    <Link
                       href="/fire-alarm-support-waimea"
                       onClick={() => setMobileMenuOpen(false)}
                       className="block text-gray-600 hover:text-cyan-600 py-2"
                     >
                       Fire Alarm Services
                     </Link>
-                    <Link 
+                    <Link
                       href="/lock-locksmith-services"
                       onClick={() => setMobileMenuOpen(false)}
                       className="block text-gray-600 hover:text-cyan-600 py-2"
                     >
                       Lock & Locksmith
                     </Link>
-                    <Link 
+                    <Link
                       href="/electrical-services"
                       onClick={() => setMobileMenuOpen(false)}
                       className="block text-gray-600 hover:text-cyan-600 py-2"
@@ -198,10 +198,10 @@ export default function MarketingHeader() {
                 Resources
               </button>
 
-              <a 
-                href="tel:+1-808-303-4627" 
-                onClick={() => setMobileMenuOpen(false)} 
-                className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold hover:from-green-400 hover:to-emerald-400 transition-all duration-300 text-center shadow-lg flex items-center justify-center gap-2" 
+              <a
+                href="tel:+1-808-303-4627"
+                onClick={() => setMobileMenuOpen(false)}
+                className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold hover:from-green-400 hover:to-emerald-400 transition-all duration-300 text-center shadow-lg flex items-center justify-center gap-2"
                 style={{ boxShadow: '0 0 20px rgba(34,197,94,0.3)' }}
                 data-gtm-event="phone_call"
                 data-gtm-location="header_mobile"

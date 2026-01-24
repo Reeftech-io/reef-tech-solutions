@@ -17,7 +17,7 @@ export default function ResourcesSection() {
       title: 'Smart Home Setup Guide',
       description: 'Step-by-step framework to integrate reliable automation in premium properties.',
       icon: <GiToolbox />,
-      href: '/pdfs/SmartHomeSetup.pdf',
+      href: '/pdfs/SmartHomeSetupNew.pdf',
       cta: 'Open Guide'
     },
     {

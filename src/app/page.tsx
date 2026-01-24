@@ -32,10 +32,10 @@ export default function Home() {
           <source src="/videos/Hero.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        
+
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40 z-10"></div>
-        
+
         {/* Content */}
         <div className="absolute inset-0 flex items-center justify-center px-4 py-8 z-30">
           <div className="container mx-auto px-4 text-center text-white relative z-10">
@@ -43,9 +43,9 @@ export default function Home() {
               <div className="mb-8 sm:mb-12">
                 {/* Logo */}
                 <div className="flex items-center justify-center mb-8 sm:mb-12">
-                  <img 
-                    src="/photos/logo.png" 
-                    alt="ReefTech Solutions Logo" 
+                  <img
+                    src="/photos/logoOpt.webp"
+                    alt="ReefTech Solutions Logo"
                     className="h-24 sm:h-32 md:h-40 lg:h-56 xl:h-64 w-auto animate-pulse"
                     style={{
                       filter: 'drop-shadow(0 0 20px rgba(0, 206, 209, 0.5))'
@@ -89,8 +89,8 @@ export default function Home() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                  <a 
-                    href="#request-form" 
+                  <a
+                    href="#request-form"
                     className="bg-gradient-to-r from-lime-400 to-cyan-400 text-gray-900 px-8 py-4 rounded-full text-xl font-bold hover:from-lime-300 hover:to-cyan-300 transition-all duration-300 hover:scale-105 shadow-2xl"
                     style={{
                       boxShadow: '0 0 30px rgba(50, 205, 50, 0.4)'
@@ -100,14 +100,14 @@ export default function Home() {
                   >
                     Get Started Today
                   </a>
-                  <a 
-                    href="tel:+1-808-303-4627" 
+                  <a
+                    href="tel:+1-808-303-4627"
                     className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-bold text-xl transition-all duration-300 hover:scale-105 shadow-2xl flex items-center gap-3"
                     data-gtm-event="phone_call"
                     data-gtm-location="hero"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                     Call (808) 303-4627
                   </a>
@@ -118,21 +118,21 @@ export default function Home() {
         </div>
       </section>
 
-  <ServicesSection />
+      <ServicesSection />
 
-  {/* Emergency Section moved directly below Services */}
-  <EmergencyCTASection />
-
-      
-
-    
-
-    
+      {/* Emergency Section moved directly below Services */}
+      <EmergencyCTASection />
 
 
-  <ResourcesSection />
 
-  <RequestFormSection />
+
+
+
+
+
+      <ResourcesSection />
+
+      <RequestFormSection />
     </>
   );
 }
