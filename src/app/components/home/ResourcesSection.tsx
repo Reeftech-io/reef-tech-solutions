@@ -24,7 +24,7 @@ export default function ResourcesSection() {
       title: 'Remote Monitoring Solutions',
       description: 'Technology options to manage multiple locations with proactive insight.',
       icon: <MdSettingsRemote />,
-      href: '/pdfs/RemoteMonitoring.pdf',
+      href: '/pdfs/RemoteMonitoringNew.pdf',
       cta: 'View PDF'
     }
   ];
