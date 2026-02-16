@@ -116,7 +116,6 @@ export default function PlumbingServicesPage() {
 
       <div className="container mx-auto px-4 py-32 max-w-4xl">
 
-        {/* Header - H1 with primary keywords */}
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#007595]">
             Licensed Plumber Big Island Hawaii
@@ -129,7 +128,6 @@ export default function PlumbingServicesPage() {
           </p>
         </div>
 
-        {/* Intro paragraph with keywords */}
         <div className="mb-12 text-gray-700 leading-relaxed">
           <p className="mb-4">
             Looking for a reliable <strong className='text-[#007595]'>plumber in Big Island Hawaii</strong>? ReefTech Solutions provides professional plumbing services throughout Kailua-Kona, Waimea, Hilo, and surrounding areas. Our licensed plumbers handle everything from emergency repairs to routine maintenance for residential and commercial properties.
@@ -139,10 +137,8 @@ export default function PlumbingServicesPage() {
           </p>
         </div>
 
-        {/* Services Section */}
         <div className="space-y-12">
 
-          {/* Emergency Plumbing */}
           <section className="border-l-4 border-[#007595] py-3 rounded-l-2xl pl-6">
             <div className="flex items-center gap-6 mb-4">
               <div className="flex-shrink-0">

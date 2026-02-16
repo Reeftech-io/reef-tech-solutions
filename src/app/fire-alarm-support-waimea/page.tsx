@@ -30,11 +30,7 @@ export default function FireAlarmWaimeaPage() {
             Installation • Inspection • Service • Compliance
           </p>
         </div>
-
-        {/* Services Section */}
         <div className="space-y-12">
-
-          {/* Fire Hose and Cabinet Service */}
           <section className="border-l-4 border-[#007595] rounded-l-2xl py-3 pl-6">
             <div className="flex items-center gap-6 mb-4">
               <div className="flex-shrink-0">
@@ -56,8 +52,6 @@ export default function FireAlarmWaimeaPage() {
               <p className="text-gray-700">Sales, installation, inspection and service of fire hoses and cabinets</p>
             </div>
           </section>
-
-          {/* Restaurant Range Hood Fire Suppression */}
           <section className="border-l-4 border-[#007595] rounded-l-2xl py-3 pl-6">
             <div className="flex items-center gap-6 mb-4">
               <div className="flex-shrink-0">
@@ -96,7 +90,6 @@ export default function FireAlarmWaimeaPage() {
               </ul>
             </div>
           </section>
-
           <section className="border-l-4 border-[#007595] rounded-l-2xl py-3 pl-6">
             <div className="flex items-center gap-6 mb-4">
               <div className="flex-shrink-0">
@@ -115,10 +108,7 @@ export default function FireAlarmWaimeaPage() {
               <p className="text-gray-700">Installation, inspection, maintenance and repair</p>
             </div>
           </section>
-
         </div>
-
-        {/* Service Area */}
         <div className="mt-16 bg-[#f0f9ff] rounded-lg p-8">
           <h3 className="text-xl font-bold text-center mb-3 text-[#007595]">
             Serving Big Island Hawaii
@@ -127,8 +117,6 @@ export default function FireAlarmWaimeaPage() {
             Waimea <span className='text-[#007595]'>✦</span> Kamuela <span className='text-[#007595]'>✦</span> Kailua-Kona <span className='text-[#007595]'>✦</span> Hilo <span className='text-[#007595]'>✦</span> Captain Cook <span className='text-[#007595]'>✦</span> Volcano
           </p>
         </div>
-
-        {/* CTA Section */}
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold mb-6 text-gray-900">
             Need Fire Safety Service?
@@ -151,7 +139,6 @@ export default function FireAlarmWaimeaPage() {
             </Link>
           </div>
         </div>
-
       </div>
     </div>
   );
