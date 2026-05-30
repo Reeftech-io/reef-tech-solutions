@@ -156,7 +156,7 @@ export default function VideoHeroSection() {
               </a>
               <a
                 href="tel:+1-808-303-4627"
-                className="inline-flex h-[46px] min-w-[200px] items-center justify-center gap-2.5 rounded-full bg-[#00b34c] px-7 text-[clamp(0.92rem,1vw,1.2rem)] font-semibold text-white shadow-[0_12px_36px_rgba(0,0,0,0.3)] transition hover:bg-[#00a645] sm:h-[50px] sm:min-w-[235px]"
+                className="inline-flex h-[46px] min-w-[200px] items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-7 text-[clamp(0.92rem,1vw,1.2rem)] font-semibold text-white shadow-[0_12px_36px_rgba(0,0,0,0.3)] transition hover:from-lime-400 hover:to-cyan-400 sm:h-[50px] sm:min-w-[235px]"
                 aria-label="Call (808) 303-4627"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>

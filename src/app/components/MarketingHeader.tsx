@@ -132,7 +132,7 @@ export default function MarketingHeader() {
 
             <a
               href="tel:+1-808-303-4627"
-              className="inline-flex h-11 items-center gap-2 rounded-full bg-gradient-to-r from-green-600 to-emerald-500 px-5 text-sm font-semibold text-white shadow-[0_12px_24px_-14px_rgba(22,163,74,0.95)] transition-all duration-300 hover:scale-[1.03] hover:from-green-500 hover:to-emerald-400"
+              className="inline-flex h-11 items-center gap-2 rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-5 text-sm font-semibold text-white shadow-[0_12px_24px_-14px_rgba(6,182,212,0.95)] transition-all duration-300 hover:scale-[1.03] hover:from-lime-400 hover:to-cyan-400"
               data-gtm-event="phone_call"
               data-gtm-location="header_desktop"
             >
@@ -220,7 +220,7 @@ export default function MarketingHeader() {
               <a
                 href="tel:+1-808-303-4627"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-green-600 to-emerald-500 px-6 py-3 text-center font-semibold text-white shadow-[0_14px_28px_-16px_rgba(22,163,74,0.95)] transition-all duration-300 hover:from-green-500 hover:to-emerald-400"
+                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-6 py-3 text-center font-semibold text-white shadow-[0_14px_28px_-16px_rgba(6,182,212,0.95)] transition-all duration-300 hover:from-lime-400 hover:to-cyan-400"
                 data-gtm-event="phone_call"
                 data-gtm-location="header_mobile"
               >
