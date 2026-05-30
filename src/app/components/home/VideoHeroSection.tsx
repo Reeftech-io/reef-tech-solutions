@@ -23,11 +23,11 @@ export default function VideoHeroSection() {
     setVideoSrc("/videos/Hero.mp4");
   }, []);
 
-  const topBadges = [
-    { name: "BIG ISLAND LOCAL", Icon: StarIcon },
-    { name: "LICENSED & INSURED", Icon: ShieldCheckIcon },
-    { name: "24/7 RESPONSE", Icon: ClockIcon },
-  ];
+  // const topBadges = [
+  //   { name: "BIG ISLAND LOCAL", Icon: StarIcon },
+  //   { name: "LICENSED & INSURED", Icon: ShieldCheckIcon },
+  //   { name: "24/7 RESPONSE", Icon: ClockIcon },
+  // ];
 
   const services = [
     { name: "Plumbing", Icon: WrenchScrewdriverIcon },
@@ -81,7 +81,7 @@ export default function VideoHeroSection() {
       <div className="absolute inset-0 z-30 flex items-center">
         <div className="w-full max-w-[720px] xl:max-w-[920px] px-4 sm:px-10 md:px-14 lg:px-20 xl:px-36 pt-20">
           <div className="relative w-full text-white max-sm:text-center">
-            <MotionFade delay={0.02} className="mb-8 flex flex-wrap gap-2 max-sm:justify-center">
+            {/* <MotionFade delay={0.02} className="mb-8 flex flex-wrap gap-2 max-sm:justify-center">
               {topBadges.map(({ name, Icon }, idx) => (
                 <motion.span
                   key={name}
@@ -95,7 +95,7 @@ export default function VideoHeroSection() {
                   {name}
                 </motion.span>
               ))}
-            </MotionFade>
+            </MotionFade> */}
 
             <MotionFade delay={0.08}>
               <motion.img
