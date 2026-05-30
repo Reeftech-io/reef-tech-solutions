@@ -1,11 +1,12 @@
 'use client'
-import { Facebook, Instagram, Phone, Twitter } from 'lucide-react'
+import { Phone } from 'lucide-react'
+import { BsTwitter } from 'react-icons/bs'
 
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white border-t border-gray-800">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center text-center">
+        <div className="grid grid-cols-2 gap-6 items-center text-center">
           {/* Phone */}
           <a
             href="tel:+1-808-303-4627"
@@ -17,32 +18,6 @@ export default function Footer() {
             </span>
             (808) 303-4627
           </a>
-          {/* Facebook */}
-          <a
-            href="https://www.facebook.com/reeftechsolutions"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col items-center gap-2 text-sm font-medium hover:text-blue-400 transition-colors"
-            aria-label="Visit our Facebook page"
-          >
-            <span className="p-3 rounded-full bg-gray-800 group-hover:bg-blue-600 transition-colors">
-              <Facebook className="w-5 h-5" />
-            </span>
-            Facebook
-          </a>
-          {/* Instagram */}
-          <a
-            href="https://www.instagram.com/reeftechsolutions/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col items-center gap-2 text-sm font-medium hover:text-pink-300 transition-colors"
-            aria-label="Visit our Instagram profile"
-          >
-            <span className="p-3 rounded-full bg-gray-800 group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-600 transition-all">
-              <Instagram className="w-5 h-5" />
-            </span>
-            Instagram
-          </a>
           {/* X (placeholder) */}
           <a
             href="#" /* TODO: replace with X.com profile link */
@@ -51,7 +26,7 @@ export default function Footer() {
           >
             <span className="p-3 rounded-full bg-gray-800 group-hover:bg-black transition-colors flex items-center justify-center">
               {/* Using Twitter icon as placeholder; can swap for custom X glyph */}
-              <Twitter className="w-5 h-5" />
+              <BsTwitter className="w-5 h-5" />
             </span>
             X
           </a>

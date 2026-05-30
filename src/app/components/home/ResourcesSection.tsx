@@ -37,12 +37,8 @@ export default function ResourcesSection() {
             <pattern id="resources-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
               <path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.4" opacity="0.6" />
               <path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.3" opacity="0.5" />
-              <circle cx="10" cy="10" r="0.8" fill="#00CED1" opacity="0.7">
-                <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="5" cy="5" r="0.5" fill="#32CD32" opacity="0.6">
-                <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.5s" repeatCount="indefinite" />
-              </circle>
+              <circle cx="10" cy="10" r="0.8" fill="#00CED1" opacity="0.45" />
+              <circle cx="5" cy="5" r="0.5" fill="#32CD32" opacity="0.35" />
             </pattern>
           </defs>
           <rect width="100" height="100" fill="url(#resources-circuit)" />

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { LockClosedIcon, KeyIcon, ShieldCheckIcon, AdjustmentsHorizontalIcon, HomeIcon, BuildingOfficeIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
 };
 
 export default function LockLocksmithServicesPage() {
+  notFound();
   return (
     <div className="min-h-screen bg-white">
       <script

@@ -9,25 +9,12 @@ export default function RequestFormSection() {
             <pattern id="form-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
               <path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.4" opacity="0.6" />
               <path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.3" opacity="0.5" />
-              <circle cx="10" cy="10" r="0.8" fill="#00CED1" opacity="0.7">
-                <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="5" cy="5" r="0.5" fill="#32CD32" opacity="0.6">
-                <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.5s" repeatCount="indefinite" />
-              </circle>
+              <circle cx="10" cy="10" r="0.8" fill="#00CED1" opacity="0.45" />
+              <circle cx="5" cy="5" r="0.5" fill="#32CD32" opacity="0.35" />
             </pattern>
           </defs>
           <rect width="100" height="100" fill="url(#form-circuit)" />
         </svg>
-      </div>
-
-      {/* Floating tech elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-16 left-16 w-6 h-6 bg-white/20 rounded-full animate-ping" />
-        <div className="absolute top-32 right-24 w-4 h-4 bg-white/30 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute bottom-40 left-32 w-5 h-5 bg-white/25 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-24 right-16 w-3 h-3 bg-white/35 rounded-full animate-ping" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute top-1/2 right-8 w-4 h-4 bg-white/20 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -47,6 +34,7 @@ export default function RequestFormSection() {
             className="w-full rounded-2xl"
             sandbox="allow-forms allow-scripts allow-same-origin allow-modals"
             src="https://clienthub.getjobber.com/client_hubs/82c2ec52-21b5-4684-acbc-8aafff4565f1/public/work_request/embedded_new?source=embedded_inline&sp_websites_embed=true"
+            loading="lazy"
             style={{
               visibility: 'visible',
               width: '100%',
