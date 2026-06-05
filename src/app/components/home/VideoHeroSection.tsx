@@ -149,7 +149,7 @@ export default function VideoHeroSection() {
             <MotionFade delay={0.5} className="flex flex-wrap items-center gap-4 max-sm:justify-center">
               <a
                 href="#request-form"
-                className="inline-flex h-[46px] min-w-[180px] items-center justify-center rounded-full bg-white px-7 text-[clamp(0.95rem,1.1vw,1.25rem)] font-semibold text-gray-900 shadow-[0_12px_36px_rgba(0,0,0,0.28)] transition hover:brightness-95 sm:h-[50px] sm:min-w-[205px]"
+                className="inline-flex h-[46px] min-w-[180px] items-center justify-center rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-7 text-[clamp(0.95rem,1.1vw,1.25rem)] font-semibold text-white shadow-[0_12px_36px_rgba(0,0,0,0.28)] transition hover:brightness-95 sm:h-[50px] sm:min-w-[205px]"
                 aria-label="Get Started Today"
               >
                 Get Started Today

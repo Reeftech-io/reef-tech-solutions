@@ -125,7 +125,8 @@ export default function MarketingHeader() {
 
             <button
               onClick={handleResourcesClick}
-              className={`rounded-full px-4 py-2 text-sm font-semibold tracking-[0.01em] transition-all duration-300 ${isHomePage && !scrolled ? 'text-white hover:bg-white/20 hover:text-white' : 'text-gray-700 hover:bg-cyan-50 hover:text-cyan-700'}`}
+              type="button"
+              className={`inline-flex h-11 items-center gap-2 rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-5 text-sm font-semibold text-white shadow-[0_12px_24px_-14px_rgba(6,182,212,0.95)] transition-all duration-300 hover:scale-[1.03] hover:from-lime-400 hover:to-cyan-400`}
             >
               Resources
             </button>
@@ -212,7 +213,8 @@ export default function MarketingHeader() {
                   handleResourcesClick(e);
                   setMobileMenuOpen(false);
                 }}
-                className="rounded-xl px-3 py-2 text-left font-semibold text-gray-700 transition-colors duration-300 hover:bg-cyan-50 hover:text-cyan-700"
+                type="button"
+                className="mt-2 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-6 py-3 text-center font-semibold text-white shadow-[0_14px_28px_-16px_rgba(6,182,212,0.95)] transition-all duration-300 hover:from-lime-400 hover:to-cyan-400"
               >
                 Resources
               </button>
