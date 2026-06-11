@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     default: "ReefTech Solutions - Property Maintenance & Repair Services | Big Island Hawaii",
     template: "%s | ReefTech Solutions - Hawaii Property Services"
   },
-  description: "Professional property maintenance and repair services for Hawaii's Big Island. Plumbing, electrical, carpentry, sauna repair, lock service, and general maintenance. Fast, reliable [...]
+  description: "Professional property maintenance and repair services for Hawaii's Big Island. Plumbing, electrical, carpentry, sauna repair, lock service, and general maintenance. Fast, reliable service.",
   keywords: [
     // Primary Keywords
     "property maintenance Hawaii",
@@ -149,7 +149,7 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   verification: {
-    google: 'google95fe311b9c002ae1', // Google Search Console verification
+    google: 'google95fe311b9c002ae1',
     yandex: 'your-yandex-verification-code',
     yahoo: 'your-yahoo-verification-code',
     other: {
@@ -213,7 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "@id": "https://www.reeftech.io/#organization",
                 "name": "ReefTech Solutions",
                 "alternateName": "ReefTech",
-                "description": "Professional property maintenance and repair services for Hawaii properties. Plumbing, electrical, carpentry, sauna repair, lock service, and general maintenance f[...]
+                "description": "Professional property maintenance and repair services for Hawaii properties. Plumbing, electrical, carpentry, sauna repair, lock service, and general maintenance.",
                 "url": "https://www.reeftech.io",
                 "logo": "https://www.reeftech.io/photos/logoOpt.webp",
                 "image": [
