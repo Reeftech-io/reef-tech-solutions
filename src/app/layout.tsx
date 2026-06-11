@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     default: "ReefTech Solutions - Property Maintenance & Repair Services | Big Island Hawaii",
     template: "%s | ReefTech Solutions - Hawaii Property Services"
   },
-  description: "Professional property maintenance and repair services for Hawaii's Big Island. Plumbing, electrical, carpentry, sauna repair, lock service, and general maintenance. Fast, reliable service for residential and commercial properties in Kona, Waimea, and Hilo.",
+  description: "Professional property maintenance and repair services for Hawaii's Big Island. Plumbing, electrical, carpentry, sauna repair, lock service, and general maintenance. Fast, reliable [...]
   keywords: [
     // Primary Keywords
     "property maintenance Hawaii",
@@ -96,17 +96,17 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://reeftech.io'),
+  metadataBase: new URL('https://www.reeftech.io'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.reeftech.io/',
     languages: {
-      'en-US': '/',
+      'en-US': 'https://www.reeftech.io/',
     },
   },
   openGraph: {
     title: "ReefTech Solutions - Property Maintenance & Repair Services",
     description: "Professional property maintenance and repair services for Hawaii's Big Island. Plumbing, electrical, carpentry, sauna repair, and general maintenance. Fast, reliable service.",
-    url: 'https://reeftech.io',
+    url: 'https://www.reeftech.io',
     siteName: 'ReefTech Solutions',
     images: [
       {
@@ -210,15 +210,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
-                "@id": "https://reeftech.io/#organization",
+                "@id": "https://www.reeftech.io/#organization",
                 "name": "ReefTech Solutions",
                 "alternateName": "ReefTech",
-                "description": "Professional property maintenance and repair services for Hawaii properties. Plumbing, electrical, carpentry, sauna repair, lock service, and general maintenance for residential and commercial properties.",
-                "url": "https://reeftech.io",
-                "logo": "https://reeftech.io/photos/logoOpt.webp",
+                "description": "Professional property maintenance and repair services for Hawaii properties. Plumbing, electrical, carpentry, sauna repair, lock service, and general maintenance f[...]
+                "url": "https://www.reeftech.io",
+                "logo": "https://www.reeftech.io/photos/logoOpt.webp",
                 "image": [
-                  "https://reeftech.io/photos/logoOpt.webp",
-                  "https://reeftech.io/photos/og-image.jpg"
+                  "https://www.reeftech.io/photos/logoOpt.webp",
+                  "https://www.reeftech.io/photos/og-image.jpg"
                 ],
                 "telephone": "+1-808-303-4627",
                 "email": "joshua@reeftech.io",
@@ -279,7 +279,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         "name": "Plumbing Services",
                         "description": "Emergency plumbing repairs, leak detection, fixture installation, water heater service, and drain cleaning",
                         "provider": {
-                          "@id": "https://reeftech.io/#organization"
+                          "@id": "https://www.reeftech.io/#organization"
                         }
                       }
                     },
@@ -290,7 +290,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         "name": "Electrical Services",
                         "description": "Electrical repairs, lighting installation, fixture replacement, troubleshooting, and emergency electrical service",
                         "provider": {
-                          "@id": "https://reeftech.io/#organization"
+                          "@id": "https://www.reeftech.io/#organization"
                         }
                       }
                     },
@@ -301,7 +301,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         "name": "Sauna & Spa Repair",
                         "description": "Professional sauna repair and maintenance, spa service, and wellness system repairs for residential and commercial properties",
                         "provider": {
-                          "@id": "https://reeftech.io/#organization"
+                          "@id": "https://www.reeftech.io/#organization"
                         }
                       }
                     },
@@ -312,7 +312,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         "name": "Lock & Door Services",
                         "description": "Lock installation, lockout assistance, door hardware repair, and security solutions",
                         "provider": {
-                          "@id": "https://reeftech.io/#organization"
+                          "@id": "https://www.reeftech.io/#organization"
                         }
                       }
                     }
@@ -369,19 +369,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "@id": "https://reeftech.io/#website",
-                "url": "https://reeftech.io",
+                "@id": "https://www.reeftech.io/#website",
+                "url": "https://www.reeftech.io",
                 "name": "ReefTech Solutions",
                 "description": "Hawaii's premier smart home integration and building technology solutions provider",
                 "publisher": {
-                  "@id": "https://reeftech.io/#organization"
+                  "@id": "https://www.reeftech.io/#organization"
                 },
                 "potentialAction": [
                   {
                     "@type": "SearchAction",
                     "target": {
                       "@type": "EntryPoint",
-                      "urlTemplate": "https://reeftech.io/search?q={search_term_string}"
+                      "urlTemplate": "https://www.reeftech.io/search?q={search_term_string}"
                     },
                     "query-input": "required name=search_term_string"
                   }
@@ -391,10 +391,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               {
                 "@context": "https://schema.org",
                 "@type": "ProfessionalService",
-                "@id": "https://reeftech.io/#service",
+                "@id": "https://www.reeftech.io/#service",
                 "name": "ReefTech Solutions Professional Services",
                 "provider": {
-                  "@id": "https://reeftech.io/#organization"
+                  "@id": "https://www.reeftech.io/#organization"
                 },
                 "areaServed": {
                   "@type": "State",
@@ -420,8 +420,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
 
         {/* Additional SEO enhancements */}
-        <link rel="canonical" href="https://reeftech.io/" />
-        <link rel="alternate" hrefLang="en-US" href="https://reeftech.io/" />
+        <link rel="canonical" href="https://www.reeftech.io/" />
+        <link rel="alternate" hrefLang="en-US" href="https://www.reeftech.io/" />
 
         {/* Security headers */}
         <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
