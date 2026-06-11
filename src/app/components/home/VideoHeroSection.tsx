@@ -89,7 +89,7 @@ export default function VideoHeroSection() {
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true, amount: 0.6 }}
                   transition={{ duration: 0.35, ease: "easeOut", delay: idx * 0.07 }}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/22 bg-gradient-to-r from-white/24 via-white/14 to-white/10 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.02em] text-white/95 backdrop-blur-md sm:text-[12px]"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-white/22 bg-gradient-to-r from-white/24 via-white/14 to-white/10 px-3.5 py-1 text-[11px] font-semibold uppe[...]
                 >
                   <Icon className="h-3.5 w-3.5 text-white/90" />
                   {name}
@@ -116,7 +116,7 @@ export default function VideoHeroSection() {
               className="mb-3 font-tan-headline text-[clamp(1.9rem,3.7vw,3.5rem)] leading-[0.95] tracking-[-0.015em]"
             >
               <span className="bg-gradient-to-r from-[#3ce7ff] via-[#58e6cb] to-[#a3ef45] bg-clip-text text-transparent">
-                ReefTech Solutions
+                Property Maintenance & Tech Services — Big Island Hawaii
               </span>
             </MotionFade>
 
@@ -138,7 +138,7 @@ export default function VideoHeroSection() {
               {services.map(({ name, Icon }) => (
                 <span
                   key={name}
-                  className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/20 bg-gradient-to-r from-black/45 via-black/35 to-black/25 px-3 py-1 text-[11px] font-medium text-white/88 backdrop-blur-md sm:text-[12px]"
+                  className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/20 bg-gradient-to-r from-black/45 via-black/35 to-black/25 px-3 py-1 text-[11px] f[...]
                 >
                   <Icon className="h-3 w-3 text-white/70" />
                   {name}
@@ -149,17 +149,17 @@ export default function VideoHeroSection() {
             <MotionFade delay={0.5} className="flex flex-wrap items-center gap-4 max-sm:justify-center">
               <a
                 href="#request-form"
-                className="inline-flex h-[46px] min-w-[180px] items-center justify-center rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-7 text-[clamp(0.95rem,1.1vw,1.25rem)] font-semibold text-white shadow-[0_12px_36px_rgba(0,0,0,0.28)] transition hover:brightness-95 sm:h-[50px] sm:min-w-[205px]"
+                className="inline-flex h-[46px] min-w-[180px] items-center justify-center rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-7 text-[clamp(0.95rem,1.1vw,1.25rem)] font-sem[...]
                 aria-label="Get Started Today"
               >
                 Get Started Today
               </a>
               <a
                 href="tel:+1-808-303-4627"
-                className="inline-flex h-[46px] min-w-[200px] items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-7 text-[clamp(0.92rem,1vw,1.2rem)] font-semibold text-white shadow-[0_12px_36px_rgba(0,0,0,0.3)] transition hover:from-lime-400 hover:to-cyan-400 sm:h-[50px] sm:min-w-[235px]"
+                className="inline-flex h-[46px] min-w-[200px] items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-7 text-[clamp(0.92rem,1vw,1.2rem)] fon[...]
                 aria-label="Call (808) 303-4627"
               >
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.[...]
                 Call (808) 303-4627
               </a>
             </MotionFade>
