@@ -150,11 +150,6 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
   verification: {
     google: 'google95fe311b9c002ae1',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
-    other: {
-      'msvalidate.01': 'your-bing-verification-code',
-    },
   },
   category: 'Property Maintenance & Repair',
   classification: 'Professional Property Maintenance and Repair Services',
