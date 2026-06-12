@@ -89,23 +89,29 @@ async function fetchPlaceDetails(
   return res.json();
 }
 
+// Helper: never cache error responses so a fresh env var / billing fix shows
+// up on the next request instead of waiting 24h for revalidation.
+function errorResponse(payload: ReviewsPayload) {
+  return NextResponse.json<ReviewsPayload>(payload, {
+    status: 200, // 200 so the client renders the empty state gracefully.
+    headers: { 'Cache-Control': 'no-store, max-age=0' },
+  });
+}
+
 export async function GET() {
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
   if (!apiKey) {
-    return NextResponse.json<ReviewsPayload>(
-      {
-        ok: false,
-        reviews: [],
-        error: 'GOOGLE_MAPS_API_KEY is not set in the environment.',
-      },
-      { status: 200 } // Use 200 so the client renders the empty state gracefully.
-    );
+    return errorResponse({
+      ok: false,
+      reviews: [],
+      error: 'GOOGLE_MAPS_API_KEY is not set in the environment.',
+    });
   }
 
   try {
     const placeId = await findPlaceId(apiKey);
     if (!placeId) {
-      return NextResponse.json<ReviewsPayload>({
+      return errorResponse({
         ok: false,
         reviews: [],
         error: 'Could not resolve Place ID for the business.',
@@ -114,7 +120,7 @@ export async function GET() {
 
     const details = await fetchPlaceDetails(placeId, apiKey);
     if (details.status !== 'OK' || !details.result) {
-      return NextResponse.json<ReviewsPayload>({
+      return errorResponse({
         ok: false,
         reviews: [],
         error:
@@ -145,7 +151,7 @@ export async function GET() {
       reviews: cleaned,
     });
   } catch (err) {
-    return NextResponse.json<ReviewsPayload>({
+    return errorResponse({
       ok: false,
       reviews: [],
       error:
