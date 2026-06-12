@@ -6,34 +6,43 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-const SEARCH_QUERY = 'ReefTech Solutions Big Island Hawaii';
+// Search query and optional location bias for finding the business.
+// Defaults are tuned for ReefTech Solutions at 64-5085 Kalake St, Waimea HI.
+const SEARCH_QUERY = 'ReefTech Solutions Waimea Hawaii';
+const BIAS_LAT = 20.0314744;
+const BIAS_LNG = -155.6164902;
 
-type GoogleReview = {
-  author_name: string;
-  profile_photo_url?: string;
-  rating: number;
-  relative_time_description: string;
-  text: string;
-  time: number;
-};
+// ---------- Types: Places API (New) v1 ----------
 
-type FindPlaceResponse = {
-  candidates: Array<{ place_id: string }>;
-  status: string;
-  error_message?: string;
-};
-
-type PlaceDetailsResponse = {
-  result?: {
-    name?: string;
-    rating?: number;
-    user_ratings_total?: number;
-    reviews?: GoogleReview[];
-    url?: string;
+type PlacesV1Review = {
+  name?: string;
+  relativePublishTimeDescription?: string;
+  rating?: number;
+  text?: { text?: string; languageCode?: string };
+  originalText?: { text?: string; languageCode?: string };
+  authorAttribution?: {
+    displayName?: string;
+    uri?: string;
+    photoUri?: string;
   };
-  status: string;
-  error_message?: string;
+  publishTime?: string;
 };
+
+type PlacesV1Place = {
+  id?: string; // bare place id like "ChIJ..."
+  name?: string; // resource name like "places/ChIJ..."
+  displayName?: { text?: string; languageCode?: string };
+  rating?: number;
+  userRatingCount?: number;
+  googleMapsUri?: string;
+  reviews?: PlacesV1Review[];
+};
+
+type PlacesV1SearchTextResponse = {
+  places?: PlacesV1Place[];
+};
+
+// ---------- Output payload ----------
 
 export type ReviewsPayload = {
   ok: boolean;
@@ -52,64 +61,127 @@ export type ReviewsPayload = {
   error?: string;
 };
 
-async function findPlaceId(
-  apiKey: string
-): Promise<{ placeId: string | null; status?: string; errorMessage?: string }> {
-  // Allow override via env to skip the lookup entirely.
-  if (process.env.GOOGLE_PLACE_ID) {
-    return { placeId: process.env.GOOGLE_PLACE_ID };
-  }
+// ---------- Helpers ----------
 
-  const url = new URL(
-    'https://maps.googleapis.com/maps/api/place/findplacefromtext/json'
-  );
-  url.searchParams.set('input', SEARCH_QUERY);
-  url.searchParams.set('inputtype', 'textquery');
-  url.searchParams.set('fields', 'place_id');
-  url.searchParams.set('key', apiKey);
-
-  const res = await fetch(url.toString(), { next: { revalidate: 86400 } });
-  if (!res.ok) {
-    return { placeId: null, errorMessage: `HTTP ${res.status}` };
-  }
-  const data: FindPlaceResponse = await res.json();
-  if (data.status !== 'OK' || !data.candidates?.length) {
-    return {
-      placeId: null,
-      status: data.status,
-      errorMessage: data.error_message,
-    };
-  }
-  return { placeId: data.candidates[0].place_id };
-}
-
-async function fetchPlaceDetails(
-  placeId: string,
-  apiKey: string
-): Promise<PlaceDetailsResponse> {
-  const url = new URL('https://maps.googleapis.com/maps/api/place/details/json');
-  url.searchParams.set('place_id', placeId);
-  url.searchParams.set(
-    'fields',
-    'name,rating,user_ratings_total,reviews,url'
-  );
-  // 'reviews_sort=newest' returns the most recent (default is 'most_relevant').
-  url.searchParams.set('reviews_sort', 'newest');
-  url.searchParams.set('reviews_no_translations', 'true');
-  url.searchParams.set('key', apiKey);
-
-  const res = await fetch(url.toString(), { next: { revalidate: 86400 } });
-  return res.json();
-}
-
-// Helper: never cache error responses so a fresh env var / billing fix shows
-// up on the next request instead of waiting 24h for revalidation.
 function errorResponse(payload: ReviewsPayload) {
   return NextResponse.json<ReviewsPayload>(payload, {
-    status: 200, // 200 so the client renders the empty state gracefully.
+    status: 200, // 200 so the client renders an empty state gracefully.
     headers: { 'Cache-Control': 'no-store, max-age=0' },
   });
 }
+
+function successResponse(payload: ReviewsPayload) {
+  return NextResponse.json<ReviewsPayload>(payload, {
+    // Successful payload: cache at the edge for 24h, allow SWR for another 24h.
+    headers: {
+      'Cache-Control':
+        'public, s-maxage=86400, stale-while-revalidate=86400',
+    },
+  });
+}
+
+// Map a Places API (New) review to our flat payload shape.
+function mapReview(r: PlacesV1Review) {
+  const text = r.text?.text ?? r.originalText?.text ?? '';
+  const publishMs = r.publishTime ? Date.parse(r.publishTime) : Date.now();
+  return {
+    author: r.authorAttribution?.displayName ?? 'Google user',
+    profilePhoto: r.authorAttribution?.photoUri,
+    rating: typeof r.rating === 'number' ? r.rating : 5,
+    relativeTime: r.relativePublishTimeDescription ?? '',
+    text,
+    timestamp: Math.floor(publishMs / 1000),
+  };
+}
+
+// ---------- Places API (New) calls ----------
+
+const FIELD_MASK = [
+  'places.id',
+  'places.displayName',
+  'places.rating',
+  'places.userRatingCount',
+  'places.googleMapsUri',
+  'places.reviews',
+].join(',');
+
+async function searchTextV1(
+  apiKey: string,
+  textQuery: string,
+  biased: boolean
+): Promise<{ place?: PlacesV1Place; httpStatus: number; body: string }> {
+  const body: Record<string, unknown> = { textQuery };
+  if (biased) {
+    body.locationBias = {
+      circle: {
+        center: { latitude: BIAS_LAT, longitude: BIAS_LNG },
+        radius: 5000,
+      },
+    };
+  }
+
+  const res = await fetch('https://places.googleapis.com/v1/places:searchText', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Goog-Api-Key': apiKey,
+      'X-Goog-FieldMask': FIELD_MASK,
+    },
+    body: JSON.stringify(body),
+    next: { revalidate: 86400 },
+  });
+
+  const raw = await res.text();
+  if (!res.ok) return { httpStatus: res.status, body: raw };
+
+  let parsed: PlacesV1SearchTextResponse = {};
+  try {
+    parsed = JSON.parse(raw) as PlacesV1SearchTextResponse;
+  } catch {
+    return { httpStatus: res.status, body: raw };
+  }
+  return { place: parsed.places?.[0], httpStatus: res.status, body: raw };
+}
+
+// If the user has hardcoded a place id, fetch details directly via v1.
+async function fetchPlaceDetailsV1(
+  apiKey: string,
+  placeId: string
+): Promise<{ place?: PlacesV1Place; httpStatus: number; body: string }> {
+  // v1 accepts the bare id under /v1/places/{id}; reviews require the reviews
+  // field in the field mask.
+  const detailsMask = [
+    'id',
+    'displayName',
+    'rating',
+    'userRatingCount',
+    'googleMapsUri',
+    'reviews',
+  ].join(',');
+
+  const res = await fetch(
+    `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}`,
+    {
+      headers: {
+        'X-Goog-Api-Key': apiKey,
+        'X-Goog-FieldMask': detailsMask,
+      },
+      next: { revalidate: 86400 },
+    }
+  );
+  const raw = await res.text();
+  if (!res.ok) return { httpStatus: res.status, body: raw };
+
+  let parsed: PlacesV1Place = {};
+  try {
+    parsed = JSON.parse(raw) as PlacesV1Place;
+  } catch {
+    return { httpStatus: res.status, body: raw };
+  }
+  return { place: parsed, httpStatus: res.status, body: raw };
+}
+
+// ---------- Route handler ----------
 
 export async function GET() {
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
@@ -122,48 +194,68 @@ export async function GET() {
   }
 
   try {
-    const lookup = await findPlaceId(apiKey);
-    if (!lookup.placeId) {
-      const parts = ['Could not resolve Place ID for the business.'];
-      if (lookup.status) parts.push(`status=${lookup.status}`);
-      if (lookup.errorMessage) parts.push(lookup.errorMessage);
+    let place: PlacesV1Place | undefined;
+    let lastError = '';
+
+    // 1) If a Place ID is hardcoded, use it directly via v1 Place Details.
+    const hardcodedId = process.env.GOOGLE_PLACE_ID;
+    if (hardcodedId) {
+      const r = await fetchPlaceDetailsV1(apiKey, hardcodedId);
+      if (r.place) place = r.place;
+      else lastError = `Place Details v1 HTTP ${r.httpStatus}: ${r.body.slice(0, 200)}`;
+    }
+
+    // 2) Otherwise, try Text Search (New) WITHOUT bias.
+    if (!place) {
+      const r = await searchTextV1(apiKey, SEARCH_QUERY, false);
+      if (r.place) place = r.place;
+      else if (!lastError)
+        lastError = `Text Search v1 HTTP ${r.httpStatus}: ${r.body.slice(0, 200)}`;
+    }
+
+    // 3) Retry Text Search with location bias around Waimea.
+    if (!place) {
+      const r = await searchTextV1(apiKey, SEARCH_QUERY, true);
+      if (r.place) place = r.place;
+      else if (!lastError)
+        lastError = `Text Search v1 (biased) HTTP ${r.httpStatus}: ${r.body.slice(0, 200)}`;
+    }
+
+    // 4) Last resort: searchText with just "ReefTech" near coords.
+    if (!place) {
+      const r = await searchTextV1(apiKey, 'ReefTech property maintenance', true);
+      if (r.place) place = r.place;
+      else if (!lastError)
+        lastError = `Text Search v1 fallback HTTP ${r.httpStatus}: ${r.body.slice(0, 200)}`;
+    }
+
+    if (!place) {
       return errorResponse({
         ok: false,
         reviews: [],
-        error: parts.join(' '),
+        error: `Could not resolve business listing. ${lastError}`,
       });
     }
 
-    const details = await fetchPlaceDetails(lookup.placeId, apiKey);
-    if (details.status !== 'OK' || !details.result) {
-      return errorResponse({
-        ok: false,
-        reviews: [],
-        error:
-          details.error_message ??
-          `Place Details returned status ${details.status}.`,
-      });
+    // Some search responses don't include `reviews` directly; if missing,
+    // do a follow-up Place Details fetch by id.
+    if ((!place.reviews || place.reviews.length === 0) && place.id) {
+      const detail = await fetchPlaceDetailsV1(apiKey, place.id);
+      if (detail.place) {
+        place = { ...place, ...detail.place };
+      }
     }
 
-    const { name, rating, user_ratings_total, reviews, url } = details.result;
+    const cleaned = (place.reviews ?? [])
+      .map(mapReview)
+      .filter((r) => r.text.trim().length > 0);
 
-    const cleaned = (reviews ?? [])
-      .filter((r) => typeof r.text === 'string' && r.text.trim().length > 0)
-      .map((r) => ({
-        author: r.author_name,
-        profilePhoto: r.profile_photo_url,
-        rating: r.rating,
-        relativeTime: r.relative_time_description,
-        text: r.text,
-        timestamp: r.time,
-      }));
-
-    return NextResponse.json<ReviewsPayload>({
+    return successResponse({
       ok: true,
-      businessName: name,
-      rating,
-      totalRatings: user_ratings_total,
-      googleUrl: url,
+      businessName: place.displayName?.text,
+      rating: place.rating,
+      totalRatings: place.userRatingCount,
+      googleUrl: place.googleMapsUri,
       reviews: cleaned,
     });
   } catch (err) {
