@@ -511,30 +511,18 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 				)}
 
 				{isPlumbing && (
-					<div className="mt-6 grid grid-cols-2 gap-2 lg:hidden">
-						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
+					<div className="mt-6 lg:hidden">
+						<div className="relative h-56 overflow-hidden rounded-xl shadow-md group z-[9999] bg-white">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/services/plumbing.png" alt="Professional plumbing services" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
-						</div>
-						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/services/leak.png" alt="Smart leak detection system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+							<img src="/photos/services/flologic.jpg" alt="FloLogic smart water shutoff system with iPhone app" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 						</div>
 					</div>
 				)}
 				{isPlumbing && (
-					<div className="hidden lg:grid grid-cols-2 gap-3 absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
-						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
+					<div className="hidden lg:block absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
+						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999] bg-white">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/services/plumbing.png" alt="Professional plumbing services" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
-						</div>
-						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/services/leak.png" alt="Smart leak detection system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+							<img src="/photos/services/flologic.jpg" alt="FloLogic smart water shutoff system with iPhone app" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 						</div>
 						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
 							{index + 1}
