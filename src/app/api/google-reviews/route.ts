@@ -20,6 +20,7 @@ type GoogleReview = {
 type FindPlaceResponse = {
   candidates: Array<{ place_id: string }>;
   status: string;
+  error_message?: string;
 };
 
 type PlaceDetailsResponse = {
@@ -51,10 +52,12 @@ export type ReviewsPayload = {
   error?: string;
 };
 
-async function findPlaceId(apiKey: string): Promise<string | null> {
+async function findPlaceId(
+  apiKey: string
+): Promise<{ placeId: string | null; status?: string; errorMessage?: string }> {
   // Allow override via env to skip the lookup entirely.
   if (process.env.GOOGLE_PLACE_ID) {
-    return process.env.GOOGLE_PLACE_ID;
+    return { placeId: process.env.GOOGLE_PLACE_ID };
   }
 
   const url = new URL(
@@ -66,10 +69,18 @@ async function findPlaceId(apiKey: string): Promise<string | null> {
   url.searchParams.set('key', apiKey);
 
   const res = await fetch(url.toString(), { next: { revalidate: 86400 } });
-  if (!res.ok) return null;
+  if (!res.ok) {
+    return { placeId: null, errorMessage: `HTTP ${res.status}` };
+  }
   const data: FindPlaceResponse = await res.json();
-  if (data.status !== 'OK' || !data.candidates?.length) return null;
-  return data.candidates[0].place_id;
+  if (data.status !== 'OK' || !data.candidates?.length) {
+    return {
+      placeId: null,
+      status: data.status,
+      errorMessage: data.error_message,
+    };
+  }
+  return { placeId: data.candidates[0].place_id };
 }
 
 async function fetchPlaceDetails(
@@ -111,16 +122,19 @@ export async function GET() {
   }
 
   try {
-    const placeId = await findPlaceId(apiKey);
-    if (!placeId) {
+    const lookup = await findPlaceId(apiKey);
+    if (!lookup.placeId) {
+      const parts = ['Could not resolve Place ID for the business.'];
+      if (lookup.status) parts.push(`status=${lookup.status}`);
+      if (lookup.errorMessage) parts.push(lookup.errorMessage);
       return errorResponse({
         ok: false,
         reviews: [],
-        error: 'Could not resolve Place ID for the business.',
+        error: parts.join(' '),
       });
     }
 
-    const details = await fetchPlaceDetails(placeId, apiKey);
+    const details = await fetchPlaceDetails(lookup.placeId, apiKey);
     if (details.status !== 'OK' || !details.result) {
       return errorResponse({
         ok: false,
