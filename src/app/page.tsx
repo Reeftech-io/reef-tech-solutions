@@ -1,4 +1,3 @@
-import EmergencyCTASection from './components/home/EmergencyCTASection';
 import ResourcesSection from './components/home/ResourcesSection';
 import RequestFormSection from './components/home/RequestFormSection';
 import ServicesSection from './components/home/ServicesSection';
@@ -21,16 +20,6 @@ export default function Home() {
       <VideoHeroSection/>
 
       <ServicesSection />
-
-      {/* Emergency Section moved directly below Services */}
-      <EmergencyCTASection />
-
-
-
-
-
-
-
 
       <ResourcesSection />
 
