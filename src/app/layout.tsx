@@ -246,6 +246,7 @@ const jsonLdGraph = {
         "Smart Home Integration",
       ],
       slogan: "Your one-stop shop for property repairs and building technology.",
+      founder: { "@id": `${SITE_URL}/about#founder` },
       // NOTE: aggregateRating is intentionally omitted until real customer reviews
       // are published on-page. Google requires reviews used in structured data to
       // also be visible to users on the same page. Add a /reviews page or testimonials

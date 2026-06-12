@@ -1,5 +1,6 @@
 'use client'
-import { Phone, MapPin, Clock, Mail } from 'lucide-react'
+import Link from 'next/link'
+import { Phone, MapPin, Clock } from 'lucide-react'
 import { BsTwitter } from 'react-icons/bs'
 
 export default function Footer() {
@@ -8,16 +9,16 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand / blurb */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-1">
             <h2 className="text-xl font-bold mb-2 font-tan-headline">
               <span className="bg-gradient-to-r from-teal-400 via-cyan-400 to-lime-400 bg-clip-text text-transparent">
                 ReefTech Solutions
               </span>
             </h2>
-            <p className="text-sm text-gray-400 leading-relaxed max-w-md">
+            <p className="text-sm text-gray-400 leading-relaxed">
               Your Property&apos;s Tech Department. Licensed, local, and on-call across the Big Island for property managers, vacation rentals, and luxury homes.
             </p>
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-5">
               <a
                 href="tel:+1-808-303-4627"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-4 py-2 text-sm font-semibold text-gray-900 shadow-lg transition-transform hover:scale-[1.03]"
@@ -27,6 +28,60 @@ export default function Footer() {
                 <Phone className="w-4 h-4" /> (808) 303-4627
               </a>
             </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">Services</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/electrical-services" className="text-gray-300 hover:text-white transition-colors">
+                  Electrical services
+                </Link>
+              </li>
+              <li>
+                <Link href="/plumbing-services" className="text-gray-300 hover:text-white transition-colors">
+                  Plumbing services
+                </Link>
+              </li>
+              <li>
+                <Link href="/fire-alarm-support-waimea" className="text-gray-300 hover:text-white transition-colors">
+                  Fire alarm &amp; suppression
+                </Link>
+              </li>
+              <li>
+                <Link href="/lock-locksmith-services" className="text-gray-300 hover:text-white transition-colors">
+                  Locks &amp; access control
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">Company</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/reviews" className="text-gray-300 hover:text-white transition-colors">
+                  Reviews
+                </Link>
+              </li>
+              <li>
+                <Link href="/#request-form" className="text-gray-300 hover:text-white transition-colors">
+                  Request a quote
+                </Link>
+              </li>
+            </ul>
           </div>
 
           {/* Contact */}
@@ -41,24 +96,12 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 text-gray-300">
                 <MapPin className="w-4 h-4 mt-0.5 text-cyan-400 flex-shrink-0" />
-                <span>Based in Waimea, HI</span>
+                <span>Based in Waimea, HI · Serving Big Island</span>
               </li>
               <li className="flex items-start gap-2 text-gray-300">
                 <Clock className="w-4 h-4 mt-0.5 text-cyan-400 flex-shrink-0" />
                 <span>Mon–Sat · 24/7 emergency</span>
               </li>
-            </ul>
-          </div>
-
-          {/* Service area */}
-          <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">Service Area</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>Waimea / Kamuela</li>
-              <li>Kailua-Kona</li>
-              <li>Waikoloa</li>
-              <li>Hilo</li>
-              <li className="text-gray-500">+ surrounding Big Island</li>
             </ul>
           </div>
         </div>
