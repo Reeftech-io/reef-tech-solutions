@@ -48,8 +48,16 @@ export default function ServicesSection() {
 	const [openModal, setOpenModal] = useState<string | null>(null);
 	return (
 		<section id="services" className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden">
+			{/* Soft cyan glow at top to break the hero-to-services transition */}
+			<div
+				aria-hidden
+				className="pointer-events-none absolute -top-px left-0 right-0 h-32"
+				style={{
+					background: 'radial-gradient(ellipse 60% 100% at 50% 0%, rgba(34,211,238,0.20) 0%, rgba(34,211,238,0) 70%)',
+				}}
+			/>
 			{/* Advanced circuit background */}
-			<div className="absolute inset-0 opacity-10 pointer-events-none">
+			<div className="absolute inset-0 opacity-[0.04] pointer-events-none">
 				<svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
 					<defs>
 						<pattern id="services-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -534,10 +542,8 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					</div>
 				)}
 				<div className={`relative ${isLighting ? 'lg:pr-[520px] xl:pr-[600px]' : isMaglocks || isPlumbing ? 'lg:pr-[520px] xl:pr-[600px]' : isAccessControl ? 'lg:pr-[520px] xl:pr-[600px]' : ''}`}>
-					<h3 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight">
-						<span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent">
-							{category.title}
-						</span>
+					<h3 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight text-slate-900">
+						{category.title}
 					</h3>
 					{category.brands && (
 						<div className="flex flex-wrap items-center gap-2 mb-6">
@@ -639,7 +645,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 
 function BrandBadge({ brand }: { brand: Brand }) {
 	return (
-		<span className="px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-lime-500/10 border border-cyan-300/30 text-[11px] font-semibold tracking-wide text-cyan-700 shadow-[0_0_0_3px_rgba(6,182,212,0.08)]">
+		<span className="px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-[11px] font-semibold tracking-wide text-cyan-800">
 			{brand.name}
 		</span>
 	);

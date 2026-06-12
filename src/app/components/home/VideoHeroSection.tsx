@@ -6,13 +6,8 @@ import {
   WrenchScrewdriverIcon,
   BoltIcon,
   FireIcon,
-  LightBulbIcon,
   LockClosedIcon,
-  KeyIcon,
   BeakerIcon,
-  StarIcon,
-  ShieldCheckIcon,
-  ClockIcon,
 } from '@heroicons/react/24/outline';
 import { motion } from "framer-motion";
 
@@ -24,15 +19,11 @@ export default function VideoHeroSection() {
   }, []);
 
   const services = [
-    { name: "Plumbing", Icon: WrenchScrewdriverIcon },
     { name: "Electrical", Icon: BoltIcon },
+    { name: "Plumbing", Icon: WrenchScrewdriverIcon },
+    { name: "Access Control", Icon: LockClosedIcon },
     { name: "Fire Alarms", Icon: FireIcon },
-    { name: "Lighting", Icon: LightBulbIcon },
-    { name: "Lock Installation", Icon: LockClosedIcon },
-    { name: "Lockout Service", Icon: KeyIcon },
-    { name: "Sauna Repair", Icon: FireIcon },
-    { name: "Spa Service", Icon: BeakerIcon },
-    { name: "General Repairs", Icon: WrenchScrewdriverIcon },
+    { name: "Spa & Sauna", Icon: BeakerIcon },
   ];
 
   return (

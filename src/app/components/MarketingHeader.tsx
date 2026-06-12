@@ -126,20 +126,28 @@ export default function MarketingHeader() {
             <button
               onClick={handleResourcesClick}
               type="button"
-              className={`inline-flex h-11 items-center gap-2 rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-5 text-sm font-semibold text-white shadow-[0_12px_24px_-14px_rgba(6,182,212,0.95)] transition-all duration-300 hover:scale-[1.03] hover:from-lime-400 hover:to-cyan-400`}
+              className={`inline-flex h-11 items-center gap-2 rounded-full px-4 text-sm font-semibold transition-colors duration-200 ${
+                isHomePage && !scrolled
+                  ? 'text-white/90 hover:text-white hover:bg-white/10'
+                  : 'text-gray-700 hover:text-cyan-700 hover:bg-cyan-50'
+              }`}
             >
               Resources
             </button>
 
             <a
               href="tel:+1-808-303-4627"
-              className="inline-flex h-11 items-center gap-2 rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-5 text-sm font-semibold text-white shadow-[0_12px_24px_-14px_rgba(6,182,212,0.95)] transition-all duration-300 hover:scale-[1.03] hover:from-lime-400 hover:to-cyan-400"
+              className={`inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-semibold transition-colors duration-200 ${
+                isHomePage && !scrolled
+                  ? 'border border-white/40 text-white hover:bg-white/10'
+                  : 'border border-cyan-300/60 text-cyan-700 hover:bg-cyan-50'
+              }`}
               data-gtm-event="phone_call"
               data-gtm-location="header_desktop"
             >
               <PhoneIcon /> Call Now
             </a>
-            <a href={isHomePage ? "#request-form" : "/#request-form"} className="inline-flex h-11 items-center rounded-full border border-cyan-300/60 bg-gradient-to-r from-lime-500 to-cyan-500 px-6 text-sm font-bold tracking-[0.01em] text-white shadow-[0_12px_24px_-14px_rgba(6,182,212,0.9)] transition-all duration-300 hover:scale-[1.03] hover:from-lime-400 hover:to-cyan-400">Get Started</a>
+            <a href={isHomePage ? "#request-form" : "/#request-form"} className="inline-flex h-11 items-center rounded-full bg-gradient-to-r from-lime-500 to-cyan-500 px-6 text-sm font-bold tracking-[0.01em] text-white shadow-[0_12px_24px_-14px_rgba(6,182,212,0.9)] transition-all duration-300 hover:scale-[1.03] hover:from-lime-400 hover:to-cyan-400">Get Started</a>
           </nav>
           <button
             onClick={() => setMobileMenuOpen(o => !o)}
