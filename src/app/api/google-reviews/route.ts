@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server';
 
-// Cache the response at the Next.js data layer for 24 hours.
-// Vercel will serve the cached JSON to all visitors during this window.
-export const revalidate = 86400; // 24 hours
+// Force the route to run on every request so process.env is read at request
+// time (not build time). We still cache successful Google API responses for
+// 24h via the inner fetch() { next: { revalidate: 86400 } } calls.
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 const SEARCH_QUERY = 'ReefTech Solutions Big Island Hawaii';
 
