@@ -186,31 +186,33 @@ async function fetchPlaceDetailsV1(
   return { place: parsed, httpStatus: res.status, body: raw };
 }
 
-// Resolve a Google Maps CID to a ChIJ Place ID by following the redirect
-// chain from https://www.google.com/maps?cid=<CID>. The final URL contains
-// the FTID and (in HTML/og:url) the resolvable place reference.
+// Resolve a Google Maps CID to a ChIJ Place ID. Tries multiple endpoints
+// that expose the ChIJ id in SSR HTML: /maps/place lookup pages, the search
+// fallback, and the /maps?cid= redirect.
 async function resolvePlaceIdFromCid(cid: string): Promise<string | null> {
-  try {
-    const res = await fetch(
-      `https://www.google.com/maps?cid=${encodeURIComponent(cid)}`,
-      {
+  const urls = [
+    `https://www.google.com/maps?cid=${cid}`,
+    `https://maps.google.com/?cid=${cid}`,
+    `https://www.google.com/search?q=cid:${cid}&hl=en`,
+  ];
+  const ua =
+    'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
+  for (const url of urls) {
+    try {
+      const res = await fetch(url, {
         redirect: 'follow',
-        headers: {
-          'User-Agent':
-            'Mozilla/5.0 (compatible; ReefTechReviewsBot/1.0; +https://reeftech.io)',
-          'Accept-Language': 'en-US,en;q=0.9',
-        },
+        headers: { 'User-Agent': ua, 'Accept-Language': 'en-US,en;q=0.9' },
         next: { revalidate: 86400 },
-      }
-    );
-    if (!res.ok) return null;
-    const html = await res.text();
-    // Look for any ChIJ-prefixed Place ID in the rendered page.
-    const m = html.match(/ChIJ[A-Za-z0-9_-]{15,}/);
-    return m ? m[0] : null;
-  } catch {
-    return null;
+      });
+      if (!res.ok) continue;
+      const html = await res.text();
+      const m = html.match(/ChIJ[A-Za-z0-9_-]{15,}/);
+      if (m) return m[0];
+    } catch {
+      // try next
+    }
   }
+  return null;
 }
 
 // ---------- Route handler ----------
@@ -229,27 +231,35 @@ export async function GET() {
     let place: PlacesV1Place | undefined;
     let lastError = '';
 
-    // 1) If a CID is configured (env override or compiled-in default), look
-    //    up the place via Maps share URL redirect which canonicalises to a
-    //    ChIJ Place ID we can hand to v1 details.
+    // 1) Try Place Details (New) against multiple ID candidates. v1 accepts
+    //    several canonical forms; we try them in order. The CID candidate
+    //    uses a Geocoding fallback to resolve to a ChIJ id.
+    const candidateIds = [
+      process.env.GOOGLE_PLACE_ID,
+      // Known ChIJ candidates surfaced from Google's own data layer.
+      'ChIJS7Yh1Z25_aYR2NKhInAsasA',
+    ].filter((v): v is string => typeof v === 'string' && v.length > 0);
+
+    for (const candidate of candidateIds) {
+      const r = await fetchPlaceDetailsV1(apiKey, candidate);
+      if (r.place) {
+        place = r.place;
+        break;
+      }
+      if (!lastError) {
+        lastError = `Place Details v1 (${candidate}) HTTP ${r.httpStatus}: ${r.body.slice(0, 150)}`;
+      }
+    }
+
+    // 1b) CID -> ChIJ resolver via SSR HTML scrape (best-effort).
     const cid = process.env.GOOGLE_PLACE_CID ?? DEFAULT_CID;
     if (cid && !place) {
       const resolvedId = await resolvePlaceIdFromCid(cid);
       if (resolvedId) {
         const r = await fetchPlaceDetailsV1(apiKey, resolvedId);
         if (r.place) place = r.place;
-        else lastError = `CID->Details v1 HTTP ${r.httpStatus}: ${r.body.slice(0, 200)}`;
-      } else if (!lastError) {
-        lastError = 'CID redirect did not yield a Place ID.';
+        else if (!lastError) lastError = `CID->Details v1 HTTP ${r.httpStatus}: ${r.body.slice(0, 200)}`;
       }
-    }
-
-    // 2) If a Place ID is hardcoded, use it directly via v1 Place Details.
-    const hardcodedId = process.env.GOOGLE_PLACE_ID;
-    if (hardcodedId && !place) {
-      const r = await fetchPlaceDetailsV1(apiKey, hardcodedId);
-      if (r.place) place = r.place;
-      else lastError = `Place Details v1 HTTP ${r.httpStatus}: ${r.body.slice(0, 200)}`;
     }
 
     // 3) Text Search (New) WITHOUT bias.
