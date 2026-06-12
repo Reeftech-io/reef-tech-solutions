@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import { WrenchScrewdriverIcon, LightBulbIcon, BoltIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
@@ -29,12 +28,11 @@ export const metadata: Metadata = {
     locale: 'en_US',
   },
   alternates: {
-    canonical: 'https://reeftech.io/electrical-services',
+    canonical: 'https://www.reeftech.io/electrical-services',
   },
 };
 
 export default function ElectricalServicesPage() {
-  notFound();
   return (
     <div className="min-h-screen bg-white">
       <script

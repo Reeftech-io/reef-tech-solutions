@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
 
 export default function MarketingHeader() {
@@ -55,7 +56,15 @@ export default function MarketingHeader() {
       <div className="container mx-auto px-4 lg:px-0 2xl:px-0">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="group flex items-center space-x-3 sm:space-x-1">
-            <img src="/photos/logoOpt.webp" alt="ReefTech Solutions Logo" className="h-18 w-18 transition-transform duration-300 group-hover:scale-[1.03]" style={{ filter: 'drop-shadow(0 0 12px rgba(0, 206, 209, 0.28))' }} />
+            <Image
+              src="/photos/logoOpt.webp"
+              alt="ReefTech Solutions Logo"
+              width={72}
+              height={72}
+              priority
+              className="h-18 w-18 transition-transform duration-300 group-hover:scale-[1.03]"
+              style={{ filter: 'drop-shadow(0 0 12px rgba(0, 206, 209, 0.28))' }}
+            />
             <div className="hidden sm:flex flex-col pt-2 justify-center">
               <h1 className="text-[1.48rem] font-bold leading-tight"><span className="bg-gradient-to-r from-teal-700 via-cyan-600 to-lime-600 bg-clip-text text-transparent font-tan-headline">ReefTech Solutions</span></h1>
               <p className={`text-[0.76rem] tracking-wide font-semibold uppercase ${isHomePage && !scrolled ? 'text-white' : 'text-gray-600/90'}`}>Your Property&apos;s Tech Department</p>

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import { FireIcon, ShieldCheckIcon, BeakerIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
@@ -14,10 +13,12 @@ export const metadata: Metadata = {
     'fire sprinkler inspection Waimea',
     'commercial fire safety Hawaii'
   ],
+  alternates: {
+    canonical: 'https://www.reeftech.io/fire-alarm-support-waimea',
+  },
 };
 
 export default function FireAlarmWaimeaPage() {
-  notFound();
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-32 max-w-4xl">

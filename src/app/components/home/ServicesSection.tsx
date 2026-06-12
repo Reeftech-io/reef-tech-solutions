@@ -1,5 +1,6 @@
 "use client";
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 import { useRef, useState } from 'react';
 import Modal from '../ui/Modal';
 
@@ -374,12 +375,12 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					<div className="mt-6 grid grid-cols-3 gap-2 lg:hidden">
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/light-control1.jpg" alt="Lighting control system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/light-control1.jpg" alt="Lighting control system" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/leviton-lights.webp" alt="Leviton lighting installation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/leviton-lights.webp" alt="Leviton lighting installation" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 							<div className="absolute top-1 left-1 bg-white/85 backdrop-blur-sm rounded-md px-1 py-0.5 shadow ring-1 ring-white/60">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -388,7 +389,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</div>
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/lutron-lights.webp" alt="Lutron lighting system" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/lutron-lights.webp" alt="Lutron lighting system" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 							<div className="absolute top-1 left-1 bg-white/85 backdrop-blur-sm rounded-md px-1 py-0.5 shadow ring-1 ring-white/60">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -401,12 +402,12 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					<div className="hidden lg:grid grid-cols-3 gap-3 absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/light-control1.jpg" alt="Lighting control system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/light-control1.jpg" alt="Lighting control system" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/leviton-lights.webp" alt="Leviton lighting installation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/leviton-lights.webp" alt="Leviton lighting installation" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 							<div className="absolute top-2 left-2 bg-white/85 backdrop-blur-sm rounded-md px-1.5 py-1 shadow ring-1 ring-white/60">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -415,7 +416,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</div>
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/lutron-lights.webp" alt="Lutron lighting system" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/lutron-lights.webp" alt="Lutron lighting system" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 							<div className="absolute top-2 left-2 bg-white/85 backdrop-blur-sm rounded-md px-1.5 py-1 shadow ring-1 ring-white/60">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -431,17 +432,17 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					<div className="mt-6 grid grid-cols-3 gap-2 lg:hidden">
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/access-control-1.png" alt="Access control system installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/access-control-1.png" alt="Access control system installation" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock1.jpg" alt="Access control magnetic lock installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/mag-lock1.jpg" alt="Access control magnetic lock installation" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock3.jpg" alt="Access control system overview" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/mag-lock3.jpg" alt="Access control system overview" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 					</div>
@@ -450,17 +451,17 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					<div className="hidden lg:grid grid-cols-3 gap-3 absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/access-control-1.png" alt="Access control system installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/access-control-1.png" alt="Access control system installation" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock1.jpg" alt="Access control magnetic lock installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/mag-lock1.jpg" alt="Access control magnetic lock installation" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock3.jpg" alt="Access control system overview" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/mag-lock3.jpg" alt="Access control system overview" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
@@ -472,17 +473,17 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					<div className="mt-6 grid grid-cols-3 gap-2 lg:hidden">
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock2.jpg" alt="Magnetic lock hardware detail" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/mag-lock2.jpg" alt="Magnetic lock hardware detail" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock4.jpg" alt="Magnetic lock system installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/mag-lock4.jpg" alt="Magnetic lock system installation" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock5.jpg" alt="Magnetic lock security system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/mag-lock5.jpg" alt="Magnetic lock security system" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 					</div>
@@ -491,17 +492,17 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					<div className="hidden lg:grid grid-cols-3 gap-3 absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock2.jpg" alt="Magnetic lock hardware detail" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/mag-lock2.jpg" alt="Magnetic lock hardware detail" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock4.jpg" alt="Magnetic lock system installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/mag-lock4.jpg" alt="Magnetic lock system installation" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock5.jpg" alt="Magnetic lock security system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/brand-pictures/mag-lock5.jpg" alt="Magnetic lock security system" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
@@ -514,7 +515,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					<div className="mt-6 lg:hidden">
 						<div className="relative h-56 overflow-hidden rounded-xl shadow-md group z-[9999] bg-white">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/services/flologic.jpg" alt="FloLogic smart water shutoff system with iPhone app" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/services/flologic.jpg" alt="FloLogic smart water shutoff system with iPhone app" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 						</div>
 					</div>
 				)}
@@ -522,7 +523,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					<div className="hidden lg:block absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999] bg-white">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/services/flologic.jpg" alt="FloLogic smart water shutoff system with iPhone app" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<Image src="/photos/services/flologic.jpg" alt="FloLogic smart water shutoff system with iPhone app" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 						</div>
 						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
 							{index + 1}
@@ -581,17 +582,17 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 
 							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img src="/photos/brand-pictures/Jacuzzi-Hawaii.jpg" alt="Jacuzzi spa installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+								<Image src="/photos/brand-pictures/Jacuzzi-Hawaii.jpg" alt="Jacuzzi spa installation" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 								<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 							</div>
 							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img src="/photos/brand-pictures/sauna-1.jpg" alt="Professional sauna installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+								<Image src="/photos/brand-pictures/sauna-1.jpg" alt="Professional sauna installation" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 								<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 							</div>
 							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img src="/photos/brand-pictures/infra-red-sauna.jpg" alt="Infrared sauna installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+								<Image src="/photos/brand-pictures/infra-red-sauna.jpg" alt="Infrared sauna installation" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 								<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 							</div>
 							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">

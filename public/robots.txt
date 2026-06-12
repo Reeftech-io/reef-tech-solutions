@@ -1,5 +1,5 @@
 # Robots.txt for ReefTech Solutions
-# https://reeftech.io/robots.txt
+# https://www.reeftech.io/robots.txt
 
 User-agent: *
 Allow: /
@@ -8,36 +8,4 @@ Disallow: /_next/
 Disallow: /admin/
 Disallow: /private/
 
-# Sitemap location
-Sitemap: https://reeftech.io/sitemap.xml
-
-# Crawl delay for respectful crawling
-Crawl-delay: 1
-
-# Allow all search engines to index images and media
-User-agent: Googlebot-Image
-Allow: /photos/
-Allow: /images/
-Allow: /videos/
-
-# Allow specific bots
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-# Local SEO optimization for Hawaii Big Island services:
-# This site provides professional property maintenance and repair services
-# Primary service areas: Kailua-Kona, Waimea (Kamuela), Hilo, Captain Cook, Volcano
-# Key services: plumbing repairs, electrical service, sauna repair, lock installation, carpentry, general maintenance
-# Target searches: "handyman big island", "plumber kona", "electrician waimea", "property maintenance hawaii", "emergency repairs big island"
+Sitemap: https://www.reeftech.io/sitemap.xml

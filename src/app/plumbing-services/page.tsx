@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import { WrenchScrewdriverIcon, CheckCircleIcon, BoltIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
@@ -33,12 +32,11 @@ export const metadata: Metadata = {
     locale: 'en_US',
   },
   alternates: {
-    canonical: 'https://reeftech.io/plumbing-services',
+    canonical: 'https://www.reeftech.io/plumbing-services',
   },
 };
 
 export default function PlumbingServicesPage() {
-  notFound();
   return (
     <div className="min-h-screen bg-white">
       {/* Schema Markup for SEO */}
