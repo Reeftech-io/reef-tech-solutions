@@ -12,6 +12,11 @@ const SEARCH_QUERY = 'ReefTech Solutions Waimea Hawaii';
 const BIAS_LAT = 20.0314744;
 const BIAS_LNG = -155.6164902;
 
+// Public Google Business Profile CID for ReefTech Solutions. Sourced from
+// the share.google link the owner provided. Not a secret — it's the same
+// identifier embedded in the Google Maps share URL.
+const DEFAULT_CID = '13864943262942483160';
+
 // ---------- Types: Places API (New) v1 ----------
 
 type PlacesV1Review = {
@@ -181,6 +186,33 @@ async function fetchPlaceDetailsV1(
   return { place: parsed, httpStatus: res.status, body: raw };
 }
 
+// Resolve a Google Maps CID to a ChIJ Place ID by following the redirect
+// chain from https://www.google.com/maps?cid=<CID>. The final URL contains
+// the FTID and (in HTML/og:url) the resolvable place reference.
+async function resolvePlaceIdFromCid(cid: string): Promise<string | null> {
+  try {
+    const res = await fetch(
+      `https://www.google.com/maps?cid=${encodeURIComponent(cid)}`,
+      {
+        redirect: 'follow',
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (compatible; ReefTechReviewsBot/1.0; +https://reeftech.io)',
+          'Accept-Language': 'en-US,en;q=0.9',
+        },
+        next: { revalidate: 86400 },
+      }
+    );
+    if (!res.ok) return null;
+    const html = await res.text();
+    // Look for any ChIJ-prefixed Place ID in the rendered page.
+    const m = html.match(/ChIJ[A-Za-z0-9_-]{15,}/);
+    return m ? m[0] : null;
+  } catch {
+    return null;
+  }
+}
+
 // ---------- Route handler ----------
 
 export async function GET() {
@@ -197,15 +229,30 @@ export async function GET() {
     let place: PlacesV1Place | undefined;
     let lastError = '';
 
-    // 1) If a Place ID is hardcoded, use it directly via v1 Place Details.
+    // 1) If a CID is configured (env override or compiled-in default), look
+    //    up the place via Maps share URL redirect which canonicalises to a
+    //    ChIJ Place ID we can hand to v1 details.
+    const cid = process.env.GOOGLE_PLACE_CID ?? DEFAULT_CID;
+    if (cid && !place) {
+      const resolvedId = await resolvePlaceIdFromCid(cid);
+      if (resolvedId) {
+        const r = await fetchPlaceDetailsV1(apiKey, resolvedId);
+        if (r.place) place = r.place;
+        else lastError = `CID->Details v1 HTTP ${r.httpStatus}: ${r.body.slice(0, 200)}`;
+      } else if (!lastError) {
+        lastError = 'CID redirect did not yield a Place ID.';
+      }
+    }
+
+    // 2) If a Place ID is hardcoded, use it directly via v1 Place Details.
     const hardcodedId = process.env.GOOGLE_PLACE_ID;
-    if (hardcodedId) {
+    if (hardcodedId && !place) {
       const r = await fetchPlaceDetailsV1(apiKey, hardcodedId);
       if (r.place) place = r.place;
       else lastError = `Place Details v1 HTTP ${r.httpStatus}: ${r.body.slice(0, 200)}`;
     }
 
-    // 2) Otherwise, try Text Search (New) WITHOUT bias.
+    // 3) Text Search (New) WITHOUT bias.
     if (!place) {
       const r = await searchTextV1(apiKey, SEARCH_QUERY, false);
       if (r.place) place = r.place;
@@ -213,7 +260,7 @@ export async function GET() {
         lastError = `Text Search v1 HTTP ${r.httpStatus}: ${r.body.slice(0, 200)}`;
     }
 
-    // 3) Retry Text Search with location bias around Waimea.
+    // 4) Retry Text Search with location bias around Waimea.
     if (!place) {
       const r = await searchTextV1(apiKey, SEARCH_QUERY, true);
       if (r.place) place = r.place;
@@ -221,7 +268,7 @@ export async function GET() {
         lastError = `Text Search v1 (biased) HTTP ${r.httpStatus}: ${r.body.slice(0, 200)}`;
     }
 
-    // 4) Last resort: searchText with just "ReefTech" near coords.
+    // 5) Last resort: searchText with just "ReefTech" near coords.
     if (!place) {
       const r = await searchTextV1(apiKey, 'ReefTech property maintenance', true);
       if (r.place) place = r.place;
