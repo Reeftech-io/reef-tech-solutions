@@ -2,6 +2,7 @@ import ResourcesSection from './components/home/ResourcesSection';
 import RequestFormSection from './components/home/RequestFormSection';
 import ServicesSection from './components/home/ServicesSection';
 import VideoHeroSection from './components/home/VideoHeroSection';
+import ReviewsSection from './components/home/ReviewsSection';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <ServicesSection />
       <ResourcesSection />
       <RequestFormSection />
+      <ReviewsSection />
     </>
   );
 }
