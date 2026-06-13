@@ -313,7 +313,10 @@ export async function GET() {
       .map(mapReview)
       .filter((r) => r.text.trim().length > 0)
       // Newest first so the carousel surfaces fresh reviews as they roll in.
-      .sort((a, b) => b.timestamp - a.timestamp);
+      .sort((a, b) => b.timestamp - a.timestamp)
+      // Only show the 5 newest. Google's Places API caps at 5 anyway,
+      // but this guarantees the contract even if that ever changes.
+      .slice(0, 5);
 
     return successResponse({
       ok: true,

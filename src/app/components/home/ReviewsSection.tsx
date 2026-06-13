@@ -23,7 +23,7 @@ type ReviewsPayload = {
   error?: string;
 };
 
-const ROTATION_MS = 6500;
+const ROTATION_MS = 4000;
 
 function Stars({ rating }: { rating: number }) {
   return (
