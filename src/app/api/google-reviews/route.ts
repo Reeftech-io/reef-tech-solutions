@@ -164,11 +164,14 @@ async function fetchPlaceDetailsV1(
     'reviews',
   ].join(',');
 
-  // reviewsNoTranslations=true keeps original text. reviewsSort=NEWEST
-  // surfaces the most recent 5 reviews (Google's API hard-caps at 5).
+  // languageCode=en keeps original-language text consistent. Note: the
+  // Places API (New) does NOT currently expose a reviews sort knob via
+  // query params — 'NEWEST' / 'MOST_RELEVANT' are only available on the
+  // legacy v0 API, and v0 cannot find newer GBPs. Google's API caps
+  // reviews returned at 5 regardless.
   const url =
     `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}` +
-    `?reviewsSort=NEWEST&reviewsNoTranslations=true&languageCode=en`;
+    `?languageCode=en`;
 
   const res = await fetch(url, {
     headers: {
@@ -308,7 +311,9 @@ export async function GET() {
 
     const cleaned = (place.reviews ?? [])
       .map(mapReview)
-      .filter((r) => r.text.trim().length > 0);
+      .filter((r) => r.text.trim().length > 0)
+      // Newest first so the carousel surfaces fresh reviews as they roll in.
+      .sort((a, b) => b.timestamp - a.timestamp);
 
     return successResponse({
       ok: true,
