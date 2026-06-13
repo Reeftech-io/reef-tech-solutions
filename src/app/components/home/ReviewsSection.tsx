@@ -149,8 +149,10 @@ export default function ReviewsSection() {
             Verified Google reviews
           </div>
 
-          <h2 className="mt-3 font-tan-headline text-2xl md:text-3xl font-bold tracking-tight text-slate-900">
-            {headline}
+          <h2 className="mt-3 font-tan-headline text-2xl md:text-3xl font-bold tracking-tight">
+            <span className="bg-gradient-to-r from-teal-700 via-cyan-600 to-lime-600 bg-clip-text text-transparent">
+              {headline}
+            </span>
           </h2>
           <div className="mt-2 flex items-center gap-2.5 text-slate-600">
             {data?.rating !== undefined && <Stars rating={data.rating} />}
