@@ -100,10 +100,10 @@ export default function ReviewsSection() {
     return (
       <section
         aria-label="Customer reviews"
-        className="relative border-t border-slate-100 bg-gradient-to-b from-white to-slate-50 py-20"
+        className="relative border-t border-slate-100 bg-gradient-to-b from-white to-slate-50 py-12"
       >
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="h-48 rounded-3xl bg-slate-100/60 animate-pulse" />
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="h-32 rounded-2xl bg-slate-100/60 animate-pulse" />
         </div>
       </section>
     );
@@ -122,7 +122,7 @@ export default function ReviewsSection() {
   return (
     <section
       aria-label="Customer reviews from Google"
-      className="relative border-t border-slate-100 bg-gradient-to-b from-white via-cyan-50/40 to-white py-20 overflow-hidden"
+      className="relative border-t border-slate-100 bg-gradient-to-b from-white via-cyan-50/40 to-white py-12 md:py-14 overflow-hidden"
     >
       {/* Soft background accents */}
       <div
@@ -134,14 +134,14 @@ export default function ReviewsSection() {
         }}
       />
 
-      <div className="container relative mx-auto px-4 max-w-5xl">
+      <div className="container relative mx-auto px-4 max-w-4xl">
         {/* Header */}
-        <div className="mb-10 flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-700 shadow-sm backdrop-blur">
+        <div className="mb-6 flex flex-col items-center text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/80 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-cyan-700 shadow-sm backdrop-blur">
             <svg
               aria-hidden="true"
               viewBox="0 0 24 24"
-              className="h-3.5 w-3.5"
+              className="h-3 w-3"
               fill="currentColor"
             >
               <path d="M12 11.5v2.9h4.8c-.2 1.2-1.4 3.6-4.8 3.6-2.9 0-5.2-2.4-5.2-5.3s2.3-5.3 5.2-5.3c1.6 0 2.7.7 3.3 1.3l2.2-2.2C16.1 5.2 14.3 4.4 12 4.4 7.8 4.4 4.4 7.8 4.4 12s3.4 7.6 7.6 7.6c4.4 0 7.3-3.1 7.3-7.5 0-.5-.1-.9-.1-1.3H12z" />
@@ -149,13 +149,13 @@ export default function ReviewsSection() {
             Verified Google reviews
           </div>
 
-          <h2 className="mt-4 font-tan-headline text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+          <h2 className="mt-3 font-tan-headline text-2xl md:text-3xl font-bold tracking-tight text-slate-900">
             {headline}
           </h2>
-          <div className="mt-3 flex items-center gap-3 text-slate-600">
+          <div className="mt-2 flex items-center gap-2.5 text-slate-600">
             {data?.rating !== undefined && <Stars rating={data.rating} />}
             {data?.totalRatings !== undefined && (
-              <span className="text-sm">
+              <span className="text-xs">
                 {data.totalRatings.toLocaleString()} review
                 {data.totalRatings === 1 ? '' : 's'} from Big Island neighbors
               </span>
@@ -165,49 +165,49 @@ export default function ReviewsSection() {
 
         {/* Carousel card */}
         <div
-          className="relative mx-auto max-w-3xl"
+          className="relative mx-auto max-w-2xl"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocus={() => setPaused(true)}
           onBlur={() => setPaused(false)}
         >
-          <div className="relative rounded-3xl border border-white bg-white/90 p-8 md:p-10 shadow-[0_30px_60px_-30px_rgba(8,47,73,0.25)] backdrop-blur min-h-[260px] sm:min-h-[240px]">
+          <div className="relative rounded-2xl border border-white bg-white/90 p-5 md:p-6 shadow-[0_20px_45px_-25px_rgba(8,47,73,0.22)] backdrop-blur min-h-[200px] sm:min-h-[190px]">
             <Quote
               aria-hidden="true"
-              className="absolute -top-4 left-8 h-10 w-10 rounded-full bg-gradient-to-br from-lime-500 to-cyan-500 p-2 text-white shadow-md"
+              className="absolute -top-3 left-5 h-7 w-7 rounded-full bg-gradient-to-br from-lime-500 to-cyan-500 p-1.5 text-white shadow-md"
             />
 
             <AnimatePresence mode="wait">
               <motion.figure
                 key={current.timestamp}
-                initial={{ opacity: 0, y: 8 }}
+                initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.55, ease: 'easeOut' }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
               >
                 <Stars rating={current.rating} />
-                <blockquote className="mt-4 text-lg leading-relaxed text-slate-800">
+                <blockquote className="mt-3 text-[15px] leading-relaxed text-slate-800 line-clamp-6">
                   &ldquo;{current.text}&rdquo;
                 </blockquote>
-                <figcaption className="mt-6 flex items-center gap-3">
+                <figcaption className="mt-4 flex items-center gap-2.5">
                   {current.profilePhoto ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={current.profilePhoto}
                       alt=""
-                      width={48}
-                      height={48}
-                      className="h-12 w-12 rounded-full object-cover shadow-md"
+                      width={36}
+                      height={36}
+                      className="h-9 w-9 rounded-full object-cover shadow-md"
                       referrerPolicy="no-referrer"
                     />
                   ) : (
                     <Initials name={current.author} />
                   )}
-                  <div className="flex flex-col">
-                    <span className="font-semibold text-slate-900">
+                  <div className="flex flex-col leading-tight">
+                    <span className="font-semibold text-slate-900 text-sm">
                       {current.author}
                     </span>
-                    <span className="text-xs text-slate-500">
+                    <span className="text-[11px] text-slate-500">
                       {current.relativeTime} · via Google
                     </span>
                   </div>
@@ -218,17 +218,17 @@ export default function ReviewsSection() {
 
           {/* Dot pagination */}
           {reviews.length > 1 && (
-            <div className="mt-6 flex items-center justify-center gap-2">
+            <div className="mt-4 flex items-center justify-center gap-1.5">
               {reviews.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setIndex(i)}
                   aria-label={`Show review ${i + 1} of ${reviews.length}`}
                   aria-current={i === index}
-                  className={`h-2 rounded-full transition-all duration-300 ${
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
                     i === index
-                      ? 'w-8 bg-gradient-to-r from-lime-500 to-cyan-500'
-                      : 'w-2 bg-slate-300 hover:bg-slate-400'
+                      ? 'w-6 bg-gradient-to-r from-lime-500 to-cyan-500'
+                      : 'w-1.5 bg-slate-300 hover:bg-slate-400'
                   }`}
                 />
               ))}
@@ -238,14 +238,14 @@ export default function ReviewsSection() {
 
         {/* Footer link */}
         {data?.googleUrl && (
-          <div className="mt-8 flex justify-center">
+          <div className="mt-5 flex justify-center">
             <a
               href={data.googleUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 hover:text-cyan-800 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-700 hover:text-cyan-800 transition-colors"
             >
-              See all reviews on Google
+              See all {data.totalRatings ?? ''} reviews on Google
               <svg
                 aria-hidden="true"
                 viewBox="0 0 24 24"

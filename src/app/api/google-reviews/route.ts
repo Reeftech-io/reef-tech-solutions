@@ -164,16 +164,19 @@ async function fetchPlaceDetailsV1(
     'reviews',
   ].join(',');
 
-  const res = await fetch(
-    `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}`,
-    {
-      headers: {
-        'X-Goog-Api-Key': apiKey,
-        'X-Goog-FieldMask': detailsMask,
-      },
-      next: { revalidate: 86400 },
-    }
-  );
+  // reviewsNoTranslations=true keeps original text. reviewsSort=NEWEST
+  // surfaces the most recent 5 reviews (Google's API hard-caps at 5).
+  const url =
+    `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}` +
+    `?reviewsSort=NEWEST&reviewsNoTranslations=true&languageCode=en`;
+
+  const res = await fetch(url, {
+    headers: {
+      'X-Goog-Api-Key': apiKey,
+      'X-Goog-FieldMask': detailsMask,
+    },
+    next: { revalidate: 86400 },
+  });
   const raw = await res.text();
   if (!res.ok) return { httpStatus: res.status, body: raw };
 
