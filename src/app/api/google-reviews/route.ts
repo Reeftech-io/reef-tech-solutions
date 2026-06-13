@@ -309,9 +309,14 @@ export async function GET() {
       }
     }
 
+    // Author names the site owner has asked be excluded from the carousel
+    // (privacy / personal request). Matched case-insensitively on displayName.
+    const HIDDEN_AUTHORS = new Set(['ernest simien']);
+
     const cleaned = (place.reviews ?? [])
       .map(mapReview)
       .filter((r) => r.text.trim().length > 0)
+      .filter((r) => !HIDDEN_AUTHORS.has(r.author.trim().toLowerCase()))
       // Newest first so the carousel surfaces fresh reviews as they roll in.
       .sort((a, b) => b.timestamp - a.timestamp)
       // Only show the 5 newest. Google's Places API caps at 5 anyway,
