@@ -313,10 +313,44 @@ export async function GET() {
     // (privacy / personal request). Matched case-insensitively on displayName.
     const HIDDEN_AUTHORS = new Set(['ernest simien']);
 
-    const cleaned = (place.reviews ?? [])
+    // Curated reviews that exist on the public Google Business Profile but
+    // are not returned by the Places API (which hard-caps at 5 reviews).
+    // These are pulled verbatim from the public Google Maps listing so the
+    // carousel can include the genuinely newest review even when the API
+    // doesn't surface it. Timestamps use a recent date so they sort to the
+    // top alongside the API's newest entries.
+    const CURATED_REVIEWS = [
+      {
+        author: 'Alex Munster',
+        profilePhoto:
+          'https://lh3.googleusercontent.com/a-/ALV-UjWw6NM7_lAgDhnqRjR1VO-MlnpA510WAfB8d9tD1r5XwSUz4OlZ=w72-h72-p-rp-mo-br100',
+        rating: 5,
+        relativeTime: 'a day ago',
+        text:
+          "Joshua's depth of knowledge and experience is invaluable. He was able to fix, repair and troubleshoot all the problems in record time. He is super conscientious and left the job site spotless. I highly recommend his services.",
+        // June 13, 2026 — pulled the day the review was posted.
+        timestamp: Math.floor(Date.parse('2026-06-13T18:23:00Z') / 1000),
+      },
+    ];
+
+    const fromGoogle = (place.reviews ?? [])
       .map(mapReview)
       .filter((r) => r.text.trim().length > 0)
-      .filter((r) => !HIDDEN_AUTHORS.has(r.author.trim().toLowerCase()))
+      .filter((r) => !HIDDEN_AUTHORS.has(r.author.trim().toLowerCase()));
+
+    // De-duplicate by author+text so a curated entry never doubles up if
+    // Google later starts returning it via the API.
+    const seen = new Set<string>();
+    const dedupKey = (r: { author: string; text: string }) =>
+      `${r.author.trim().toLowerCase()}::${r.text.trim().toLowerCase().slice(0, 80)}`;
+
+    const cleaned = [...CURATED_REVIEWS, ...fromGoogle]
+      .filter((r) => {
+        const k = dedupKey(r);
+        if (seen.has(k)) return false;
+        seen.add(k);
+        return true;
+      })
       // Newest first so the carousel surfaces fresh reviews as they roll in.
       .sort((a, b) => b.timestamp - a.timestamp)
       // Only show the 5 newest. Google's Places API caps at 5 anyway,
