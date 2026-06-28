@@ -24,8 +24,25 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Minor Electrical Services Big Island Hawaii | ReefTech Solutions',
     description: 'Professional minor electrical services in Kona, Waimea, Hilo. Outlet repairs, lighting installation, switch replacement. Fast response, quality service.',
+    url: 'https://www.reeftech.io/electrical-services',
+    siteName: 'ReefTech Solutions',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: 'https://www.reeftech.io/photos/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Minor Electrical Services — ReefTech Solutions, Big Island Hawaii',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Minor Electrical Services Big Island Hawaii | ReefTech Solutions',
+    description: 'Professional electrical repair and installation in Kona, Waimea, and Hilo. Outlets, lighting, switches. Call (808) 303-4627.',
+    images: ['https://www.reeftech.io/photos/og-image.jpg'],
   },
   alternates: {
     canonical: 'https://www.reeftech.io/electrical-services',
@@ -105,6 +122,42 @@ export default function ElectricalServicesPage() {
                 }
               ]
             }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.reeftech.io/electrical-services#breadcrumb",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.reeftech.io/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Electrical Services",
+                    "item": "https://www.reeftech.io/electrical-services"
+                  }
+                ]
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.reeftech.io/electrical-services#webpage",
+                "url": "https://www.reeftech.io/electrical-services",
+                "name": "Minor Electrical Services Big Island Hawaii | ReefTech Solutions",
+                "isPartOf": { "@id": "https://www.reeftech.io/#website" },
+                "inLanguage": "en-US"
+              }
+            ]
           })
         }}
       />

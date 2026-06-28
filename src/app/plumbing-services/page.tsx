@@ -28,8 +28,25 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Licensed Plumber Big Island Hawaii | Emergency Plumbing Services',
     description: '24/7 emergency plumbing repairs in Kona, Waimea, Hilo. Licensed plumber for residential and commercial properties. Fast response, quality service.',
+    url: 'https://www.reeftech.io/plumbing-services',
+    siteName: 'ReefTech Solutions',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: 'https://www.reeftech.io/photos/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Licensed Plumber Big Island Hawaii — ReefTech Solutions',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Licensed Plumber Big Island Hawaii | ReefTech Solutions',
+    description: '24/7 emergency plumbing in Kona, Waimea, and Hilo. Leak detection, water heater, drain cleaning. Call (808) 303-4627.',
+    images: ['https://www.reeftech.io/photos/og-image.jpg'],
   },
   alternates: {
     canonical: 'https://www.reeftech.io/plumbing-services',
@@ -110,6 +127,43 @@ export default function PlumbingServicesPage() {
                 }
               ]
             }
+          })
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.reeftech.io/plumbing-services#breadcrumb",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.reeftech.io/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Plumbing Services",
+                    "item": "https://www.reeftech.io/plumbing-services"
+                  }
+                ]
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.reeftech.io/plumbing-services#webpage",
+                "url": "https://www.reeftech.io/plumbing-services",
+                "name": "Licensed Plumber Big Island Hawaii | ReefTech Solutions",
+                "isPartOf": { "@id": "https://www.reeftech.io/#website" },
+                "inLanguage": "en-US"
+              }
+            ]
           })
         }}
       />

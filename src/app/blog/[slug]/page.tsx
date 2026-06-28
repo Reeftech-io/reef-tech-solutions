@@ -28,10 +28,27 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       url,
+      siteName: 'ReefTech Solutions',
       type: 'article',
       publishedTime: post.datePublished,
       modifiedTime: post.dateModified ?? post.datePublished,
       authors: [post.author],
+      locale: 'en_US',
+      images: [
+        {
+          url: `${SITE_URL}/photos/og-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${post.title} — ReefTech Solutions`,
+          type: 'image/jpeg',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: [`${SITE_URL}/photos/og-image.jpg`],
     },
   };
 }

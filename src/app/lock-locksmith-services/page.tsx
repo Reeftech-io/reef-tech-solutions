@@ -21,8 +21,25 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Lock & Locksmith Services Big Island Hawaii | ReefTech Solutions',
     description: 'Professional locksmith services on Big Island Hawaii. Lock installation, repair, emergency lockout service, and security upgrades.',
+    url: 'https://www.reeftech.io/lock-locksmith-services',
+    siteName: 'ReefTech Solutions',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: 'https://www.reeftech.io/photos/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Lock & Locksmith Services — ReefTech Solutions, Big Island Hawaii',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lock & Locksmith Services Big Island Hawaii | ReefTech Solutions',
+    description: 'Professional locksmith services in Kona, Waimea, and Hilo. Lock installation, emergency lockout, smart locks, access control. Call (808) 303-4627.',
+    images: ['https://www.reeftech.io/photos/og-image.jpg'],
   },
   alternates: {
     canonical: 'https://www.reeftech.io/lock-locksmith-services',
@@ -102,6 +119,42 @@ export default function LockLocksmithServicesPage() {
                 }
               ]
             }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.reeftech.io/lock-locksmith-services#breadcrumb",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.reeftech.io/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Lock & Locksmith Services",
+                    "item": "https://www.reeftech.io/lock-locksmith-services"
+                  }
+                ]
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.reeftech.io/lock-locksmith-services#webpage",
+                "url": "https://www.reeftech.io/lock-locksmith-services",
+                "name": "Lock & Locksmith Services Big Island Hawaii | ReefTech Solutions",
+                "isPartOf": { "@id": "https://www.reeftech.io/#website" },
+                "inLanguage": "en-US"
+              }
+            ]
           })
         }}
       />
