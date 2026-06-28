@@ -4,10 +4,35 @@ import Link from 'next/link';
 const SITE_URL = 'https://www.reeftech.io';
 
 export const metadata: Metadata = {
-  title: 'Customer Reviews — ReefTech Solutions',
+  title: 'Customer Reviews — ReefTech Solutions | Big Island Hawaii',
   description:
     'What Big Island homeowners, property managers, and businesses say about working with ReefTech Solutions for electrical, plumbing, fire alarm, access control, and spa & sauna service.',
   alternates: { canonical: `${SITE_URL}/reviews` },
+  openGraph: {
+    title: 'Customer Reviews — ReefTech Solutions | Big Island Hawaii',
+    description:
+      'Read what Big Island homeowners, property managers, and businesses say about ReefTech Solutions — electrical, plumbing, fire alarm, access control, and spa & sauna service.',
+    url: `${SITE_URL}/reviews`,
+    siteName: 'ReefTech Solutions',
+    type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: `${SITE_URL}/photos/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'ReefTech Solutions Customer Reviews — Big Island Hawaii',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Customer Reviews — ReefTech Solutions | Big Island Hawaii',
+    description:
+      'Read what Big Island customers say about ReefTech Solutions for electrical, plumbing, fire alarm, and access control service.',
+    images: [`${SITE_URL}/photos/og-image.jpg`],
+  },
 };
 
 /**
