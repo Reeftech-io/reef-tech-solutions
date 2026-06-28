@@ -101,6 +101,14 @@ const fireAlarmJsonLd = {
       },
     },
     {
+      '@type': 'BreadcrumbList',
+      '@id': `${SITE_URL}/fire-alarm-support-waimea#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Fire Alarm & Suppression Services', item: `${SITE_URL}/fire-alarm-support-waimea` },
+      ],
+    },
+    {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/fire-alarm-support-waimea#webpage`,
       url: `${SITE_URL}/fire-alarm-support-waimea`,
