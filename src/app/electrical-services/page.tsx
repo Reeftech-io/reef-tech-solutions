@@ -125,6 +125,42 @@ export default function ElectricalServicesPage() {
           })
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.reeftech.io/electrical-services#breadcrumb",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.reeftech.io/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Electrical Services",
+                    "item": "https://www.reeftech.io/electrical-services"
+                  }
+                ]
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.reeftech.io/electrical-services#webpage",
+                "url": "https://www.reeftech.io/electrical-services",
+                "name": "Minor Electrical Services Big Island Hawaii | ReefTech Solutions",
+                "isPartOf": { "@id": "https://www.reeftech.io/#website" },
+                "inLanguage": "en-US"
+              }
+            ]
+          })
+        }}
+      />
       <div className="container mx-auto px-4 py-32 max-w-4xl">
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#007595]">

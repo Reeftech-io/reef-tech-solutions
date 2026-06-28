@@ -131,6 +131,43 @@ export default function PlumbingServicesPage() {
         }}
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.reeftech.io/plumbing-services#breadcrumb",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.reeftech.io/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Plumbing Services",
+                    "item": "https://www.reeftech.io/plumbing-services"
+                  }
+                ]
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.reeftech.io/plumbing-services#webpage",
+                "url": "https://www.reeftech.io/plumbing-services",
+                "name": "Licensed Plumber Big Island Hawaii | ReefTech Solutions",
+                "isPartOf": { "@id": "https://www.reeftech.io/#website" },
+                "inLanguage": "en-US"
+              }
+            ]
+          })
+        }}
+      />
+
       <div className="container mx-auto px-4 py-32 max-w-4xl">
 
         <div className="mb-16">
