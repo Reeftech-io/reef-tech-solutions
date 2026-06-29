@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     template: "%s | ReefTech Solutions",
   },
   description:
-    "Licensed electrician and property tech specialist serving Hawaii's Big Island. Electrical, plumbing, access control, fire alarms, and spa & sauna service in Kailua-Kona, Waimea, and Hilo.",
+    "Expert electrical, plumbing, and access control services for Big Island vacation rentals & homes. Fast repairs and installations in Waimea, Kamuela & Kona. Call (808) 303-4627.",
   applicationName: "ReefTech Solutions",
   authors: [{ name: "ReefTech Solutions", url: SITE_URL }],
   creator: "ReefTech Solutions",
