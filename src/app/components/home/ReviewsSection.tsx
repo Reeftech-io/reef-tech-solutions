@@ -122,7 +122,7 @@ export default function ReviewsSection() {
   return (
     <section
       aria-label="Customer reviews from Google"
-      className="relative border-t border-slate-100 py-12 md:py-14 overflow-hidden"
+      className="relative py-20 md:py-28 overflow-hidden"
     >
       {/* Wave background — fixed, never shifts during review rotation */}
       <div
@@ -180,7 +180,7 @@ export default function ReviewsSection() {
           onFocus={() => setPaused(true)}
           onBlur={() => setPaused(false)}
         >
-          <div className="relative rounded-2xl border border-white/20 bg-white/10 p-5 md:p-6 shadow-[0_20px_45px_-25px_rgba(8,47,73,0.45)] backdrop-blur-md min-h-[220px] h-[220px] overflow-hidden">
+          <div className="relative rounded-2xl border border-white/20 bg-white/10 p-6 md:p-8 shadow-[0_20px_45px_-25px_rgba(8,47,73,0.45)] backdrop-blur-md min-h-[260px]">
             <Quote
               aria-hidden="true"
               className="absolute -top-3 left-5 h-7 w-7 rounded-full bg-gradient-to-br from-lime-500 to-cyan-500 p-1.5 text-white shadow-md"
@@ -195,7 +195,7 @@ export default function ReviewsSection() {
                 transition={{ duration: 0.5, ease: 'easeOut' }}
               >
                 <Stars rating={current.rating} />
-                <blockquote className="mt-3 text-[15px] leading-relaxed text-white/90 line-clamp-5">
+                <blockquote className="mt-3 text-[15px] leading-relaxed text-white/90">
                   &ldquo;{current.text}&rdquo;
                 </blockquote>
                 <figcaption className="mt-4 flex items-center gap-2.5">
