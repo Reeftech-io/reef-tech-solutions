@@ -66,7 +66,7 @@ export default function MarketingHeader() {
               style={{ filter: 'drop-shadow(0 0 12px rgba(0, 206, 209, 0.28))' }}
             />
             <div className="hidden sm:flex flex-col pt-2 justify-center">
-              <h1 className="text-[1.48rem] font-bold leading-tight"><span className="bg-gradient-to-r from-teal-700 via-cyan-600 to-lime-600 bg-clip-text text-transparent font-tan-headline">ReefTech Solutions</span></h1>
+              <span className="text-[1.48rem] font-bold leading-tight"><span className="bg-gradient-to-r from-teal-700 via-cyan-600 to-lime-600 bg-clip-text text-transparent font-tan-headline">ReefTech Solutions</span></span>
               <p className={`text-[0.76rem] tracking-wide font-semibold uppercase ${isHomePage && !scrolled ? 'text-white' : 'text-gray-600/90'}`}>Your Property&apos;s Tech Department</p>
             </div>
           </Link>
