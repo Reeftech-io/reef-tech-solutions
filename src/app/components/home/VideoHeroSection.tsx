@@ -30,7 +30,6 @@ export default function VideoHeroSection() {
     <section className="relative h-screen min-h-[780px] overflow-hidden bg-gray-900">
       <video
         className="absolute inset-0 z-0 h-full w-full object-cover"
-        poster="/photos/og-image.jpg"
         autoPlay
         loop
         muted
