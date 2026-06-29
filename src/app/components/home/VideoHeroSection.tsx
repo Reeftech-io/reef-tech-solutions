@@ -85,7 +85,7 @@ export default function VideoHeroSection() {
               className="mb-3 font-tan-headline text-[clamp(1.9rem,3.7vw,3.5rem)] leading-[0.95] tracking-[-0.015em]"
             >
               <span className="bg-gradient-to-r from-[#3ce7ff] via-[#58e6cb] to-[#a3ef45] bg-clip-text text-transparent">
-                Reeftech Solutions
+                Big Island Electrical, Plumbing &amp; Access Control
               </span>
             </MotionFade>
 
