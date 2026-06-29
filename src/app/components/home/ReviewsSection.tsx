@@ -122,22 +122,29 @@ export default function ReviewsSection() {
   return (
     <section
       aria-label="Customer reviews from Google"
-      className="relative border-t border-slate-100 bg-gradient-to-b from-white via-cyan-50/40 to-white py-12 md:py-14 overflow-hidden"
+      className="relative border-t border-slate-100 py-12 md:py-14 overflow-hidden"
     >
-      {/* Soft background accents */}
+      {/* Wave background — fixed, never shifts during review rotation */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-60"
+        className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage:
-            'radial-gradient(60% 50% at 10% 10%, rgba(132,204,22,0.10), transparent 70%), radial-gradient(50% 50% at 90% 90%, rgba(34,211,238,0.10), transparent 70%)',
+          backgroundImage: 'url(/photos/wave-bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
+      />
+      {/* Dark overlay so text remains readable */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-black/55"
       />
 
       <div className="container relative mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="mb-6 flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/80 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-cyan-700 shadow-sm backdrop-blur">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-cyan-300 shadow-sm backdrop-blur">
             <svg
               aria-hidden="true"
               viewBox="0 0 24 24"
@@ -149,15 +156,15 @@ export default function ReviewsSection() {
             Verified Google reviews
           </div>
 
-          <h2 className="mt-3 font-tan-headline text-2xl md:text-3xl font-bold tracking-tight">
+          <h2 className="mt-3 font-tan-headline text-2xl md:text-3xl font-bold tracking-tight text-white">
             <span className="bg-gradient-to-r from-teal-700 via-cyan-600 to-lime-600 bg-clip-text text-transparent">
               {headline}
             </span>
           </h2>
-          <div className="mt-2 flex items-center gap-2.5 text-slate-600">
+          <div className="mt-2 flex items-center gap-2.5 text-white/80">
             {data?.rating !== undefined && <Stars rating={data.rating} />}
             {data?.totalRatings !== undefined && (
-              <span className="text-xs">
+              <span className="text-xs text-white/80">
                 {data.totalRatings.toLocaleString()} review
                 {data.totalRatings === 1 ? '' : 's'} from Big Island neighbors
               </span>
@@ -173,7 +180,7 @@ export default function ReviewsSection() {
           onFocus={() => setPaused(true)}
           onBlur={() => setPaused(false)}
         >
-          <div className="relative rounded-2xl border border-white bg-white/90 p-5 md:p-6 shadow-[0_20px_45px_-25px_rgba(8,47,73,0.22)] backdrop-blur min-h-[200px] sm:min-h-[190px]">
+          <div className="relative rounded-2xl border border-white/20 bg-white/10 p-5 md:p-6 shadow-[0_20px_45px_-25px_rgba(8,47,73,0.45)] backdrop-blur-md min-h-[220px] h-[220px] overflow-hidden">
             <Quote
               aria-hidden="true"
               className="absolute -top-3 left-5 h-7 w-7 rounded-full bg-gradient-to-br from-lime-500 to-cyan-500 p-1.5 text-white shadow-md"
@@ -188,7 +195,7 @@ export default function ReviewsSection() {
                 transition={{ duration: 0.5, ease: 'easeOut' }}
               >
                 <Stars rating={current.rating} />
-                <blockquote className="mt-3 text-[15px] leading-relaxed text-slate-800 line-clamp-6">
+                <blockquote className="mt-3 text-[15px] leading-relaxed text-white/90 line-clamp-5">
                   &ldquo;{current.text}&rdquo;
                 </blockquote>
                 <figcaption className="mt-4 flex items-center gap-2.5">
@@ -206,10 +213,10 @@ export default function ReviewsSection() {
                     <Initials name={current.author} />
                   )}
                   <div className="flex flex-col leading-tight">
-                    <span className="font-semibold text-slate-900 text-sm">
+                    <span className="font-semibold text-white text-sm">
                       {current.author}
                     </span>
-                    <span className="text-[11px] text-slate-500">
+                    <span className="text-[11px] text-white/60">
                       {current.relativeTime} · via Google
                     </span>
                   </div>
@@ -245,7 +252,7 @@ export default function ReviewsSection() {
               href={data.googleUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-700 hover:text-cyan-800 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-300 hover:text-white transition-colors"
             >
               See all {data.totalRatings ?? ''} reviews on Google
               <svg
