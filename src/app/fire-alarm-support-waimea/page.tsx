@@ -5,8 +5,8 @@ import { FireIcon, ShieldCheckIcon, BeakerIcon } from '@heroicons/react/24/outli
 const SITE_URL = 'https://www.reeftech.io';
 
 export const metadata: Metadata = {
-  title: 'Fire Alarm & Suppression Services Waimea Hawaii | ReefTech Solutions',
-  description: 'Professional fire alarm installation, inspection, and service in Waimea, Kamuela, and Big Island Hawaii. Fire hose service, kitchen hood suppression systems, and fire sprinkler maintenance. Call (808) 303-4627.',
+  title: 'Fire Alarm & Suppression Services Big Island Hawaii | Waimea, Kona & Hilo | ReefTech Solutions',
+  description: 'Professional fire alarm installation, inspection, and service in Waimea, Kona, Hilo, and Big Island Hawaii. Fire hose service, kitchen hood suppression systems, and fire sprinkler maintenance. Call (808) 303-4627.',
   keywords: [
     'fire alarm service Waimea',
     'fire suppression Kamuela',
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/fire-alarm-support-waimea`,
   },
   openGraph: {
-    title: 'Fire Alarm & Suppression Services Waimea Hawaii | ReefTech Solutions',
-    description: 'Professional fire alarm installation, inspection, and service in Waimea, Kamuela, and Big Island Hawaii. Fire hose, kitchen hood suppression, and fire sprinkler service.',
+    title: 'Fire Alarm & Suppression Services Big Island Hawaii | Waimea, Kona & Hilo | ReefTech Solutions',
+    description: 'Professional fire alarm installation, inspection, and service in Waimea, Kona, Hilo, and Big Island Hawaii. Fire hose, kitchen hood suppression, and fire sprinkler service.',
     url: `${SITE_URL}/fire-alarm-support-waimea`,
     siteName: 'ReefTech Solutions',
     type: 'website',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fire Alarm & Suppression Services Waimea Hawaii | ReefTech Solutions',
+    title: 'Fire Alarm & Suppression Services Big Island Hawaii | Waimea, Kona & Hilo | ReefTech Solutions',
     description: 'Professional fire alarm installation, inspection, and suppression system service on Hawaii\'s Big Island.',
     images: [`${SITE_URL}/photos/og-image.jpg`],
   },
@@ -112,7 +112,7 @@ const fireAlarmJsonLd = {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/fire-alarm-support-waimea#webpage`,
       url: `${SITE_URL}/fire-alarm-support-waimea`,
-      name: 'Fire Alarm & Suppression Services Waimea Hawaii | ReefTech Solutions',
+      name: 'Fire Alarm & Suppression Services Big Island Hawaii | Waimea, Kona & Hilo | ReefTech Solutions',
       isPartOf: { '@id': `${SITE_URL}/#website` },
       about: { '@id': `${SITE_URL}/fire-alarm-support-waimea#service` },
       inLanguage: 'en-US',
