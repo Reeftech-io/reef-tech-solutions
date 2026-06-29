@@ -83,10 +83,13 @@ export default function VideoHeroSection() {
             <MotionFade
               as="h1"
               delay={0.1}
-              className="mb-3 font-tan-headline text-[clamp(1.9rem,3.7vw,3.5rem)] leading-[0.95] tracking-[-0.015em]"
+              className="mb-4 font-tan-headline text-[clamp(2rem,4.2vw,3.8rem)] leading-[1.15] tracking-[-0.01em]"
             >
-              <span className="bg-gradient-to-r from-[#3ce7ff] via-[#58e6cb] to-[#a3ef45] bg-clip-text text-transparent">
-                Big Island Electrical, Plumbing &amp; Access Control
+              <span className="bg-gradient-to-r from-teal-700 via-cyan-600 to-lime-600 bg-clip-text text-transparent">
+                Hawaii Island Electrical,{" "}
+              </span>
+              <span className="bg-gradient-to-r from-teal-700 via-cyan-600 to-lime-600 bg-clip-text text-transparent">
+                Plumbing &amp; Access Control
               </span>
             </MotionFade>
 
