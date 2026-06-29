@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { WrenchScrewdriverIcon, LightBulbIcon, BoltIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Minor Electrical Services Big Island Hawaii | Kona Waimea Hilo | ReefTech Solutions',
-  description: 'Minor electrical services on Big Island Hawaii. Outlet repairs, switch replacement, lighting installation, and basic electrical work in Kona, Waimea, Hilo. Fast response. Call (808) 303-4627.',
+  title: 'Electrical Services Big Island Hawaii | Repairs, Lighting & Outlets | ReefTech Solutions',
+  description: 'Electrical services on Big Island Hawaii. Outlet repairs, switch replacement, lighting installation, and troubleshooting in Kona, Waimea, Hilo. Fast response. Call (808) 303-4627.',
   keywords: [
     'electrical services Big Island Hawaii',
     'electrical repair Kona',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'electrical troubleshooting Hawaii',
     'light fixture installation Kona',
     'ceiling fan installation Waimea',
-    'minor electrical work Big Island',
+    'electrical work Big Island',
     'licensed electrician Hawaii',
     'residential electrical Big Island',
     'commercial electrical Kona',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     'dimmer switch installation Waimea'
   ],
   openGraph: {
-    title: 'Minor Electrical Services Big Island Hawaii | ReefTech Solutions',
-    description: 'Professional minor electrical services in Kona, Waimea, Hilo. Outlet repairs, lighting installation, switch replacement. Fast response, quality service.',
+    title: 'Electrical Services Big Island Hawaii | ReefTech Solutions',
+    description: 'Professional electrical services in Kona, Waimea, Hilo. Outlet repairs, lighting installation, switch replacement. Fast response, quality service.',
     url: 'https://www.reeftech.io/electrical-services',
     siteName: 'ReefTech Solutions',
     type: 'website',
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
         url: 'https://www.reeftech.io/photos/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Minor Electrical Services — ReefTech Solutions, Big Island Hawaii',
+        alt: 'Electrical Services — ReefTech Solutions, Big Island Hawaii',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Minor Electrical Services Big Island Hawaii | ReefTech Solutions',
+    title: 'Electrical Services Big Island Hawaii | ReefTech Solutions',
     description: 'Professional electrical repair and installation in Kona, Waimea, and Hilo. Outlets, lighting, switches. Call (808) 303-4627.',
     images: ['https://www.reeftech.io/photos/og-image.jpg'],
   },
@@ -153,7 +153,7 @@ export default function ElectricalServicesPage() {
                 "@type": "WebPage",
                 "@id": "https://www.reeftech.io/electrical-services#webpage",
                 "url": "https://www.reeftech.io/electrical-services",
-                "name": "Minor Electrical Services Big Island Hawaii | ReefTech Solutions",
+                "name": "Electrical Services Big Island Hawaii | ReefTech Solutions",
                 "isPartOf": { "@id": "https://www.reeftech.io/#website" },
                 "inLanguage": "en-US"
               }
@@ -164,7 +164,7 @@ export default function ElectricalServicesPage() {
       <div className="container mx-auto px-4 py-32 max-w-4xl">
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#007595]">
-            Minor Electrical Services Big Island Hawaii
+            Electrical Services Big Island Hawaii
           </h1>
           <p className="text-xl text-gray-600 mb-2">
             Outlet Repairs, Lighting Installation &amp; Switch Replacement in Kona, Waimea &amp; Hilo
@@ -175,7 +175,7 @@ export default function ElectricalServicesPage() {
         </div>
         <div className="mb-12 text-gray-700 leading-relaxed">
           <p className="mb-4">
-            Need reliable <strong className='text-[#007595]'>minor electrical services on Big Island Hawaii</strong>? ReefTech Solutions provides professional electrical repair and installation services throughout Kailua-Kona, Waimea, Hilo, and surrounding areas. Our experienced team handles everything from outlet repairs to lighting installations for residential and commercial properties.
+            Need reliable <strong className='text-[#007595]'>electrical services on Big Island Hawaii</strong>? ReefTech Solutions provides professional electrical repair and installation services throughout Kailua-Kona, Waimea, Hilo, and surrounding areas. Our experienced team handles everything from outlet repairs to lighting installations for residential and commercial properties.
           </p>
           <p>
             With fast response times and quality workmanship, we&apos;re your trusted choice for <strong className='text-[#007595]'>electrical work on Big Island</strong>. Call <a href="tel:+1-808-303-4627" className="text-[#007595] font-semibold hover:underline">(808) 303-4627</a> for prompt service.
@@ -196,7 +196,7 @@ export default function ElectricalServicesPage() {
               </div>
             </div>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              Basic electrical repair services for minor issues throughout your home or business. From faulty outlets to damaged switches, we diagnose and fix common electrical problems quickly and safely.
+              Electrical repair services for your home or business. From faulty outlets to damaged switches, we diagnose and fix common electrical problems quickly and safely.
             </p>
             <div className="bg-[#f0f9ff] rounded-lg p-6">
               <p className="font-bold text-[#007595] mb-3">Repair Services Include:</p>
@@ -325,7 +325,7 @@ export default function ElectricalServicesPage() {
           <div className="bg-[#f0f9ff] rounded-lg p-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-[#007595] mb-2">Commercial Minor Work</h4>
+                <h4 className="font-semibold text-[#007595] mb-2">Commercial Electrical Work</h4>
                 <ul className="space-y-1 text-gray-700 text-sm">
                   <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Outlet repairs</span></li>
                   <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Light fixture replacement</span></li>
