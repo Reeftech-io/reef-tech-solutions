@@ -35,7 +35,7 @@ const EMAIL = "info@reeftech.io";
 export const metadata: Metadata = {
   title: {
     default:
-      "ReefTech Solutions — Property Maintenance & Building Technology | Big Island Hawaii",
+      "ReefTech Solutions | Electrical, Plumbing & Access Control | Big Island Hawaii",
     template: "%s | ReefTech Solutions",
   },
   description:
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "ReefTech Solutions — Property Maintenance & Building Technology",
+      "ReefTech Solutions | Electrical, Plumbing & Access Control | Big Island Hawaii",
     description:
       "Licensed electrician and property tech specialist for Hawaii's Big Island. Electrical, plumbing, access control, fire alarms, and spa & sauna service.",
     url: SITE_URL,
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
         url: "/photos/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ReefTech Solutions — Property Maintenance & Building Technology, Big Island Hawaii",
+        alt: "ReefTech Solutions — Electrical, Plumbing & Access Control, Big Island Hawaii",
         type: "image/jpeg",
       },
     ],
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "ReefTech Solutions — Property Maintenance & Building Technology",
+      "ReefTech Solutions | Electrical, Plumbing & Access Control | Big Island Hawaii",
     description:
       "Licensed electrician and property tech specialist for Hawaii's Big Island.",
     images: ["/photos/og-image.jpg"],
