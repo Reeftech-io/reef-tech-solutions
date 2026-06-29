@@ -141,9 +141,9 @@ export default function ReviewsSection() {
         className="pointer-events-none absolute inset-0 bg-black/55"
       />
 
-      <div className="container relative mx-auto px-4 max-w-4xl">
+      <div className="container relative mx-auto px-4 max-w-4xl flex flex-col items-center">
         {/* Header */}
-        <div className="mb-6 flex flex-col items-center text-center">
+        <div className="mb-12 flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-cyan-300 shadow-sm backdrop-blur">
             <svg
               aria-hidden="true"
