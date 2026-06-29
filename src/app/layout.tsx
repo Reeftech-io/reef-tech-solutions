@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     template: "%s | ReefTech Solutions",
   },
   description:
-    "Expert electrical, plumbing, and access control services for Big Island vacation rentals & homes. Fast repairs and installations in Waimea, Kamuela & Kona. Call (808) 303-4627.",
+    "Expert electrical, plumbing, and access control services for Big Island vacation rentals & homes. Fast repairs and installations in Waimea, Hilo and Kona. Call (808) 303-4627.",
   applicationName: "ReefTech Solutions",
   authors: [{ name: "ReefTech Solutions", url: SITE_URL }],
   creator: "ReefTech Solutions",
