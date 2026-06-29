@@ -8,8 +8,9 @@ import ReviewsSection from './components/home/ReviewsSection';
 const SITE_URL = 'https://www.reeftech.io';
 
 // Page-level metadata overrides layout defaults for the homepage.
-// This adds a canonical, og:url, og:type=website, and per-page twitter card.
 export const metadata: Metadata = {
+  description:
+    'Expert electrical, plumbing, and access control services for Big Island vacation rentals & homes. Fast repairs and installations in Waimea, Kamuela & Kona. Call (808) 303-4627.',
   alternates: {
     canonical: `${SITE_URL}/`,
   },
