@@ -85,10 +85,7 @@ export default function VideoHeroSection() {
               className="mb-4 font-tan-headline text-[clamp(2rem,4.2vw,3.8rem)] leading-[1.15] tracking-[-0.01em]"
             >
               <span className="bg-gradient-to-r from-teal-700 via-cyan-600 to-lime-600 bg-clip-text text-transparent">
-                Hawaii Island Electrical,{" "}
-              </span>
-              <span className="bg-gradient-to-r from-teal-700 via-cyan-600 to-lime-600 bg-clip-text text-transparent">
-                Plumbing &amp; Access Control
+                ReefTech Solutions
               </span>
             </MotionFade>
 
