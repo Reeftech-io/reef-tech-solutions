@@ -74,7 +74,7 @@ export default function VideoHeroSection() {
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                 viewport={{ once: true, amount: 0.6 }}
                 transition={{ duration: 0.45, ease: "easeOut" }}
-                className="mb-5 h-20 w-20 rounded-full max-sm:mx-auto sm:relative sm:-left-4"
+                className="mb-5 h-28 w-28 rounded-full max-sm:mx-auto sm:relative sm:-left-4"
                 style={{ filter: "drop-shadow(0 8px 22px rgba(0,0,0,0.55))" }}
               />
             </MotionFade>
@@ -82,7 +82,7 @@ export default function VideoHeroSection() {
             <MotionFade
               as="h1"
               delay={0.1}
-              className="mb-4 font-tan-headline text-[clamp(2rem,4.2vw,3.8rem)] leading-[1.15] tracking-[-0.01em]"
+              className="mb-4 font-tan-headline text-[clamp(2.5rem,5.4vw,4.8rem)] leading-[1.15] tracking-[-0.01em]"
             >
               <span className="bg-gradient-to-r from-teal-700 via-cyan-600 to-lime-600 bg-clip-text text-transparent">
                 ReefTech Solutions
