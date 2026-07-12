@@ -11,6 +11,12 @@
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
 	--font-tan-headline: var(--font-tan-headline);
+	--animate-marquee: marquee 40s linear infinite;
+
+	@keyframes marquee {
+		from { transform: translateX(0); }
+		to { transform: translateX(calc(-50% - 1rem)); }
+	}
 }
 
 @media (prefers-color-scheme: dark) {

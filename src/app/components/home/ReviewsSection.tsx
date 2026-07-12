@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 
 type Review = {
@@ -23,7 +22,6 @@ type ReviewsPayload = {
   error?: string;
 };
 
-const ROTATION_MS = 2800;
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -62,8 +60,6 @@ function Initials({ name }: { name: string }) {
 export default function ReviewsSection() {
   const [data, setData] = useState<ReviewsPayload | null>(null);
   const [loading, setLoading] = useState(true);
-  const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -86,16 +82,6 @@ export default function ReviewsSection() {
 
   const reviews = data?.reviews ?? [];
 
-  useEffect(() => {
-    if (paused || reviews.length < 2) return;
-    const id = window.setInterval(() => {
-      setIndex((i) => (i + 1) % reviews.length);
-    }, ROTATION_MS);
-    return () => window.clearInterval(id);
-  }, [paused, reviews.length]);
-
-  // Hide the section entirely until reviews load; if API errors or returns
-  // nothing, don't render an empty stub.
   if (loading) {
     return (
       <section
@@ -114,10 +100,12 @@ export default function ReviewsSection() {
     return null;
   }
 
-  const current = reviews[index];
   const headline = data?.rating
     ? `${data.rating.toFixed(1)} stars on Google`
     : 'What our customers say';
+
+  // Duplicate reviews to create a seamless infinite scroll effect
+  const marqueeItems = [...reviews, ...reviews, ...reviews, ...reviews];
 
   return (
     <section
@@ -141,7 +129,7 @@ export default function ReviewsSection() {
         className="pointer-events-none absolute inset-0 bg-black/55"
       />
 
-      <div className="container relative mx-auto px-4 max-w-4xl flex flex-col items-center">
+      <div className="container relative mx-auto px-4 max-w-7xl flex flex-col items-center">
         {/* Header */}
         <div className="mb-12 flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-cyan-300 shadow-sm backdrop-blur">
@@ -172,37 +160,32 @@ export default function ReviewsSection() {
           </div>
         </div>
 
-        {/* Carousel card */}
-        <div
-          className="relative mx-auto max-w-2xl"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocus={() => setPaused(true)}
-          onBlur={() => setPaused(false)}
-        >
-          <div className="relative rounded-2xl border border-white/20 bg-white/10 p-6 md:p-8 shadow-[0_20px_45px_-25px_rgba(8,47,73,0.45)] backdrop-blur-md min-h-[260px]">
-            <Quote
-              aria-hidden="true"
-              className="absolute -top-3 left-5 h-7 w-7 rounded-full bg-gradient-to-br from-lime-500 to-cyan-500 p-1.5 text-white shadow-md"
-            />
+        {/* Marquee Carousel Container */}
+        <div className="relative w-full max-w-7xl mx-auto overflow-hidden">
+          {/* Gradient masks for smooth fade in/out at edges */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-[#0d171d]/90 to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-[#0d171d]/90 to-transparent z-10" />
 
-            <AnimatePresence mode="wait">
-              <motion.figure
-                key={current.timestamp}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
+          {/* Scrolling Track */}
+          <div className="flex w-max animate-marquee hover:[animation-play-state:paused] py-4">
+            {marqueeItems.map((review, idx) => (
+              <div 
+                key={`${review.timestamp}-${idx}`} 
+                className="relative flex-shrink-0 w-[300px] md:w-[400px] mx-3 md:mx-4 rounded-2xl border border-white/20 bg-white/10 p-6 md:p-8 shadow-[0_20px_45px_-25px_rgba(8,47,73,0.45)] backdrop-blur-md"
               >
-                <Stars rating={current.rating} />
-                <blockquote className="mt-3 text-[15px] leading-relaxed text-white/90">
-                  &ldquo;{current.text}&rdquo;
+                <Quote
+                  aria-hidden="true"
+                  className="absolute -top-3 left-5 h-7 w-7 rounded-full bg-gradient-to-br from-lime-500 to-cyan-500 p-1.5 text-white shadow-md"
+                />
+                <Stars rating={review.rating} />
+                <blockquote className="mt-4 text-[14px] md:text-[15px] leading-relaxed text-white/90 line-clamp-4 min-h-[90px]">
+                  &ldquo;{review.text}&rdquo;
                 </blockquote>
-                <figcaption className="mt-4 flex items-center gap-2.5">
-                  {current.profilePhoto ? (
+                <figcaption className="mt-6 flex items-center gap-3">
+                  {review.profilePhoto ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
-                      src={current.profilePhoto}
+                      src={review.profilePhoto}
                       alt=""
                       width={36}
                       height={36}
@@ -210,39 +193,20 @@ export default function ReviewsSection() {
                       referrerPolicy="no-referrer"
                     />
                   ) : (
-                    <Initials name={current.author} />
+                    <Initials name={review.author} />
                   )}
                   <div className="flex flex-col leading-tight">
                     <span className="font-semibold text-white text-sm">
-                      {current.author}
+                      {review.author}
                     </span>
                     <span className="text-[11px] text-white/60">
-                      {current.relativeTime} · via Google
+                      {review.relativeTime} · via Google
                     </span>
                   </div>
                 </figcaption>
-              </motion.figure>
-            </AnimatePresence>
+              </div>
+            ))}
           </div>
-
-          {/* Dot pagination */}
-          {reviews.length > 1 && (
-            <div className="mt-4 flex items-center justify-center gap-1.5">
-              {reviews.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setIndex(i)}
-                  aria-label={`Show review ${i + 1} of ${reviews.length}`}
-                  aria-current={i === index}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    i === index
-                      ? 'w-6 bg-gradient-to-r from-lime-500 to-cyan-500'
-                      : 'w-1.5 bg-slate-300 hover:bg-slate-400'
-                  }`}
-                />
-              ))}
-            </div>
-          )}
         </div>
 
         {/* Footer link */}

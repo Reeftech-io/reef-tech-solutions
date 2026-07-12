@@ -118,14 +118,6 @@ export default function Footer() {
             >
               <BsTwitter className="w-4 h-4" />
             </a>
-            <a
-              href="https://xtremery.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[10px] bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent font-medium hover:opacity-80 transition-opacity"
-            >
-              pixel-polished by Xtremery · Deland, FL
-            </a>
           </div>
         </div>
       </div>

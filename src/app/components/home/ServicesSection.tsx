@@ -437,9 +437,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 								<img src="/photos/brand-icons/lutron-logo.svg" alt="Lutron logo" className="h-5 w-auto" loading="lazy" />
 							</div>
 						</div>
-						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
-							{index + 1}
-						</span>
+ 
 					</div>
 				)}
 				{isAccessControl && (
@@ -478,9 +476,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 							<Image src="/photos/brand-pictures/mag-lock3.jpg" alt="Access control system overview" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
-						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
-							{index + 1}
-						</span>
+ 
 					</div>
 				)}
 				{isMaglocks && (
@@ -519,9 +515,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 							<Image src="/photos/brand-pictures/mag-lock5.jpg" alt="Magnetic lock security system" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
-						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
-							{index + 1}
-						</span>
+ 
 					</div>
 				)}
 
@@ -546,9 +540,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<Image src="/photos/services/flologic.jpg" alt="FloLogic smart water shutoff system with iPhone app" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
 						</div>
-						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
-							{index + 1}
-						</span>
+ 
 					</div>
 				)}
 				{isFireAlarms && (
@@ -556,9 +548,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999] bg-white">
 							<Image src="/photos/services/HomeAutomation.jpg" alt="Fire Alarm and Suppression Services" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 						</div>
-						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
-							{index + 1}
-						</span>
+ 
 					</div>
 				)}
 				<div className={`relative ${isLighting ? 'lg:pr-[520px] xl:pr-[600px]' : isMaglocks || isPlumbing || isFireAlarms ? 'lg:pr-[520px] xl:pr-[600px]' : isAccessControl ? 'lg:pr-[520px] xl:pr-[600px]' : ''}`}>
@@ -645,9 +635,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 									loading="lazy"
 								/>
 								<div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-								<span className="absolute bottom-2 left-3 text-[11px] tracking-wide font-semibold text-white/90 bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm">
-									{index + 1}
-								</span>
+ 
 							</div>
 						) : (
 							<div className="w-full h-48 rounded-2xl bg-gradient-to-br from-cyan-50 to-lime-50 border border-cyan-100 flex items-center justify-center text-cyan-600 text-sm font-medium tracking-wide">
@@ -664,8 +652,10 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 
 function BrandBadge({ brand }: { brand: Brand }) {
 	return (
-		<span className="px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-[11px] font-semibold tracking-wide text-cyan-800">
-			{brand.name}
+		<span className="px-3 py-1 rounded-full bg-white border border-gray-200 text-[13px] font-semibold tracking-wide shadow-sm">
+			<span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent">
+				{brand.name}
+			</span>
 		</span>
 	);
 }

@@ -38,9 +38,9 @@ export default function RequestFormSection() {
             style={{
               visibility: 'visible',
               width: '100%',
-              height: '1600px',
+              height: '800px',
               border: 'none',
-              minHeight: '1600px'
+              minHeight: '800px'
             }}
             title="Request Form"
           />
