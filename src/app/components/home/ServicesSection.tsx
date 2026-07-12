@@ -1,17 +1,19 @@
 "use client";
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 import Modal from '../ui/Modal';
 
 interface Brand { name: string; logo?: string; }
 interface Product { name: string; description: string; }
-interface Category { id: string; title: string; brands?: Brand[]; products?: Product[]; blurb?: string; image?: string; }
+interface Category { id: string; title: string; href: string; brands?: Brand[]; products?: Product[]; blurb?: string; image?: string; }
 
 const categories: Category[] = [
 	{
 		id: 'lighting',
 		title: 'Electrical & Lighting Services',
+		href: '/electrical-services',
 		image: '/photos/services/Lighting.jpg',
 		brands: [{ name: 'Leviton' }, { name: 'Lutron' }],
 		blurb: 'For the demanding environment of luxury properties, you need electrical work that is both flawless and durable. We use only premium-grade components from respected brands, such as Leviton, known for their reliability and long-lasting performance. We also specialize in implementing advanced lighting and automation solutions from Lutron, a global leader in high-end control systems.\n\nBy combining the trusted durability of brands like Leviton with the sophisticated controls and automation of Lutron, we ensure that every upgrade, from switches and outlets to intelligent lighting and automated shades, is safe, reliable, and a perfect match for your property\'s quality standards.'
@@ -19,6 +21,7 @@ const categories: Category[] = [
 	{
 		id: 'access-control',
 		title: 'Access Control & Door Hardware',
+		href: '/lock-locksmith-services',
 		image: '/photos/services/AccessControl.jpg',
 		brands: [{ name: 'Dormakaba' }, { name: 'Von Duprin' }, { name: 'Adams Rite' }, { name: 'Norton Rixson' }],
 		blurb: 'Access control is a critical blend of security, convenience, and seamless design. We partner with industry-leading brands like Dormakaba and Adams Rite to create systems that are both highly secure and beautifully integrated. By combining the global security expertise of brands like Dormakaba, a leader in electronic access and mobile credentials, with the specialized hardware of Adams Rite for elegant glass and aluminum doors, we deliver solutions that enhance both guest experience and operational efficiency.\n\nOur approach also incorporates the life-safety excellence of Von Duprin, the inventor of the panic device, and the quiet, touchless door automation of Norton Rixson. This multi-brand strategy allows us to design and install a comprehensive access control system that not only meets the highest standards for safety and reliability but also preserves the architectural integrity and sophisticated atmosphere of your property. From a guest\'s first seamless entry using a mobile key to the secure, silent operation of every back-of-house door, we ensure your access control system is as flawless as your property\'s reputation.'
@@ -26,6 +29,7 @@ const categories: Category[] = [
 	{
 		id: 'maglocks',
 		title: 'Commercial Magnetic Lock Systems',
+		href: '/lock-locksmith-services',
 		image: '/photos/services/Security.jpg',
 		brands: [{ name: 'Allegion' }, { name: 'Schlage' }, { name: 'Cobra Controls' }],
 		blurb: 'Professional electromagnetic lock installations for secure access control. We specialize in commercial-grade systems from industry leaders Allegion and Cobra Controls, delivering reliable security solutions for vacation rentals, commercial properties, and high-security facilities. Our installations include complete access control integration with proximity readers, keypads, and network connectivity for comprehensive property protection.'
@@ -33,6 +37,7 @@ const categories: Category[] = [
 	{
 		id: 'sauna',
 		title: 'Pool, Spa & Sauna',
+		href: '/pool-spa-sauna',
 		image: '/photos/services/Sauna.jpg',
 		brands: [{ name: 'Sunlighten' }, { name: 'Finnleo' }, { name: 'Amerec' }],
 		blurb: 'Professional sauna installations and spa maintenance for luxury properties and wellness facilities. We specialize in infrared and traditional sauna systems from leading manufacturers, offering complete installation, maintenance, and repair services. From residential wellness rooms to commercial spa facilities, our expertise ensures optimal performance and guest satisfaction. We provide comprehensive service for all major sauna and spa brands, including electrical, plumbing, and control systems.'
@@ -40,8 +45,16 @@ const categories: Category[] = [
 	{
 		id: 'plumbing',
 		title: 'Plumbing & Leak Detection',
+		href: '/plumbing-services',
 		image: '/photos/services/plumbing.png',
 		blurb: 'Professional plumbing services for Big Island residential and commercial properties. Emergency repairs, leak detection, fixture installation, and water heater service. We provide fast, reliable plumbing solutions to protect your property from water damage.'
+	},
+	{
+		id: 'fire-alarms',
+		title: 'Fire Alarms & Smoke Detectors',
+		href: '/fire-alarm-support-waimea',
+		image: '/photos/services/HomeAutomation.jpg',
+		blurb: 'Professional fire alarm, kitchen suppression, and fire sprinkler service on Hawaii\'s Big Island. We provide annual fire hose testing, semi-annual kitchen hood suppression system inspections, and complete fire sprinkler system maintenance for commercial buildings, vacation rentals, and luxury residential properties.'
 	}
 ];
 
@@ -362,7 +375,8 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 	const isAccessControl = category.id === 'access-control';
 	const isMaglocks = category.id === 'maglocks';
 	const isSauna = category.id === 'sauna';
-	const isPlumbing = category.id === 'plumbing'; return (
+	const isPlumbing = category.id === 'plumbing';
+	const isFireAlarms = category.id === 'fire-alarms'; return (
 		<motion.div
 			ref={ref}
 			initial={{ opacity: 0, y: 40 }}
@@ -519,6 +533,13 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</div>
 					</div>
 				)}
+				{isFireAlarms && (
+					<div className="mt-6 lg:hidden">
+						<div className="relative h-56 overflow-hidden rounded-xl shadow-md group z-[9999] bg-white">
+							<Image src="/photos/services/HomeAutomation.jpg" alt="Fire Alarm and Suppression Services" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+						</div>
+					</div>
+				)}
 				{isPlumbing && (
 					<div className="hidden lg:block absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999] bg-white">
@@ -530,7 +551,17 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</span>
 					</div>
 				)}
-				<div className={`relative ${isLighting ? 'lg:pr-[520px] xl:pr-[600px]' : isMaglocks || isPlumbing ? 'lg:pr-[520px] xl:pr-[600px]' : isAccessControl ? 'lg:pr-[520px] xl:pr-[600px]' : ''}`}>
+				{isFireAlarms && (
+					<div className="hidden lg:block absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
+						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999] bg-white">
+							<Image src="/photos/services/HomeAutomation.jpg" alt="Fire Alarm and Suppression Services" fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+						</div>
+						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
+							{index + 1}
+						</span>
+					</div>
+				)}
+				<div className={`relative ${isLighting ? 'lg:pr-[520px] xl:pr-[600px]' : isMaglocks || isPlumbing || isFireAlarms ? 'lg:pr-[520px] xl:pr-[600px]' : isAccessControl ? 'lg:pr-[520px] xl:pr-[600px]' : ''}`}>
 					<h3 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight text-slate-900">
 						{category.title}
 					</h3>
@@ -566,14 +597,13 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</ul>
 					)}
 					<div className="mt-8">
-						<button
-							type="button"
-							onClick={onOpen}
+						<Link
+							href={category.href}
 							className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold bg-gradient-to-r from-lime-500 to-cyan-500 text-white shadow hover:from-lime-400 hover:to-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-white transition disabled:opacity-50"
 						>
 							Read More
 							<svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg>
-						</button>
+						</Link>
 					</div>
 				</div>
 				{isSauna && (
@@ -603,7 +633,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</div>
 					</div>
 				)}
-				{!isLighting && !isAccessControl && !isMaglocks && !isSauna && !isPlumbing && (
+				{!isLighting && !isAccessControl && !isMaglocks && !isSauna && !isPlumbing && !isFireAlarms && (
 					<div className="hidden lg:flex w-64 flex-none items-center justify-center">
 						{category.image ? (
 							<div className="relative w-full h-48 overflow-hidden rounded-2xl shadow-lg group">
