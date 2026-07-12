@@ -10,6 +10,7 @@ import {
   BeakerIcon,
 } from '@heroicons/react/24/outline';
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 export default function VideoHeroSection() {
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
@@ -19,11 +20,11 @@ export default function VideoHeroSection() {
   }, []);
 
   const services = [
-    { name: "Electrical", Icon: BoltIcon },
-    { name: "Plumbing", Icon: WrenchScrewdriverIcon },
-    { name: "Access Control", Icon: LockClosedIcon },
-    { name: "Fire Alarms", Icon: FireIcon },
-    { name: "Spa & Sauna", Icon: BeakerIcon },
+    { name: "Electrical", Icon: BoltIcon, href: "/electrical-services" },
+    { name: "Plumbing", Icon: WrenchScrewdriverIcon, href: "/plumbing-services" },
+    { name: "Access Control", Icon: LockClosedIcon, href: "/lock-locksmith-services" },
+    { name: "Fire Alarms", Icon: FireIcon, href: "/fire-alarm-support-waimea" },
+    { name: "Spa & Sauna", Icon: BeakerIcon, href: "/pool-spa-sauna" },
   ];
 
   return (
@@ -104,14 +105,15 @@ export default function VideoHeroSection() {
             </MotionFade>
 
             <MotionFade delay={0.4} className="mb-8 flex max-w-[980px] flex-wrap gap-2 max-sm:max-w-full max-sm:justify-center">
-              {services.map(({ name, Icon }) => (
-                <span
+              {services.map(({ name, Icon, href }) => (
+                <Link
                   key={name}
+                  href={href}
                   className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/20 bg-gradient-to-r from-black/45 via-black/35 to-black/25 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white/80 transition-all duration-300 hover:bg-gradient-to-r hover:from-black/60 hover:via-black/50 hover:to-black/40"
                 >
                   <Icon className="h-3 w-3 text-white/70" />
                   {name}
-                </span>
+                </Link>
               ))}
             </MotionFade>
 
