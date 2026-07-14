@@ -115,8 +115,33 @@ export const metadata: Metadata = {
   },
 };
 
+// Fetches the live Google review rating/count so the LocalBusiness schema below
+// can include a real aggregateRating instead of a hardcoded value. Fails silently
+// (returns null) if the reviews API is unavailable so the layout never breaks.
+async function getAggregateRating(): Promise<{ ratingValue: number; reviewCount: number } | null> {
+  try {
+    const res = await fetch(`${SITE_URL}/api/google-reviews`, {
+      next: { revalidate: 86400 },
+    });
+    if (!res.ok) return null;
+    const data = (await res.json()) as { rating?: number; totalRatings?: number };
+    if (typeof data.rating !== "number" || typeof data.totalRatings !== "number") {
+      return null;
+    }
+    return { ratingValue: data.rating, reviewCount: data.totalRatings };
+  } catch {
+    return null;
+  }
+}
+
 // Single consolidated JSON-LD @graph (replaces previous duplicated LocalBusiness blocks).
-const jsonLdGraph = {
+// aggregateRating is populated from the live Google review data fetched above — the
+// real reviews it's based on are visible on-page at /reviews and in the homepage
+// ReviewsSection, satisfying Google's review-snippet visibility requirement.
+function buildJsonLdGraph(
+  aggregateRating: { ratingValue: number; reviewCount: number } | null
+) {
+  return {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -251,10 +276,17 @@ const jsonLdGraph = {
       ],
       slogan: "Your one-stop shop for property repairs and building technology.",
       founder: { "@id": `${SITE_URL}/about#founder` },
-      // NOTE: aggregateRating is intentionally omitted until real customer reviews
-      // are published on-page. Google requires reviews used in structured data to
-      // also be visible to users on the same page. Add a /reviews page or testimonials
-      // section with the real 28 reviews, then add `aggregateRating` back here.
+      ...(aggregateRating
+        ? {
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: aggregateRating.ratingValue,
+              reviewCount: aggregateRating.reviewCount,
+              bestRating: 5,
+              worstRating: 1,
+            },
+          }
+        : {}),
     },
     {
       "@type": "WebSite",
@@ -319,13 +351,17 @@ const jsonLdGraph = {
       ],
     },
   ],
-};
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const aggregateRating = await getAggregateRating();
+  const jsonLdGraph = buildJsonLdGraph(aggregateRating);
+
   return (
     <html lang="en-US">
       <head>
