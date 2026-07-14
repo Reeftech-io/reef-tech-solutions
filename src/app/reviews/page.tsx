@@ -36,67 +36,85 @@ export const metadata: Metadata = {
 };
 
 /**
- * Real customer reviews go here. Once this page is populated, you can re-enable
- * `aggregateRating` in `src/app/layout.tsx` (LocalBusiness JSON-LD).
- *
- * Required fields per review for valid schema:
- *   - author (real first name or full name)
- *   - rating (1-5)
- *   - reviewBody (1-3 sentences)
- *   - datePublished (YYYY-MM-DD)
+ * Reviews are pulled server-side from /api/google-reviews (the same live Google
+ * Places data source used by the homepage ReviewsSection) so real review text and
+ * ratings are present in the initial server-rendered HTML — not just injected
+ * client-side after the page loads.
  *
  * Google's review-snippet policy: the reviews used in JSON-LD must also be
- * visible on the same page to users.
+ * visible on the same page to users, which this page now satisfies directly.
  */
-type CustomerReview = {
+type GoogleReview = {
   author: string;
+  profilePhoto?: string;
   rating: number;
-  reviewBody: string;
-  datePublished: string;
+  relativeTime: string;
+  text: string;
+  timestamp: number;
 };
 
-const reviews: CustomerReview[] = [
-  // Example shape — replace with real reviews:
-  // {
-  //   author: 'Jane S.',
-  //   rating: 5,
-  //   reviewBody: 'Joshua fixed our breaker panel same day. Professional and fast.',
-  //   datePublished: '2025-08-14',
-  // },
-];
+type ReviewsPayload = {
+  ok: boolean;
+  businessName?: string;
+  rating?: number;
+  totalRatings?: number;
+  googleUrl?: string;
+  reviews: GoogleReview[];
+  error?: string;
+};
 
-const reviewsJsonLd =
-  reviews.length > 0
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
-        '@id': `${SITE_URL}/#organization`,
-        name: 'ReefTech Solutions',
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: (
-            reviews.reduce((s, r) => s + r.rating, 0) / reviews.length
-          ).toFixed(1),
-          reviewCount: reviews.length,
-          bestRating: 5,
-          worstRating: 1,
-        },
-        review: reviews.map((r) => ({
-          '@type': 'Review',
-          reviewRating: {
-            '@type': 'Rating',
-            ratingValue: r.rating,
+async function getReviews(): Promise<ReviewsPayload> {
+  try {
+    const res = await fetch(`${SITE_URL}/api/google-reviews`, {
+      next: { revalidate: 86400 },
+    });
+    if (!res.ok) return { ok: false, reviews: [] };
+    return (await res.json()) as ReviewsPayload;
+  } catch {
+    return { ok: false, reviews: [] };
+  }
+}
+
+export default async function ReviewsPage() {
+  const data = await getReviews();
+  const reviews = data.reviews ?? [];
+
+  const ratingValue =
+    data.rating ??
+    (reviews.length > 0
+      ? reviews.reduce((s, r) => s + r.rating, 0) / reviews.length
+      : undefined);
+  const reviewCount = data.totalRatings ?? reviews.length;
+
+  const reviewsJsonLd =
+    reviews.length > 0 && ratingValue !== undefined
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          '@id': `${SITE_URL}/#organization`,
+          name: 'ReefTech Solutions',
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: ratingValue.toFixed(1),
+            reviewCount,
             bestRating: 5,
             worstRating: 1,
           },
-          author: { '@type': 'Person', name: r.author },
-          reviewBody: r.reviewBody,
-          datePublished: r.datePublished,
-        })),
-      }
-    : null;
+          review: reviews.map((r) => ({
+            '@type': 'Review',
+            reviewRating: {
+              '@type': 'Rating',
+              ratingValue: r.rating,
+              bestRating: 5,
+              worstRating: 1,
+            },
+            author: { '@type': 'Person', name: r.author },
+            reviewBody: r.text,
+            datePublished: new Date(r.timestamp * 1000).toISOString().slice(0, 10),
+          })),
+        }
+      : null;
 
-export default function ReviewsPage() {
   return (
     <div className="min-h-screen bg-white">
       {reviewsJsonLd && (
@@ -113,6 +131,21 @@ export default function ReviewsPage() {
           <p className="text-xl text-slate-600">
             What our customers say about working with ReefTech Solutions.
           </p>
+          {ratingValue !== undefined && reviewCount > 0 && (
+            <div className="mt-4 flex items-center gap-2">
+              <span className="text-amber-500 text-lg" aria-hidden="true">
+                {'★'.repeat(Math.round(ratingValue))}
+                {'☆'.repeat(5 - Math.round(ratingValue))}
+              </span>
+              <span className="text-slate-700 font-semibold">
+                {ratingValue.toFixed(1)} stars
+              </span>
+              <span className="text-slate-500">
+                from {reviewCount.toLocaleString()} Google review
+                {reviewCount === 1 ? '' : 's'}
+              </span>
+            </div>
+          )}
         </div>
 
         {reviews.length === 0 ? (
@@ -134,25 +167,32 @@ export default function ReviewsPage() {
         ) : (
           <ul className="space-y-6">
             {reviews.map((r, i) => (
-              <li key={i} className="rounded-2xl border border-slate-200 p-6">
+              <li key={`${r.timestamp}-${i}`} className="rounded-2xl border border-slate-200 p-6">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-amber-500 text-lg">
-                    {'★'.repeat(r.rating)}
-                    {'☆'.repeat(5 - r.rating)}
+                  <span className="text-amber-500 text-lg" aria-hidden="true">
+                    {'★'.repeat(Math.round(r.rating))}
+                    {'☆'.repeat(5 - Math.round(r.rating))}
                   </span>
                   <span className="font-semibold text-slate-900">{r.author}</span>
-                  <span className="text-sm text-slate-500">
-                    {new Date(r.datePublished).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric',
-                    })}
-                  </span>
+                  <span className="text-sm text-slate-500">{r.relativeTime}</span>
                 </div>
-                <p className="text-slate-700 leading-relaxed">{r.reviewBody}</p>
+                <p className="text-slate-700 leading-relaxed">{r.text}</p>
               </li>
             ))}
           </ul>
+        )}
+
+        {data.googleUrl && (
+          <div className="mt-8">
+            <a
+              href={data.googleUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-700 font-semibold hover:underline"
+            >
+              See all reviews on Google →
+            </a>
+          </div>
         )}
       </div>
     </div>
