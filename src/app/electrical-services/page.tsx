@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'light fixture installation Kona',
     'ceiling fan installation Waimea',
     'electrical work Big Island',
-    'licensed electrician Hawaii',
+    'electrician Hawaii',
     'residential electrical Big Island',
     'commercial electrical Kona',
     'LED lighting installation',
@@ -170,7 +170,7 @@ export default function ElectricalServicesPage() {
             Outlet Repairs, Lighting Installation &amp; Switch Replacement in Kona, Waimea &amp; Hilo
           </p>
           <p className="text-lg text-gray-500">
-            Fast Response • Licensed &amp; Insured • Quality Workmanship
+            Fast Response • Insured • Quality Workmanship
           </p>
         </div>
         <div className="mb-12 text-gray-700 leading-relaxed">
