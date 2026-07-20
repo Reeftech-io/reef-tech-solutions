@@ -4,7 +4,7 @@ import { WrenchScrewdriverIcon, CheckCircleIcon, BoltIcon, InformationCircleIcon
 
 export const metadata: Metadata = {
   title: 'Plumber Big Island Hawaii | Emergency Plumbing Kona Waimea Hilo | ReefTech Solutions',
-  description: 'Licensed plumber serving Big Island Hawaii. 24/7 emergency plumbing repairs, leak detection, water heater service, drain cleaning in Kona, Waimea, Hilo. Fast response. Call (808) 303-4627.',
+  description: 'Plumber serving Big Island Hawaii. 24/7 emergency plumbing repairs, leak detection, water heater service, drain cleaning in Kona, Waimea, Hilo. Fast response. Call (808) 303-4627.',
   keywords: [
     'plumber Big Island Hawaii',
     'emergency plumber Kona',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'leak detection Big Island',
     'water heater repair Kona',
     'drain cleaning Waimea',
-    'licensed plumber Hawaii',
+    'plumber Hawaii',
     'emergency plumbing Big Island',
     'plumbing repairs Kailua-Kona',
     '24 hour plumber Big Island',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     'faucet installation Waimea'
   ],
   openGraph: {
-    title: 'Licensed Plumber Big Island Hawaii | Emergency Plumbing Services',
-    description: '24/7 emergency plumbing repairs in Kona, Waimea, Hilo. Licensed plumber for residential and commercial properties. Fast response, quality service.',
+    title: 'Plumber Big Island Hawaii | Emergency Plumbing Services',
+    description: '24/7 emergency plumbing repairs in Kona, Waimea, Hilo. Plumber for residential and commercial properties. Fast response, quality service.',
     url: 'https://www.reeftech.io/plumbing-services',
     siteName: 'ReefTech Solutions',
     type: 'website',
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
         url: 'https://www.reeftech.io/photos/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Licensed Plumber Big Island Hawaii — ReefTech Solutions',
+        alt: 'Plumber Big Island Hawaii — ReefTech Solutions',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Licensed Plumber Big Island Hawaii | ReefTech Solutions',
+    title: 'Plumber Big Island Hawaii | ReefTech Solutions',
     description: '24/7 emergency plumbing in Kona, Waimea, and Hilo. Leak detection, water heater, drain cleaning. Call (808) 303-4627.',
     images: ['https://www.reeftech.io/photos/og-image.jpg'],
   },
@@ -159,7 +159,7 @@ export default function PlumbingServicesPage() {
                 "@type": "WebPage",
                 "@id": "https://www.reeftech.io/plumbing-services#webpage",
                 "url": "https://www.reeftech.io/plumbing-services",
-                "name": "Licensed Plumber Big Island Hawaii | ReefTech Solutions",
+                "name": "Plumber Big Island Hawaii | ReefTech Solutions",
                 "isPartOf": { "@id": "https://www.reeftech.io/#website" },
                 "inLanguage": "en-US"
               }
@@ -172,19 +172,19 @@ export default function PlumbingServicesPage() {
 
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#007595]">
-            Licensed Plumber Big Island Hawaii
+            Plumber Big Island Hawaii
           </h1>
           <p className="text-xl text-gray-600 mb-2">
             Emergency Plumbing Services in Kona, Waimea, Hilo & Kamuela
           </p>
           <p className="text-lg text-gray-500">
-            24/7 Emergency Service • Licensed & Insured • Fast Response
+            24/7 Emergency Service • Insured • Fast Response
           </p>
         </div>
 
         <div className="mb-12 text-gray-700 leading-relaxed">
           <p className="mb-4">
-            Looking for a reliable <strong className='text-[#007595]'>plumber in Big Island Hawaii</strong>? ReefTech Solutions provides professional plumbing services throughout Kailua-Kona, Waimea, Hilo, and surrounding areas. Our licensed plumbers handle everything from emergency repairs to routine maintenance for residential and commercial properties.
+            Looking for a reliable <strong className='text-[#007595]'>plumber in Big Island Hawaii</strong>? ReefTech Solutions provides professional plumbing services throughout Kailua-Kona, Waimea, Hilo, and surrounding areas. Our plumbers handle everything from emergency repairs to routine maintenance for residential and commercial properties.
           </p>
           <p>
             With fast response times and quality workmanship, we&apos;re your trusted choice for <strong className='text-[#007595]'>emergency plumbing in Big Island</strong>. Call <a href="tel:+1-808-303-4627" className="text-[#007595] font-semibold hover:underline">(808) 303-4627</a> for immediate service.
