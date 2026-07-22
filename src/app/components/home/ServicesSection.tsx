@@ -21,7 +21,7 @@ const categories: Category[] = [
 	{
 		id: 'access-control',
 		title: 'Access Control & Door Hardware',
-		href: '/lock-locksmith-services',
+		href: '/access-control-services',
 		image: '/photos/services/AccessControl.jpg',
 		brands: [{ name: 'Dormakaba' }, { name: 'Von Duprin' }, { name: 'Adams Rite' }, { name: 'Norton Rixson' }],
 		blurb: 'Access control is a critical blend of security, convenience, and seamless design. We partner with industry-leading brands like Dormakaba and Adams Rite to create systems that are both highly secure and beautifully integrated. By combining the global security expertise of brands like Dormakaba, a leader in electronic access and mobile credentials, with the specialized hardware of Adams Rite for elegant glass and aluminum doors, we deliver solutions that enhance both guest experience and operational efficiency.\n\nOur approach also incorporates the life-safety excellence of Von Duprin, the inventor of the panic device, and the quiet, touchless door automation of Norton Rixson. This multi-brand strategy allows us to design and install a comprehensive access control system that not only meets the highest standards for safety and reliability but also preserves the architectural integrity and sophisticated atmosphere of your property. From a guest\'s first seamless entry using a mobile key to the secure, silent operation of every back-of-house door, we ensure your access control system is as flawless as your property\'s reputation.'
@@ -29,7 +29,7 @@ const categories: Category[] = [
 	{
 		id: 'maglocks',
 		title: 'Commercial Magnetic Lock Systems',
-		href: '/lock-locksmith-services',
+		href: '/access-control-services',
 		image: '/photos/services/Security.jpg',
 		brands: [{ name: 'Allegion' }, { name: 'Schlage' }, { name: 'Cobra Controls' }],
 		blurb: 'Professional electromagnetic lock installations for secure access control. We specialize in commercial-grade systems from industry leaders Allegion and Cobra Controls, delivering reliable security solutions for vacation rentals, commercial properties, and high-security facilities. Our installations include complete access control integration with proximity readers, keypads, and network connectivity for comprehensive property protection.'

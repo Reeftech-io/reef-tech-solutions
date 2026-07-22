@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Access Control Services Big Island Hawaii | ReefTech Solutions',
     description: 'Professional locksmith services on Big Island Hawaii. Lock installation, repair, emergency lockout service, and security upgrades.',
-    url: 'https://www.reeftech.io/lock-locksmith-services',
+    url: 'https://www.reeftech.io/access-control-services',
     siteName: 'ReefTech Solutions',
     type: 'website',
     locale: 'en_US',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: ['https://www.reeftech.io/photos/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://www.reeftech.io/lock-locksmith-services',
+    canonical: 'https://www.reeftech.io/access-control-services',
   },
 };
 
@@ -130,7 +130,7 @@ export default function LockLocksmithServicesPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://www.reeftech.io/lock-locksmith-services#breadcrumb",
+                "@id": "https://www.reeftech.io/access-control-services#breadcrumb",
                 "itemListElement": [
                   {
                     "@type": "ListItem",
@@ -142,14 +142,14 @@ export default function LockLocksmithServicesPage() {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Access Control Services",
-                    "item": "https://www.reeftech.io/lock-locksmith-services"
+                    "item": "https://www.reeftech.io/access-control-services"
                   }
                 ]
               },
               {
                 "@type": "WebPage",
-                "@id": "https://www.reeftech.io/lock-locksmith-services#webpage",
-                "url": "https://www.reeftech.io/lock-locksmith-services",
+                "@id": "https://www.reeftech.io/access-control-services#webpage",
+                "url": "https://www.reeftech.io/access-control-services",
                 "name": "Access Control Services Big Island Hawaii | ReefTech Solutions",
                 "isPartOf": { "@id": "https://www.reeftech.io/#website" },
                 "inLanguage": "en-US"

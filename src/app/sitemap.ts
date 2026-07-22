@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/lock-locksmith-services`,
+      url: `${baseUrl}/access-control-services`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,

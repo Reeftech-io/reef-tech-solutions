@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
         destination: "https://www.reeftech.io/:path*",
         permanent: true,
       },
+      {
+        source: "/lock-locksmith-services",
+        destination: "/access-control-services",
+        permanent: true,
+      },
     ];
   },
   async headers() {

@@ -22,7 +22,7 @@ export default function VideoHeroSection() {
   const services = [
     { name: "Electrical", Icon: BoltIcon, href: "/electrical-services" },
     { name: "Plumbing", Icon: WrenchScrewdriverIcon, href: "/plumbing-services" },
-    { name: "Access Control", Icon: LockClosedIcon, href: "/lock-locksmith-services" },
+    { name: "Access Control", Icon: LockClosedIcon, href: "/access-control-services" },
     { name: "Fire Alarms", Icon: FireIcon, href: "/fire-alarm-support-waimea" },
     { name: "Spa & Sauna", Icon: BeakerIcon, href: "/pool-spa-sauna" },
   ];

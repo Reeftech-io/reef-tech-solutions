@@ -50,7 +50,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/lock-locksmith-services" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/access-control-services" className="text-gray-300 hover:text-white transition-colors">
                   Locks &amp; access control
                 </Link>
               </li>

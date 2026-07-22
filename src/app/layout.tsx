@@ -223,7 +223,7 @@ const jsonLdGraph = {
             itemOffered: {
               "@type": "Service",
               name: "Locks & Access Control",
-              url: `${SITE_URL}/lock-locksmith-services`,
+              url: `${SITE_URL}/access-control-services`,
               description:
                 "Lock installation, lockout assistance, smart locks, mag locks, and access control systems.",
             },

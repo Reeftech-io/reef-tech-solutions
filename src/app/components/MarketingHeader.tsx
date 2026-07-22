@@ -105,7 +105,7 @@ export default function MarketingHeader() {
                       <div className="text-xs text-gray-500">Installation & inspection</div>
                     </Link>
                     <Link
-                      href="/lock-locksmith-services"
+                      href="/access-control-services"
                       className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-200"
                       onClick={() => setServicesDropdownOpen(false)}
                     >
@@ -191,7 +191,7 @@ export default function MarketingHeader() {
                       Fire Alarm Services
                     </Link>
                     <Link
-                      href="/lock-locksmith-services"
+                      href="/access-control-services"
                       onClick={() => setMobileMenuOpen(false)}
                       className="block rounded-lg px-2 py-2 text-gray-600 transition-colors hover:bg-cyan-50 hover:text-cyan-700"
                     >
