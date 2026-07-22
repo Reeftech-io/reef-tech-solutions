@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { LockClosedIcon, KeyIcon, ShieldCheckIcon, AdjustmentsHorizontalIcon, HomeIcon, BuildingOfficeIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Lock & Locksmith Services Big Island Hawaii | ReefTech Solutions',
+  title: 'Access Control Services Big Island Hawaii | ReefTech Solutions',
   description: 'Professional locksmith services on Big Island Hawaii. Lock installation, repair, emergency lockout service, and security upgrades in Kona, Waimea, and Hilo. Fast response. Call (808) 303-4627.',
   keywords: [
     'locksmith big island',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     '24/7 locksmith Big Island'
   ],
   openGraph: {
-    title: 'Lock & Locksmith Services Big Island Hawaii | ReefTech Solutions',
+    title: 'Access Control Services Big Island Hawaii | ReefTech Solutions',
     description: 'Professional locksmith services on Big Island Hawaii. Lock installation, repair, emergency lockout service, and security upgrades.',
     url: 'https://www.reeftech.io/lock-locksmith-services',
     siteName: 'ReefTech Solutions',
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
         url: 'https://www.reeftech.io/photos/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Lock & Locksmith Services — ReefTech Solutions, Big Island Hawaii',
+        alt: 'Access Control Services — ReefTech Solutions, Big Island Hawaii',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lock & Locksmith Services Big Island Hawaii | ReefTech Solutions',
+    title: 'Access Control Services Big Island Hawaii | ReefTech Solutions',
     description: 'Professional locksmith services in Kona, Waimea, and Hilo. Lock installation, emergency lockout, smart locks, access control. Call (808) 303-4627.',
     images: ['https://www.reeftech.io/photos/og-image.jpg'],
   },
@@ -141,7 +141,7 @@ export default function LockLocksmithServicesPage() {
                   {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "Lock & Locksmith Services",
+                    "name": "Access Control Services",
                     "item": "https://www.reeftech.io/lock-locksmith-services"
                   }
                 ]
@@ -150,7 +150,7 @@ export default function LockLocksmithServicesPage() {
                 "@type": "WebPage",
                 "@id": "https://www.reeftech.io/lock-locksmith-services#webpage",
                 "url": "https://www.reeftech.io/lock-locksmith-services",
-                "name": "Lock & Locksmith Services Big Island Hawaii | ReefTech Solutions",
+                "name": "Access Control Services Big Island Hawaii | ReefTech Solutions",
                 "isPartOf": { "@id": "https://www.reeftech.io/#website" },
                 "inLanguage": "en-US"
               }
@@ -161,7 +161,7 @@ export default function LockLocksmithServicesPage() {
       <div className="container mx-auto px-4 py-32 max-w-4xl">
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#007595]">
-            Professional Lock & Locksmith Services
+            Professional Access Control Services
           </h1>
           <p className="text-xl text-gray-600 mb-2">
             Expert Lock Installation, Repair & Emergency Lockout Service across Big Island Hawaii
