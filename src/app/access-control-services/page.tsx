@@ -4,8 +4,17 @@ import { LockClosedIcon, KeyIcon, ShieldCheckIcon, AdjustmentsHorizontalIcon, Ho
 
 export const metadata: Metadata = {
   title: 'Access Control Services Big Island Hawaii | ReefTech Solutions',
-  description: 'Professional locksmith services on Big Island Hawaii. Lock installation, repair, emergency lockout service, and security upgrades in Kona, Waimea, and Hilo. Fast response. Call (808) 303-4627.',
+  description: 'Access control and locksmith services on Big Island Hawaii. Electronic access control, card & fob readers, magnetic locks, panic hardware, smart locks, lock installation, repair, rekeying, and 24/7 lockout service in Kona, Waimea, and Hilo. Call (808) 303-4627.',
   keywords: [
+    'access control big island',
+    'access control systems hawaii',
+    'electronic access control kona',
+    'magnetic locks hawaii',
+    'maglock installation',
+    'panic hardware exit devices',
+    'card reader access control',
+    'keypad door locks',
+    'smart lock installation hawaii',
     'locksmith big island',
     'lock installation hawaii',
     'lockout service kona',
@@ -15,12 +24,11 @@ export const metadata: Metadata = {
     'residential locks',
     'deadbolt installation',
     'lock rekeying big island',
-    'licensed locksmith Hawaii',
     '24/7 locksmith Big Island'
   ],
   openGraph: {
     title: 'Access Control Services Big Island Hawaii | ReefTech Solutions',
-    description: 'Professional locksmith services on Big Island Hawaii. Lock installation, repair, emergency lockout service, and security upgrades.',
+    description: 'Access control and locksmith services on Big Island Hawaii. Electronic access control, magnetic locks, panic hardware, smart locks, lock installation, repair, and emergency lockout service.',
     url: 'https://www.reeftech.io/access-control-services',
     siteName: 'ReefTech Solutions',
     type: 'website',
@@ -38,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Access Control Services Big Island Hawaii | ReefTech Solutions',
-    description: 'Professional locksmith services in Kona, Waimea, and Hilo. Lock installation, emergency lockout, smart locks, access control. Call (808) 303-4627.',
+    description: 'Access control and locksmith services in Kona, Waimea, and Hilo. Electronic access control, magnetic locks, panic hardware, smart locks, and 24/7 lockout service. Call (808) 303-4627.',
     images: ['https://www.reeftech.io/photos/og-image.jpg'],
   },
   alternates: {
@@ -55,7 +63,7 @@ export default function LockLocksmithServicesPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "serviceType": "Locksmith Services",
+            "serviceType": "Access Control & Locksmith Services",
             "provider": {
               "@type": "LocalBusiness",
               "name": "ReefTech Solutions",
@@ -91,8 +99,24 @@ export default function LockLocksmithServicesPage() {
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Locksmith Services",
+              "name": "Access Control & Locksmith Services",
               "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Electronic Access Control",
+                    "description": "Keypads, card and fob readers, controllers, and electric strikes for residential and commercial doors"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Magnetic Locks & Panic Hardware",
+                    "description": "Code-compliant maglock installation and exit devices integrated with egress and fire systems"
+                  }
+                },
                 {
                   "@type": "Offer",
                   "itemOffered": {
@@ -164,23 +188,124 @@ export default function LockLocksmithServicesPage() {
             Professional Access Control Services
           </h1>
           <p className="text-xl text-gray-600 mb-2">
-            Expert Lock Installation, Repair & Emergency Lockout Service across Big Island Hawaii
+            Electronic Access Control, Locksmith & Emergency Lockout Service across Big Island Hawaii
           </p>
           <p className="text-lg text-gray-500">
-            24/7 Emergency Service • Licensed & Insured • Fast Response
+            24/7 Emergency Service • Insured • Fast Response
           </p>
         </div>
 
         <div className="mb-12 text-gray-700 leading-relaxed">
           <p className="mb-4">
-            Looking for a reliable <strong className='text-[#007595]'>locksmith on Big Island Hawaii</strong>? ReefTech Solutions provides professional lock installation, repair, and emergency lockout services throughout Kailua-Kona, Waimea, Hilo, and surrounding areas. Our experienced technicians handle everything from residential deadbolts to complex commercial access control systems.
+            Looking for dependable <strong className='text-[#007595]'>access control and locksmith service on Big Island Hawaii</strong>? ReefTech Solutions protects homes and businesses from Kailua-Kona to Waimea and Hilo with a complete range of door hardware and electronic security work. For homeowners, we install, repair, and rekey deadbolts, entry sets, and mortise locks, upgrade worn hardware to modern high-security cylinders, and fit smart locks that let you manage entry from your phone. Whether you have just moved into a new home, lost a key, or want stronger protection for your family, we match the right hardware to your doors and your budget. We also help homeowners add keyless entry to a front door, secure a garage side door, or bring an older lock set up to a modern Grade 1 or Grade 2 standard so it stands up to the coastal climate and years of daily use.
+          </p>
+          <p className="mb-4">
+            Commercial properties have very different needs, and we design and install <strong className='text-[#007595]'>access control systems</strong> that scale with your building. Instead of handing out keys that can be copied or lost, an access control system lets you assign credentials to each employee, set schedules, and revoke access instantly when someone leaves. We work with keypads, card and fob readers, mobile credentials, and networked controllers that tie multiple doors together, so a single office, a multi-suite building, or a property with gates and storerooms can all be managed from one place.
+          </p>
+          <p className="mb-4">
+            Electronic access control is more than a reader on the wall. A reliable installation combines the credential reader, a controller or control panel, a locking device, and a request-to-exit sensor, all wired so the door stays secure while still allowing safe, fast exit. We install and service electric strikes, electrified mortise and cylindrical locks, keypad locks, and IP or cloud-managed controllers that log every entry. For businesses that want to see who came and went, we can enable audit trails, time-based schedules, and remote lock and unlock from a web dashboard. We can also tie access control into an existing intercom, video surveillance, or alarm setup, and expand a single controlled door into a full multi-door system as your operation grows, without tearing out what is already working.
+          </p>
+          <p className="mb-4">
+            Magnetic locks, or maglocks, are a popular choice for glass storefronts, offices, and interior doors because they hold securely with no moving parts. Because a maglock is fail-safe and releases when power is cut, it must be integrated with the building&apos;s fire alarm and egress path and paired with proper exit hardware such as a request-to-exit motion sensor and a push-to-exit button. We install maglocks correctly so they meet life-safety requirements, never trapping anyone inside during a power loss or emergency.
+          </p>
+          <p className="mb-4">
+            For doors along a required exit route, we install and service <strong className='text-[#007595]'>panic hardware and exit devices</strong>, sometimes called crash bars or push bars. These devices let anyone leave instantly by pushing the bar, which is essential for occupant safety in commercial and public buildings, while still keeping the door locked from the outside. We can add electrified exit devices, alarmed exit hardware, and delayed-egress options where they are appropriate, and we service existing panic hardware that has become stiff, misaligned, or unreliable.
+          </p>
+          <p className="mb-4">
+            Traditional locksmith work remains the backbone of what we do. We install and repair deadbolts and door locks, rekey existing hardware so old keys no longer work, duplicate keys, and set up master key systems that give managers one key while limiting staff to specific doors. If you are locked out of a home, office, or storeroom, our technicians respond quickly and use non-destructive entry methods whenever possible, so you get back inside without damaging the door or lock. When a lock is worn beyond repair, we recommend a durable replacement rather than a temporary fix. Rekeying is often the fastest and most affordable way to secure a property after a move, a lost key, or staff turnover, because we simply reset the existing lock to a new key instead of replacing the whole assembly.
+          </p>
+          <p className="mb-4">
+            Smart lock and smart-home integration brings convenience to everyday access. We fit smart deadbolts and levers that unlock with a code, fob, or smartphone, support auto-lock and one-time guest codes for rentals, and connect compatible devices to the hubs and apps you already use. For vacation homes and short-term rentals across the Kona and Kohala coasts, remote access lets you grant and revoke entry without ever handing over a physical key, and integrate door status with cameras and alarms for a fuller picture of your property.
+          </p>
+          <p className="mb-4">
+            Hardware lasts longer when it is maintained, and our ongoing maintenance and service plans keep locks, closers, readers, and access panels working through salt air, humidity, and heavy daily use. We offer scheduled inspections, lubrication and adjustment, battery replacement for electronic locks, firmware and credential updates for access systems, and priority response if something fails. Regular service prevents small problems from becoming lockouts or security gaps, and gives commercial clients a documented record of their door hardware.
           </p>
           <p>
-            With fast response times and quality workmanship, we&apos;re your trusted choice for <strong className='text-[#007595]'>locksmith services on Big Island</strong>. Call <a href="tel:+1-808-303-4627" className="text-[#007595] font-semibold hover:underline">(808) 303-4627</a> for immediate assistance.
+            ReefTech Solutions is insured and serves the entire Big Island, including Kailua-Kona, Waimea, Kamuela, Hilo, Captain Cook, Kohala Coast, Holualoa, and Waikoloa. Whether you need a single deadbolt rekeyed or a full electronic access control system designed and installed, our team delivers accurate, professional work with fast response times. Call <a href="tel:+1-808-303-4627" className="text-[#007595] font-semibold hover:underline">(808) 303-4627</a> to talk through your project or schedule service.
           </p>
         </div>
 
         <div className="space-y-12">
+          {/* Electronic Access Control */}
+          <section className="border-l-4 border-[#007595] py-3 rounded-l-2xl pl-6">
+            <div className="flex items-center gap-6 mb-4">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 bg-[#f0f9ff] rounded-2xl flex items-center justify-center">
+                  <BuildingOfficeIcon className="w-8 h-8 text-[#007595]" />
+                </div>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-[#007595]">
+                  Electronic Access Control
+                </h2>
+              </div>
+            </div>
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              Manage who can open which doors, and when. We design and install keypad, card, fob, and mobile-credential systems with networked controllers, electric strikes, and request-to-exit devices for offices, storefronts, and multi-tenant buildings.
+            </p>
+            <div className="bg-[#f0f9ff] rounded-lg p-6">
+              <p className="font-bold text-[#007595] mb-3">Access Control Includes:</p>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Keypad, card & fob readers</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Controllers & electric strikes</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Mobile credentials & remote access</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Audit trails & scheduled access</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Magnetic Locks & Panic Hardware */}
+          <section className="border-l-4 border-[#007595] py-3 rounded-l-2xl pl-6">
+            <div className="flex items-center gap-6 mb-4">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 bg-[#f0f9ff] rounded-2xl flex items-center justify-center">
+                  <ShieldCheckIcon className="w-8 h-8 text-[#007595]" />
+                </div>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-[#007595]">
+                  Magnetic Locks & Panic Hardware
+                </h2>
+              </div>
+            </div>
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              Secure commercial and glass doors with electromagnetic locks and code-compliant exit devices. We integrate maglocks with fire alarm and egress systems and install panic bars that allow instant, safe exit while keeping doors locked from the outside.
+            </p>
+            <div className="bg-[#f0f9ff] rounded-lg p-6">
+              <p className="font-semibold text-[#007595] mb-3">Life-Safety Hardware Includes:</p>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Magnetic lock (maglock) installation</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Panic bars & exit devices</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Request-to-exit & push-to-exit devices</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Fire alarm & egress integration</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
           {/* Lock Installation */}
           <section className="border-l-4 border-[#007595] py-3 rounded-l-2xl pl-6">
             <div className="flex items-center gap-6 mb-4">
@@ -276,7 +401,7 @@ export default function LockLocksmithServicesPage() {
               </div>
             </div>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              Expert repair of damaged or malfunctioning locks and rekeying services for enhanced security. Ideal for new property owners or after a security breach to ensure only authorized keys work.
+              Expert repair of damaged or malfunctioning locks and rekeying services for enhanced security. Ideal for new property owners or after a security concern to ensure only authorized keys work.
             </p>
             <div className="bg-[#f0f9ff] rounded-lg p-6">
               <p className="font-semibold text-[#007595] mb-3">Repair Services Include:</p>
@@ -300,6 +425,46 @@ export default function LockLocksmithServicesPage() {
               </ul>
             </div>
           </section>
+
+          {/* Maintenance & Service Plans */}
+          <section className="border-l-4 border-[#007595] rounded-l-2xl py-3 pl-6">
+            <div className="flex items-center gap-6 mb-4">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 bg-[#f0f9ff] rounded-2xl flex items-center justify-center">
+                  <HomeIcon className="w-8 h-8 text-[#007595]" />
+                </div>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-[#007595]">
+                  Maintenance & Service Plans
+                </h2>
+              </div>
+            </div>
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              Keep locks, closers, readers, and access panels reliable through salt air and heavy daily use. Our ongoing maintenance plans include scheduled inspections, adjustments, and priority response so small issues never turn into lockouts or security gaps.
+            </p>
+            <div className="bg-[#f0f9ff] rounded-lg p-6">
+              <p className="font-semibold text-[#007595] mb-3">Ongoing Support Includes:</p>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Scheduled inspections & adjustments</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Battery, firmware & credential updates</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Door closer & hardware tune-ups</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#007595] mr-2">✦</span>
+                  <span className='text-black/65'>Priority response for plan clients</span>
+                </li>
+              </ul>
+            </div>
+          </section>
         </div>
 
         {/* Additional Services */}
@@ -312,7 +477,7 @@ export default function LockLocksmithServicesPage() {
             </div>
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-[#007595]">
-                Specialized Locksmith Solutions
+                Specialized Access Control Solutions
               </h3>
             </div>
           </div>
@@ -321,8 +486,8 @@ export default function LockLocksmithServicesPage() {
               <div>
                 <h4 className="font-semibold text-[#007595] mb-2">Commercial Security</h4>
                 <ul className="space-y-1 text-gray-700 text-sm">
-                  <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Access control systems</span></li>
-                  <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Panic bar installation</span></li>
+                  <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Electronic access control</span></li>
+                  <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Panic hardware & exit devices</span></li>
                   <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Business lock upgrades</span></li>
                 </ul>
               </div>
@@ -339,14 +504,14 @@ export default function LockLocksmithServicesPage() {
                 <ul className="space-y-1 text-gray-700 text-sm">
                   <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Security assessments</span></li>
                   <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>High-security cylinders</span></li>
-                  <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Electronic upgrades</span></li>
+                  <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Magnetic lock integration</span></li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold text-[#007595] mb-2">Why Choose Us</h4>
                 <ul className="space-y-1 text-gray-700 text-sm">
                   <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Prompt service</span></li>
-                  <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Licensed professionals</span></li>
+                  <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Experienced technicians</span></li>
                   <li><span className='text-[#007595] mr-2'>✦</span> <span className='text-black/65'>Attention to detail</span></li>
                 </ul>
               </div>
@@ -365,7 +530,7 @@ export default function LockLocksmithServicesPage() {
 
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold mb-6 text-gray-900">
-            Need Locksmith Service?
+            Need Access Control or Locksmith Service?
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
