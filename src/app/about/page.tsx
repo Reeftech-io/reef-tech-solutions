@@ -148,7 +148,7 @@ export default function AboutPage() {
               </p>
             </Link>
             <Link
-              href="/fire-alarm-support-waimea"
+              href="/fire-alarm-support"
               className="group rounded-xl border border-slate-200 p-5 hover:border-cyan-300 hover:shadow-md transition"
             >
               <div className="flex items-center gap-3 mb-2">

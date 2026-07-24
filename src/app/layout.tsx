@@ -213,7 +213,7 @@ const jsonLdGraph = {
             itemOffered: {
               "@type": "Service",
               name: "Fire Alarm & Suppression",
-              url: `${SITE_URL}/fire-alarm-support-waimea`,
+              url: `${SITE_URL}/fire-alarm-support`,
               description:
                 "Fire alarm installation and inspection, kitchen hood suppression, and fire sprinkler service.",
             },

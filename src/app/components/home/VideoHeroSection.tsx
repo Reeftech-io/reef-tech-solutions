@@ -23,7 +23,7 @@ export default function VideoHeroSection() {
     { name: "Electrical", Icon: BoltIcon, href: "/electrical-services" },
     { name: "Plumbing", Icon: WrenchScrewdriverIcon, href: "/plumbing-services" },
     { name: "Access Control", Icon: LockClosedIcon, href: "/access-control-services" },
-    { name: "Fire Alarms", Icon: FireIcon, href: "/fire-alarm-support-waimea" },
+    { name: "Fire Alarms", Icon: FireIcon, href: "/fire-alarm-support" },
     { name: "Spa & Sauna", Icon: BeakerIcon, href: "/pool-spa-sauna" },
   ];
 

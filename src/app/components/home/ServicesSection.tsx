@@ -52,7 +52,7 @@ const categories: Category[] = [
 	{
 		id: 'fire-alarms',
 		title: 'Fire Alarms & Smoke Detectors',
-		href: '/fire-alarm-support-waimea',
+		href: '/fire-alarm-support',
 		image: '/photos/services/HomeAutomation.jpg',
 		blurb: 'Professional fire alarm, kitchen suppression, and fire sprinkler service on Hawaii\'s Big Island. We provide annual fire hose testing, semi-annual kitchen hood suppression system inspections, and complete fire sprinkler system maintenance for commercial buildings, vacation rentals, and luxury residential properties.'
 	}

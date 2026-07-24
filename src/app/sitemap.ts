@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/fire-alarm-support-waimea`,
+      url: `${baseUrl}/fire-alarm-support`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,

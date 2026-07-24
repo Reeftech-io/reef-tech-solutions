@@ -45,7 +45,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/fire-alarm-support-waimea" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/fire-alarm-support" className="text-gray-300 hover:text-white transition-colors">
                   Fire alarm &amp; suppression
                 </Link>
               </li>
