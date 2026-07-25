@@ -4,7 +4,7 @@ import Link from 'next/link';
 const SITE_URL = 'https://www.reeftech.io';
 
 export const metadata: Metadata = {
-  title: 'Customer Reviews — ReefTech Solutions | Big Island Hawaii',
+  title: 'Customer Reviews | Big Island Hawaii',
   description:
     'What Big Island homeowners, property managers, and businesses say about working with ReefTech Solutions for electrical, plumbing, fire alarm, access control, and spa & sauna service.',
   alternates: { canonical: `${SITE_URL}/reviews` },

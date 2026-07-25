@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { LockClosedIcon, KeyIcon, ShieldCheckIcon, AdjustmentsHorizontalIcon, HomeIcon, BuildingOfficeIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Access Control Services Big Island Hawaii | ReefTech Solutions',
+  title: 'Access Control Services Big Island Hawaii',
   description: 'Access control and locksmith services on Big Island Hawaii. Electronic access control, card & fob readers, magnetic locks, panic hardware, smart locks, lock installation, repair, rekeying, and 24/7 lockout service in Kona, Waimea, and Hilo. Call (808) 303-4627.',
   keywords: [
     'access control big island',

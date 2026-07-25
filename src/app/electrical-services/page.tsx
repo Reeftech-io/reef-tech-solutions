@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { WrenchScrewdriverIcon, LightBulbIcon, BoltIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Electrical Services Big Island Hawaii | Repairs, Lighting & Outlets | ReefTech Solutions',
+  title: 'Electrical Services Big Island Hawaii | Repairs, Lighting & Outlets',
   description: 'Electrical services on Big Island Hawaii. Outlet repairs, switch replacement, lighting installation, and troubleshooting in Kona, Waimea, Hilo. Fast response. Call (808) 303-4627.',
   keywords: [
     'electrical services Big Island Hawaii',

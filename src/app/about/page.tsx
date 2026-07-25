@@ -12,7 +12,7 @@ import {
 const SITE_URL = 'https://www.reeftech.io';
 
 export const metadata: Metadata = {
-  title: 'About ReefTech Solutions — Licensed Electrician on the Big Island',
+  title: { absolute: 'About ReefTech Solutions — Licensed Electrician on the Big Island' },
   description:
     "Meet the team behind ReefTech Solutions. Licensed electrician and property tech specialist serving Hawaii's Big Island with electrical, plumbing, access control, fire alarm, and spa & sauna service.",
   alternates: {
