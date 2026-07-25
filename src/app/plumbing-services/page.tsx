@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { WrenchScrewdriverIcon, CheckCircleIcon, BoltIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Plumber Big Island Hawaii | Emergency Plumbing Kona Waimea Hilo | ReefTech Solutions',
+  title: 'Plumber Big Island Hawaii | Emergency Plumbing Kona Waimea Hilo',
   description: 'Plumber serving Big Island Hawaii. 24/7 emergency plumbing repairs, leak detection, water heater service, drain cleaning in Kona, Waimea, Hilo. Fast response. Call (808) 303-4627.',
   keywords: [
     'plumber Big Island Hawaii',

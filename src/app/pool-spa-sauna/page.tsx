@@ -14,7 +14,7 @@ import {
 const SITE_URL = 'https://www.reeftech.io';
 
 export const metadata: Metadata = {
-  title: 'Pool, Spa & Sauna Services Big Island Hawaii | ReefTech Solutions',
+  title: 'Pool, Spa & Sauna Services Big Island Hawaii',
   description:
     "Professional sauna installation, repair, and spa maintenance on Hawaii's Big Island. Serving Waimea, Hilo, and Kona. Sunlighten, Finnleo, and Amerec service. Call (808) 303-4627.",
   keywords: [
