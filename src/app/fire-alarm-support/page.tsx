@@ -13,7 +13,7 @@ import {
 const SITE_URL = 'https://www.reeftech.io';
 
 export const metadata: Metadata = {
-  title: 'Fire Alarm & Suppression Services Big Island Hawaii | Waimea, Kona & Hilo | ReefTech Solutions',
+  title: 'Fire Alarm & Suppression Services Big Island Hawaii | Waimea, Kona & Hilo',
   description: 'Professional fire alarm installation, inspection, and service in Waimea, Kona, Hilo, and Big Island Hawaii. Fire hose service, kitchen hood suppression systems, and fire sprinkler maintenance. Call (808) 303-4627.',
   keywords: [
     'fire alarm service Waimea',
