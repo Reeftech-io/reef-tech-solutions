@@ -586,9 +586,9 @@ export default function PlumbingServicesPage() {
 
         {/* Service Area */}
         <section className="mt-16 bg-[#f0f9ff] rounded-2xl p-8">
-          <h3 className="text-xl text-center font-bold mb-3 text-[#007595]">
+          <h2 className="text-xl text-center font-bold mb-3 text-[#007595]">
             Serving Big Island Hawaii
-          </h3>
+          </h2>
           <p className="text-center text-gray-700 max-w-2xl mx-auto mb-6">
             ReefTech Solutions provides professional plumbing services across the communities that make the Big Island home and hospitality possible. If your property is in one of the areas below — or nearby — we are ready to help.
           </p>
@@ -609,9 +609,9 @@ export default function PlumbingServicesPage() {
 
         {/* CTA Section */}
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold mb-4 text-gray-900">
+          <h2 className="text-2xl font-bold mb-4 text-gray-900">
             Need Plumbing Service?
-          </h3>
+          </h2>
           <p className="text-gray-700 max-w-2xl mx-auto mb-8 leading-relaxed">
             Whether water is actively escaping or you simply want a professional set of eyes on a property before the next season, we are here. Reach out for emergency help, leak detection, inspections, fixture work, or ongoing commercial support.
           </p>

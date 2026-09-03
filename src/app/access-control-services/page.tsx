@@ -476,9 +476,9 @@ export default function LockLocksmithServicesPage() {
               </div>
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl font-bold text-[#007595]">
+              <h2 className="text-2xl font-bold text-[#007595]">
                 Specialized Access Control Solutions
-              </h3>
+              </h2>
             </div>
           </div>
           <div className="bg-[#f0f9ff] rounded-lg p-6">
@@ -520,18 +520,18 @@ export default function LockLocksmithServicesPage() {
         </section>
 
         <div className="mt-16 bg-[#f0f9ff] rounded-2xl p-6">
-          <h3 className="text-xl text-center font-bold mb-3 text-[#007595]">
+          <h2 className="text-xl text-center font-bold mb-3 text-[#007595]">
             Serving Big Island Hawaii
-          </h3>
+          </h2>
           <p className="text-center text-gray-700">
             Kailua-Kona <span className='text-[#007595]'>✦</span> Waimea <span className='text-[#007595]'>✦</span> Kamuela <span className='text-[#007595]'>✦</span> Hilo <span className='text-[#007595]'>✦</span> Captain Cook <span className='text-[#007595]'>✦</span> Kohala Coast <span className='text-[#007595]'>✦</span> Holualoa <span className='text-[#007595]'>✦</span> Waikoloa
           </p>
         </div>
 
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold mb-6 text-gray-900">
+          <h2 className="text-2xl font-bold mb-6 text-gray-900">
             Need Access Control or Locksmith Service?
-          </h3>
+          </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="tel:+1-808-303-4627"
