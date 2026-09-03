@@ -15,6 +15,24 @@ export const metadata: Metadata = {
       "Tips and guides on electrical, plumbing, access control, fire alarms, and spa & sauna service for Hawaii's Big Island.",
     url: `${SITE_URL}/blog`,
     type: 'website',
+    siteName: 'ReefTech Solutions',
+    locale: 'en_US',
+    images: [
+      {
+        url: `${SITE_URL}/photos/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'ReefTech Solutions Blog — Property Maintenance & Building Technology on the Big Island',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ReefTech Solutions Blog',
+    description:
+      "Tips and guides on electrical, plumbing, access control, fire alarms, and spa & sauna service for Hawaii's Big Island.",
+    images: [`${SITE_URL}/photos/og-image.jpg`],
   },
 };
 

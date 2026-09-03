@@ -35,6 +35,7 @@ export default function VideoHeroSection() {
         loop
         muted
         playsInline
+        poster="/photos/wave-bg.jpg"
       >
         {videoSrc ? <source src={videoSrc} type="video/mp4" /> : null}
         Your browser does not support the video tag.
