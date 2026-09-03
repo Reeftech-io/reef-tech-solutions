@@ -24,6 +24,24 @@ export const metadata: Metadata = {
       "Meet the team behind ReefTech Solutions. Licensed electrician and property tech specialist serving Hawaii's Big Island.",
     url: `${SITE_URL}/about`,
     type: 'profile',
+    siteName: 'ReefTech Solutions',
+    locale: 'en_US',
+    images: [
+      {
+        url: `${SITE_URL}/photos/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'About ReefTech Solutions — Licensed Electrician on the Big Island',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About ReefTech Solutions — Licensed Electrician on the Big Island',
+    description:
+      "Meet the team behind ReefTech Solutions. Licensed electrician and property tech specialist serving Hawaii's Big Island.",
+    images: [`${SITE_URL}/photos/og-image.jpg`],
   },
 };
 
