@@ -1,21 +1,11 @@
+import ReefBackdrop from './ReefBackdrop';
+
 export default function RequestFormSection() {
   // Restored to original Jobber.com embed section from previous inline implementation
   return (
-    <section id="request-form" className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden">
-      {/* Advanced circuit background */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <pattern id="form-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.4" opacity="0.6" />
-              <path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.3" opacity="0.5" />
-              <circle cx="10" cy="10" r="0.8" fill="#00CED1" opacity="0.45" />
-              <circle cx="5" cy="5" r="0.5" fill="#32CD32" opacity="0.35" />
-            </pattern>
-          </defs>
-          <rect width="100" height="100" fill="url(#form-circuit)" />
-        </svg>
-      </div>
+    <section id="request-form" className="py-24 bg-[#073a4d] text-white relative overflow-hidden">
+      {/* Coral reef underwater backdrop */}
+      <ReefBackdrop idPrefix="form-reef" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">

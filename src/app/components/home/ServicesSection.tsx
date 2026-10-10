@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 import Modal from '../ui/Modal';
+import ReefBackdrop from './ReefBackdrop';
 
 interface Brand { name: string; logo?: string; }
 interface Product { name: string; description: string; }
@@ -61,7 +62,7 @@ const categories: Category[] = [
 export default function ServicesSection() {
 	const [openModal, setOpenModal] = useState<string | null>(null);
 	return (
-		<section id="services" className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden">
+		<section id="services" className="py-24 bg-[#073a4d] text-white relative overflow-hidden">
 			{/* Soft cyan glow at top to break the hero-to-services transition */}
 			<div
 				aria-hidden
@@ -70,20 +71,8 @@ export default function ServicesSection() {
 					background: 'radial-gradient(ellipse 60% 100% at 50% 0%, rgba(34,211,238,0.20) 0%, rgba(34,211,238,0) 70%)',
 				}}
 			/>
-			{/* Advanced circuit background */}
-			<div className="absolute inset-0 opacity-[0.04] pointer-events-none">
-				<svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-					<defs>
-						<pattern id="services-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-							<path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.4" opacity="0.6" />
-							<path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.3" opacity="0.5" />
-							<circle cx="10" cy="10" r="0.8" fill="#00CED1" opacity="0.45" />
-							<circle cx="5" cy="5" r="0.5" fill="#32CD32" opacity="0.35" />
-						</pattern>
-					</defs>
-					<rect width="100" height="100" fill="url(#services-circuit)" />
-				</svg>
-			</div>
+			{/* Coral reef underwater backdrop */}
+			<ReefBackdrop idPrefix="services-reef" />
 			<div className="container mx-auto px-4 relative z-[100]">
 				<HeaderIntro />
 				<div className="space-y-24">
